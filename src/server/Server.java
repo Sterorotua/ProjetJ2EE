@@ -1,5 +1,4 @@
 package server;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -13,7 +12,6 @@ public class Server {
     private Socket[] listSocket;
 
 	public static void main(String[] args) {
-
 		new Server();
 	}
 	
