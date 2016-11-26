@@ -6,7 +6,11 @@ import java.net.Socket;
 
 public class Server {
 	
-    private static boolean acceptMore = true;
+    private boolean acceptMore = true;
+    private ServerSocket serverSocket = null;
+    private int port = 1984;
+    private int nbUsers = 0;
+    private Socket[] listSocket;
 
 	public static void main(String[] args) {
 
@@ -14,16 +18,25 @@ public class Server {
 	}
 	
 	public Server(){
-		ServerSocket serverSocket = null;
+		
 		try {
-            serverSocket = new ServerSocket(1984, 100);
+			this.listSocket = new Socket[5];
+            serverSocket = new ServerSocket(port);
    			System.out.println("[Server] Serveur en ligne.");
-           while (acceptMore) {
-        	   System.out.println("[Server] Attente de la connexion d'un client ...");
-               Socket socket = serverSocket.accept();
-               System.out.println("[Server] Client connecte.");
+   			
+   			while (acceptMore) {
+   				System.out.println("[Server] Attente de la connexion d'un client ...");
+	         	Socket socket = serverSocket.accept();
 
-               new Thread(new SocketThread(socket)).start();    
+        	   if (this.nbUsers < this.listSocket.length) {
+	               this.listSocket[this.nbUsers] = socket;
+	               this.newClient();
+	               System.out.println("[Server] Client n°"+ this.nbUsers +" connecte.");
+	               new Thread(new SocketThread(socket)).start(); 
+        	   }
+        	   else {
+        		   System.out.println("[Server] Nombre max de client atteint.");
+        	   }
            }
        } catch (IOException exp) {
            exp.printStackTrace();
@@ -33,5 +46,9 @@ public class Server {
            } catch (Exception e) {
           }
        }
+	}
+	
+	public synchronized void newClient(){
+		this.nbUsers = this.nbUsers+1;
 	}
 }
