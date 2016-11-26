@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Client {
 	
 	Socket socket = null;
-	String serverAddr = "172.20.10.2";
+	String serverAddr = "172.20.10.4";
 	
 	public Socket Connect(int port) {
 		try{
