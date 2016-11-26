@@ -4,20 +4,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
 	
 	Socket socket = null;
+	String serverAddr = "172.20.10.2";
 	
 	public Socket Connect(int port) {
 		try{
-			socket = new Socket(InetAddress.getLocalHost(),port);
-			System.out.println("[Client] Asking for connexion...");
+			socket = new Socket(serverAddr,port);
+			System.out.println("[Client] : Asking for connexion...");
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			System.out.println("[Client] "+br.readLine());
+			System.out.println("[Client] : "+br.readLine());
 		} catch(IOException e){
 			e.printStackTrace();
 		}

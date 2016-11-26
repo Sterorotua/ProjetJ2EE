@@ -9,7 +9,7 @@ public class Server {
     private ServerSocket serverSocket = null;
     private int port = 1984;
     private int nbUsers = 0;
-    private Socket[] listSocket;
+    private Connexion[] listCo;
 
 	public static void main(String[] args) {
 		new Server();
@@ -18,19 +18,19 @@ public class Server {
 	public Server(){
 		
 		try {
-			this.listSocket = new Socket[5];
+			this.listCo = new Connexion[5];
             serverSocket = new ServerSocket(port);
-   			System.out.println("[Server] Serveur en ligne.");
+   			System.out.println("[Server] : Serveur en ligne.");
    			
    			while (acceptMore) {
-   				System.out.println("[Server] Attente de la connexion d'un client ...");
+   				System.out.println("[Server] : Attente de la connexion d'un client ...");
 	         	Socket socket = serverSocket.accept();
 
-        	   if (this.nbUsers < this.listSocket.length) {
-	               this.listSocket[this.nbUsers] = socket;
-	               this.newClient();
-	               System.out.println("[Server] Client n°"+ this.nbUsers +" connecte.");
-	               new Thread(new SocketThread(socket)).start(); 
+        	   if (this.nbUsers <= this.listCo.length+1) {
+	               this.listCo[this.nbUsers] = new Connexion(this, socket, this.nbUsers);
+	               System.out.println("[Server] : Client n°"+ this.nbUsers +" connecte.");
+	               this.listCo[this.nbUsers].start();
+	               this.nbUsers ++;
         	   }
         	   else {
         		   System.out.println("[Server] Nombre max de client atteint.");
@@ -44,9 +44,5 @@ public class Server {
            } catch (Exception e) {
           }
        }
-	}
-	
-	public synchronized void newClient(){
-		this.nbUsers = this.nbUsers+1;
 	}
 }
