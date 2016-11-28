@@ -26,9 +26,9 @@ public class Server {
    				System.out.println("[Server] : Attente de la connexion d'un client ...");
 	         	Socket socket = serverSocket.accept();
 
-        	   if (this.nbUsers <= this.listCo.length+1) {
+        	   if (this.nbUsers <= this.listCo.length-1) {
 	               this.listCo[this.nbUsers] = new Connexion(this, socket, this.nbUsers);
-	               System.out.println("[Server] : Client n°"+ this.nbUsers +" connecte.");
+	               System.out.println("[Server] : [Client n°"+ this.nbUsers +"] connecte.");
 	               this.listCo[this.nbUsers].start();
 	               this.nbUsers ++;
         	   }

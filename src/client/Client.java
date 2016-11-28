@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -14,26 +15,40 @@ public class Client {
 	
 	public Socket Connect(int port) {
 		try{
-			socket = new Socket(serverAddr,port);
+			socket = new Socket(InetAddress.getLocalHost(),port);
 			System.out.println("[Client] : Asking for connexion...");
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			System.out.println("[Client] : "+br.readLine());
+			System.out.println(br.readLine());
 		} catch(IOException e){
 			e.printStackTrace();
 		}
 		return socket;
 	}
 	
-	public void Message(Socket socket){
+	public void envoiMessage(Socket socket){
 		try{
 			Scanner sc = new Scanner(System.in);
 			String str = sc.nextLine();
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 			ps.println(str);
-			sc.close();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean receptionMessage(Socket socket){
+		String msg = null;
+		try{
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			msg = br.readLine();
+			System.out.println(msg);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		if (msg.equals("quit"))
+			return true;
+		else
+			return false;
 	}
 	
 	public void finalize(){
