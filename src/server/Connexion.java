@@ -21,27 +21,28 @@ public class Connexion extends Thread{
 	
 	public void run(){
 		PrintStream ps = null;
+		String msg = "";
+		
+		this.server.addClient();
+		
 		try {
 			ps = new PrintStream(socket.getOutputStream());
 			ps.println("[Client n°"+ this.idUser +"] : Vous etes connecte au serveur.");
 			
-			for(int i=9 ; i>=0 ; i--){
-				BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				System.out.println("[Client n°"+ this.idUser +"] : "+br.readLine());
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			scanner : while (true) {
+				switch(msg = this.receptionMessage()) {
+					case "quit" : this.envoiMessage(msg);
+								  System.out.println("[Server] Client deconnecte.");
+								  
+					case "close" : break scanner;
+					default : this.envoiMessage(msg);
 				}
-				this.messageSuivant(i);
-			}
-			
+			}	
 			socket.close();
-			System.out.println("[Server] Client deconnecte.");
+			this.server.removeClient(idUser);
 			
 		} catch (SocketException exp){
-			System.out.println("[Server] Perte de la connexion avec le client.");
+			System.out.println("[Server] Perte de la connexion avec le [Client n°"+ this.idUser +"].");
 			try {
 				socket.close();
 			} catch (IOException e) {
@@ -53,22 +54,42 @@ public class Connexion extends Thread{
 		}
 	}
 	
-	public void messageSuivant(int i){
-		System.out.println("[Server] Envoi d'un message a [Client n°"+ this.idUser +"].");
+	public void envoiMessage(String msgRecu){
 		try {
 			PrintStream ps = new PrintStream(socket.getOutputStream());
-
-			if (i == 0){
-				ps.println("quit");
+	
+			if (msgRecu.equals("quit")){
+				System.out.println("[Server] Envoi d'un message d'aurevoir a [Client n°"+ this.idUser +"].");
+				ps.println("[Server] Message recu : ADIOS");
 			}
 			else {
-				ps.println("[Server] : Encore " +i+ " messages");
-			}
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+				System.out.println("[Server] Envoi d'un message a [Client n°"+ this.idUser +"].");
+				ps.println("[Server] Message recu");
+			}			
+		} catch (IOException exp) {
+			exp.printStackTrace();
 		}
+	}
+	
+	public String receptionMessage(){
+		String msg = "";
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			msg = br.readLine();
+			System.out.println("[Client n°"+ this.idUser +"] : "+msg);
+		} catch (SocketException exp){
+			System.out.println("[Server] Perte de la connexion avec le [Client n°"+ this.idUser +"].");
+			try {
+				socket.close();
+				return "close";
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (IOException exp) {
+			exp.printStackTrace();
+		}
+		return msg;
 	}
 	
 }

@@ -30,7 +30,6 @@ public class Server {
 	               this.listCo[this.nbUsers] = new Connexion(this, socket, this.nbUsers);
 	               System.out.println("[Server] : [Client n°"+ this.nbUsers +"] connecte.");
 	               this.listCo[this.nbUsers].start();
-	               this.nbUsers ++;
         	   }
         	   else {
         		   System.out.println("[Server] Nombre max de client atteint.");
@@ -44,5 +43,12 @@ public class Server {
            } catch (Exception e) {
           }
        }
+	}
+	
+	public synchronized void addClient(){
+		this.nbUsers ++;
+	}
+	public synchronized void removeClient(int idUser){
+		this.listCo[idUser] = null;
 	}
 }

@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Scanner;
 
 public class Client {
@@ -19,36 +20,50 @@ public class Client {
 			System.out.println("[Client] : Asking for connexion...");
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			System.out.println(br.readLine());
-		} catch(IOException e){
-			e.printStackTrace();
+		} catch (IOException exp) {
+			exp.printStackTrace();
 		}
 		return socket;
 	}
 	
-	public void envoiMessage(Socket socket){
+	public String envoiMessage(Socket socket){
+		String msg = "";
 		try{
 			Scanner sc = new Scanner(System.in);
-			String str = sc.nextLine();
+			msg = sc.nextLine();
 			PrintStream ps = new PrintStream(socket.getOutputStream());
-			ps.println(str);
-		}catch(Exception e){
-			e.printStackTrace();
+			ps.println(msg);
+		} catch (SocketException exp){
+			System.out.println("[Server] Perte de la connexion avec le Server.");
+			try {
+				socket.close();	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (IOException exp) {
+			exp.printStackTrace();
 		}
+		return msg;
 	}
 	
-	public boolean receptionMessage(Socket socket){
-		String msg = null;
+	public void receptionMessage(Socket socket){
+		String msg = "";
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			msg = br.readLine();
 			System.out.println(msg);
-		}catch(Exception e){
-			e.printStackTrace();
+		} catch (SocketException exp){
+			System.out.println("[Server] Perte de la connexion avec le Server.");
+			try {
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (IOException exp) {
+			exp.printStackTrace();
 		}
-		if (msg.equals("quit"))
-			return true;
-		else
-			return false;
 	}
 	
 	public void finalize(){
