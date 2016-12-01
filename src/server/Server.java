@@ -2,14 +2,17 @@ package server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Server {
 	
     private boolean acceptMore = true;
     private ServerSocket serverSocket = null;
     private int port = 1984;
-    private int nbUsers = 0;
-    private Connexion[] listCo;
+    private int nbUsers = 1;
+    
+    private ArrayList listCo;
 
 	public static void main(String[] args) {
 		new Server();
@@ -18,7 +21,8 @@ public class Server {
 	public Server(){
 		
 		try {
-			this.listCo = new Connexion[5];
+			this.listCo = new ArrayList<Connexion>();
+			
             serverSocket = new ServerSocket(port);
    			System.out.println("[Server] : Serveur en ligne.");
    			
@@ -26,10 +30,11 @@ public class Server {
    				System.out.println("[Server] : Attente de la connexion d'un client ...");
 	         	Socket socket = serverSocket.accept();
 
-        	   if (this.nbUsers <= this.listCo.length-1) {
-	               this.listCo[this.nbUsers] = new Connexion(this, socket, this.nbUsers);
+        	   if (this.listCo.size() < 5) {
+        		   Connexion Co = new Connexion(this, socket, this.nbUsers);
+	               this.listCo.add(Co);
 	               System.out.println("[Server] : [Client n°"+ this.nbUsers +"] connecte.");
-	               this.listCo[this.nbUsers].start();
+	               Co.start();
         	   }
         	   else {
         		   System.out.println("[Server] Nombre max de client atteint.");
@@ -48,7 +53,12 @@ public class Server {
 	public synchronized void addClient(){
 		this.nbUsers ++;
 	}
-	public synchronized void removeClient(int idUser){
-		this.listCo[idUser] = null;
+	public synchronized void removeClient(Connexion co){
+		Iterator it = listCo.iterator();
+		
+		while (!it.next().equals(co)){
+			
+		}
+		it.remove();
 	}
 }

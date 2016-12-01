@@ -39,7 +39,7 @@ public class Connexion extends Thread{
 				}
 			}	
 			socket.close();
-			this.server.removeClient(idUser);
+			this.server.removeClient(this);
 			
 		} catch (SocketException exp){
 			System.out.println("[Server] Perte de la connexion avec le [Client n°"+ this.idUser +"].");
