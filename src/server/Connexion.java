@@ -27,12 +27,12 @@ public class Connexion extends Thread{
 		
 		try {
 			ps = new PrintStream(socket.getOutputStream());
-			ps.println("[Client n°"+ this.idUser +"] : Vous etes connecte au serveur.");
+			ps.println("You are connected on the server as [CLIENT n°"+ this.idUser +"]");
 			
 			scanner : while (true) {
 				switch(msg = this.receptionMessage()) {
 					case "quit" : this.envoiMessage(msg);
-								  System.out.println("[Server] Client deconnecte.");
+								  System.out.println("[SERVER] : Client disconnected.");
 								  
 					case "close" : break scanner;
 					default : this.envoiMessage(msg);
@@ -42,7 +42,7 @@ public class Connexion extends Thread{
 			this.server.removeClient(this);
 			
 		} catch (SocketException exp){
-			System.out.println("[Server] Perte de la connexion avec le [Client n°"+ this.idUser +"].");
+			System.out.println("[SERVER] : Connexion lost with [CLIENT n°"+ this.idUser +"].");
 			try {
 				socket.close();
 			} catch (IOException e) {
@@ -59,12 +59,12 @@ public class Connexion extends Thread{
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 	
 			if (msgRecu.equals("quit")){
-				System.out.println("[Server] Envoi d'un message d'aurevoir a [Client n°"+ this.idUser +"].");
-				ps.println("[Server] Message recu : ADIOS");
+				System.out.println("[SERVER] : Sending GoodBye to [CLIENT n°"+ this.idUser +"].");
+				ps.println("Message recu : ADIOS");
 			}
 			else {
-				System.out.println("[Server] Envoi d'un message a [Client n°"+ this.idUser +"].");
-				ps.println("[Server] Message recu");
+				System.out.println("[SERVER] : Sending a message to [CLIENT n°"+ this.idUser +"].");
+				ps.println("Message received");
 			}			
 		} catch (IOException exp) {
 			exp.printStackTrace();
@@ -76,9 +76,9 @@ public class Connexion extends Thread{
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			msg = br.readLine();
-			System.out.println("[Client n°"+ this.idUser +"] : "+msg);
+			System.out.println("[CLIENT n°"+ this.idUser +"] : "+msg);
 		} catch (SocketException exp){
-			System.out.println("[Server] Perte de la connexion avec le [Client n°"+ this.idUser +"].");
+			System.out.println("[SERVER] : Connexion lost with [CLIENT n°"+ this.idUser +"].");
 			try {
 				socket.close();
 				return "close";

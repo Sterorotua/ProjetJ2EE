@@ -12,7 +12,7 @@ public class Server {
     private int port = 1984;
     private int nbUsers = 1;
     
-    private ArrayList listCo;
+    private ArrayList<Connexion> listCo;
 
 	public static void main(String[] args) {
 		new Server();
@@ -24,20 +24,20 @@ public class Server {
 			this.listCo = new ArrayList<Connexion>();
 			
             serverSocket = new ServerSocket(port);
-   			System.out.println("[Server] : Serveur en ligne.");
+   			System.out.println("[SERVER] : Server online.");
    			
    			while (acceptMore) {
-   				System.out.println("[Server] : Attente de la connexion d'un client ...");
+   				System.out.println("[SERVER] : Waiting for a client to connect ...");
 	         	Socket socket = serverSocket.accept();
 
         	   if (this.listCo.size() < 5) {
         		   Connexion Co = new Connexion(this, socket, this.nbUsers);
 	               this.listCo.add(Co);
-	               System.out.println("[Server] : [Client n°"+ this.nbUsers +"] connecte.");
+	               System.out.println("[SERVER] : [CLIENT n°"+ this.nbUsers +"] connected.");
 	               Co.start();
         	   }
         	   else {
-        		   System.out.println("[Server] Nombre max de client atteint.");
+        		   System.out.println("[SERVER] Too many client!");
         	   }
            }
        } catch (IOException exp) {
@@ -54,7 +54,7 @@ public class Server {
 		this.nbUsers ++;
 	}
 	public synchronized void removeClient(Connexion co){
-		Iterator it = listCo.iterator();
+		Iterator<Connexion> it = listCo.iterator();
 		
 		while (!it.next().equals(co)){
 			

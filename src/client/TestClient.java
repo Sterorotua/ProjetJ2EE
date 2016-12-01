@@ -5,15 +5,21 @@ import java.net.Socket;
 public class TestClient {
 
 	public static void main(String[] args){
-		String msg = "";
+		String msgReceived = "";
 		
 		Client client = new Client();
 		ClientGUI cg = new ClientGUI(client);
-		Socket socket = client.Connect(1984);
 		
-		while (!msg.equals("quit")){
-			msg = client.envoiMessage(socket);	
-			client.receptionMessage(socket);
+		cg.getTextArea().append("\n[ME] : Asking server for connexion...");
+		Socket socket = client.Connect(1984);
+
+		
+		msgReceived = client.receptionMessage(socket);
+		cg.getTextArea().append("\n[SERVER] : " + msgReceived);
+		
+		while (!cg.msgSent.equals("quit")){
+			msgReceived = client.receptionMessage(socket);
+			cg.getTextArea().append("\n[SERVER] : " + msgReceived);
 		}
 		
 		try {
@@ -23,6 +29,8 @@ public class TestClient {
 			e.printStackTrace();
 		}
 		
-		client.finalize();	
+		client.finalize();
+		System.exit(0);
+		
 	}
 }

@@ -7,7 +7,8 @@ import java.io.PrintStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Client {
 	
@@ -17,26 +18,24 @@ public class Client {
 	public Socket Connect(int port) {
 		try{
 			socket = new Socket(InetAddress.getLocalHost(),port);
-			System.out.println("[Client] : Asking for connexion...");
-			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			System.out.println(br.readLine());
+		} catch (SocketException exp){
+			JOptionPane.showMessageDialog(null,"C'ant established connexion with server.", "Error",JOptionPane.ERROR_MESSAGE);
+			System.exit(0);
 		} catch (IOException exp) {
 			exp.printStackTrace();
 		}
 		return socket;
 	}
 	
-	public String envoiMessage(Socket socket){
-		String msg = "";
+	public String envoiMessage(Socket socket, String msg){
 		try{
-			Scanner sc = new Scanner(System.in);
-			msg = sc.nextLine();
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 			ps.println(msg);
 		} catch (SocketException exp){
-			System.out.println("[Server] Perte de la connexion avec le Server.");
+			JOptionPane.showMessageDialog(null,"Connexion with the server lost.", "Error",JOptionPane.ERROR_MESSAGE);
 			try {
-				socket.close();	
+				socket.close();
+				System.exit(0);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -47,16 +46,16 @@ public class Client {
 		return msg;
 	}
 	
-	public void receptionMessage(Socket socket){
+	public String receptionMessage(Socket socket){
 		String msg = "";
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			msg = br.readLine();
-			System.out.println(msg);
 		} catch (SocketException exp){
-			System.out.println("[Server] Perte de la connexion avec le Server.");
+			JOptionPane.showMessageDialog(null,"Connexion with the server lost.", "Error",JOptionPane.ERROR_MESSAGE);
 			try {
 				socket.close();
+				System.exit(0);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -64,6 +63,7 @@ public class Client {
 		} catch (IOException exp) {
 			exp.printStackTrace();
 		}
+		return msg;
 	}
 	
 	public void finalize(){
