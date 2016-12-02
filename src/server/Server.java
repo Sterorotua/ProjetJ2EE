@@ -51,6 +51,10 @@ public class Server {
        }
 	}
 	
+	public ArrayList<Connexion> getListCo(){
+		return this.listCo;
+	}
+	
 	public synchronized void addClient(){
 		this.nbUsers ++;
 	}

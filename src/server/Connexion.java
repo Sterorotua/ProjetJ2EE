@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Connexion extends Thread{
 
@@ -35,7 +37,7 @@ public class Connexion extends Thread{
 								  System.out.println("[SERVER] : Client disconnected.");
 								  
 					case "close" : break scanner;
-					default : this.envoiMessage(msg);
+					default : this.broadcast(msg);
 				}
 			}	
 			socket.close();
@@ -90,6 +92,23 @@ public class Connexion extends Thread{
 			exp.printStackTrace();
 		}
 		return msg;
+	}
+	
+	public void broadcast(String msgRecu) {
+		ArrayList<Connexion> listCo = server.getListCo();
+		
+		for (int i=0 ; i<listCo.size() ; i++) {
+			Socket socketBroad = listCo.get(i).socket;
+				if(!socketBroad.equals(socket)){
+				try {
+					PrintStream ps = new PrintStream(socketBroad.getOutputStream());
+					ps.println(msgRecu);
+				} catch (IOException exp) {
+					System.out.println("erreru broadcast");
+					exp.printStackTrace();
+				}
+			}
+		}
 	}
 	
 }
