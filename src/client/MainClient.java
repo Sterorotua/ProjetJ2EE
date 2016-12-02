@@ -17,11 +17,11 @@ public class MainClient {
 		cg.enablingWriting(true);
 		
 		msgReceived = client.receptionMessage(socket);
-		cg.getTextArea().append("\n[SERVER] : " + msgReceived);
+		cg.getTextArea().append("\n"+msgReceived);
 
 		while (!cg.msgSent.equals("quit")) {
 			msgReceived = client.receptionMessage(socket);
-			cg.getTextArea().append("\n[SERVER] : " + msgReceived);
+			cg.getTextArea().append("\n"+msgReceived);
 		}
 
 		try {

@@ -29,7 +29,7 @@ public class Connexion extends Thread{
 		
 		try {
 			ps = new PrintStream(socket.getOutputStream());
-			ps.println("You are connected on the server as [CLIENT n°"+ this.idUser +"]");
+			ps.println("[SERVER] : You are connected on the server as [CLIENT n°"+ this.idUser +"]");
 			
 			scanner : while (true) {
 				switch(msg = this.receptionMessage()) {
@@ -62,11 +62,11 @@ public class Connexion extends Thread{
 	
 			if (msgRecu.equals("quit")){
 				System.out.println("[SERVER] : Sending GoodBye to [CLIENT n°"+ this.idUser +"].");
-				ps.println("Message recu : ADIOS");
+				ps.println("[SERVER] : Message recu : ADIOS");
 			}
 			else {
 				System.out.println("[SERVER] : Sending a message to [CLIENT n°"+ this.idUser +"].");
-				ps.println("Message received");
+				ps.println("[SERVER] : Message received");
 			}			
 		} catch (IOException exp) {
 			exp.printStackTrace();
@@ -102,9 +102,8 @@ public class Connexion extends Thread{
 				if(!socketBroad.equals(socket)){
 				try {
 					PrintStream ps = new PrintStream(socketBroad.getOutputStream());
-					ps.println(msgRecu);
+					ps.println("[CLIENT n°"+ this.idUser +"] : "+msgRecu);
 				} catch (IOException exp) {
-					System.out.println("erreru broadcast");
 					exp.printStackTrace();
 				}
 			}
