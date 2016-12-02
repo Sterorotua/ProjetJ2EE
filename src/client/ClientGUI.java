@@ -58,6 +58,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 		this.writeMessageArea = new TextField(30);
 		this.writeMessageArea.addKeyListener(this);
 		this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
+		this.writeMessageArea.setEnabled(false);
 		p.add(writeMessageArea);
 		
 		Button send = new Button("Send");
@@ -68,6 +69,10 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 		writeMessageArea.requestFocusInWindow();
 		
 		this.setVisible(true);
+	}
+	
+	public void enablingWriting(boolean enabled){
+		this.writeMessageArea.setEnabled(enabled);;
 	}
 	
 	@Override

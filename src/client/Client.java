@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.SocketException;
 
@@ -13,13 +12,18 @@ import javax.swing.JOptionPane;
 public class Client {
 	
 	Socket socket = null;
-	String serverAddr = "172.20.10.4";
+	String serverAddr = "";
 	
 	public Socket Connect(int port) {
+		
+		Config conf = new Config();
+		serverAddr = conf.getServerAddr().trim();
+		System.out.println(serverAddr);
+		
 		try{
-			socket = new Socket(InetAddress.getLocalHost(),port);
+			socket = new Socket(serverAddr,port);
 		} catch (SocketException exp){
-			JOptionPane.showMessageDialog(null,"C'ant established connexion with server.", "Error",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null,"Can't established connexion with server.", "Error",JOptionPane.ERROR_MESSAGE);
 			System.exit(0);
 		} catch (IOException exp) {
 			exp.printStackTrace();
@@ -27,7 +31,7 @@ public class Client {
 		return socket;
 	}
 	
-	public String envoiMessage(Socket socket, String msg){
+	public void envoiMessage(Socket socket, String msg){
 		try{
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 			ps.println(msg);
@@ -43,7 +47,6 @@ public class Client {
 		} catch (IOException exp) {
 			exp.printStackTrace();
 		}
-		return msg;
 	}
 	
 	public String receptionMessage(Socket socket){

@@ -20,6 +20,7 @@ public class Server {
 	
 	public Server(){
 		
+		Runtime.getRuntime();
 		try {
 			this.listCo = new ArrayList<Connexion>();
 			

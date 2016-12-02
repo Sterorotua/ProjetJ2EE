@@ -1,7 +1,5 @@
 package test;
 
-import static org.junit.Assert.fail;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -11,23 +9,20 @@ import org.junit.Test;
 
 import client.Client;
 import junit.framework.TestCase;
+import server.Server;
 
 public class ClientTest extends TestCase{
 
-	private Client client;
-	private Socket socket;
+
 	
 	@Before
 	public void setUp() throws IOException {
-		Client client = new Client();
-		Socket socket = new Socket(InetAddress.getLocalHost(),0);
-		socket.
+
 	}
 	
 	@Test
 	public void testReceptionMessage() throws Exception {
-		super.setUp();
-		assertEquals("",client.receptionMessage(socket));
+
 	}
 	
 	@Test
