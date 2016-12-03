@@ -12,7 +12,7 @@ public class Server {
     private int port = 1984;
     private int nbUsers = 1;
     
-    private ArrayList<Connexion> listCo;
+    private ArrayList<Connection> listCo;
 
 	public static void main(String[] args) {
 		new Server();
@@ -20,9 +20,8 @@ public class Server {
 	
 	public Server(){
 		
-		Runtime.getRuntime();
 		try {
-			this.listCo = new ArrayList<Connexion>();
+			this.listCo = new ArrayList<Connection>();
 			
             serverSocket = new ServerSocket(port);
    			System.out.println("[SERVER] : Server online.");
@@ -32,7 +31,7 @@ public class Server {
 	         	Socket socket = serverSocket.accept();
 
         	   if (this.listCo.size() < 5) {
-        		   Connexion Co = new Connexion(this, socket, this.nbUsers);
+        		   Connection Co = new Connection(this, socket, this.nbUsers);
 	               this.listCo.add(Co);
 	               System.out.println("[SERVER] : [CLIENT n°"+ this.nbUsers +"] connected.");
 	               Co.start();
@@ -51,19 +50,17 @@ public class Server {
        }
 	}
 	
-	public ArrayList<Connexion> getListCo(){
+	public ArrayList<Connection> getListCo(){
 		return this.listCo;
 	}
 	
 	public synchronized void addClient(){
 		this.nbUsers ++;
 	}
-	public synchronized void removeClient(Connexion co){
-		Iterator<Connexion> it = listCo.iterator();
+	public synchronized void removeClient(Connection co){
+		Iterator<Connection> it = listCo.iterator();
 		
-		while (!it.next().equals(co)){
-			
-		}
+		while (!it.next().equals(co)){}
 		it.remove();
 	}
 }

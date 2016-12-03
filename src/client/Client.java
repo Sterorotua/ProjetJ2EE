@@ -17,7 +17,7 @@ public class Client {
 	public Socket Connect(int port) {
 		
 		Config conf = new Config();
-		serverAddr = conf.getServerAddr().trim();
+		serverAddr = conf.getServerAddr();
 		System.out.println(serverAddr);
 		
 		try{
@@ -31,7 +31,7 @@ public class Client {
 		return socket;
 	}
 	
-	public void envoiMessage(Socket socket, String msg){
+	public void sendMessage(Socket socket, String msg){
 		try{
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 			ps.println(msg);
@@ -49,7 +49,7 @@ public class Client {
 		}
 	}
 	
-	public String receptionMessage(Socket socket){
+	public String receiveMessage(Socket socket){
 		String msg = "";
 		try{
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

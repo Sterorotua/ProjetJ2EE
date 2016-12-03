@@ -7,11 +7,11 @@ public class Config {
 
 	private String serverAddr = "";
 	
-	Config() {
+	public Config() {
 		Properties properties = new Properties();
 		try {
 			properties.load(Client.class.getResourceAsStream("ressources/config.properties"));
-			serverAddr = properties.getProperty("SERVER_ADDRESS");
+			serverAddr = properties.getProperty("SERVER_ADDRESS").trim();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

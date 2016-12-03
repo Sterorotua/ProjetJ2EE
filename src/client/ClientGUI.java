@@ -81,7 +81,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 			msgSent = writeMessageArea.getText();
 			readMessageArea.append("\n[ME] : " + msgSent);
 			writeMessageArea.setText("");
-			client.envoiMessage(client.socket, msgSent);
+			client.sendMessage(client.socket, msgSent);
 			writeMessageArea.requestFocus();
 		}
 	}
@@ -92,7 +92,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 			msgSent = writeMessageArea.getText();
 			readMessageArea.append("\n[ME] : " + msgSent);
 			writeMessageArea.setText("");
-			client.envoiMessage(client.socket, msgSent);
+			client.sendMessage(client.socket, msgSent);
 			writeMessageArea.requestFocus();	
 		}
 	}
@@ -114,13 +114,13 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 
 	@Override
 	public void windowClosed(WindowEvent arg0) {
-		client.envoiMessage(client.socket, "quit");
+		client.sendMessage(client.socket, "quit");
 
 	}
 
 	@Override
 	public void windowClosing(WindowEvent arg0) {
-		client.envoiMessage(client.socket, "quit");
+		client.sendMessage(client.socket, "quit");
 	}
 
 	@Override

@@ -1,10 +1,8 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
-
-import server.Connexion;
 
 public class ConnexionTest {
 

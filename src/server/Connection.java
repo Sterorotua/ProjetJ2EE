@@ -7,15 +7,14 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class Connexion extends Thread{
+public class Connection extends Thread{
 
 	private Server server;
 	private Socket socket;
 	private int idUser;
 	
-	Connexion(Server server, Socket socket, int idUser){
+	Connection(Server server, Socket socket, int idUser){
 		this.server = server;
 		this.socket = socket;
 		this.idUser = idUser;
@@ -32,8 +31,8 @@ public class Connexion extends Thread{
 			ps.println("[SERVER] : You are connected on the server as [CLIENT n°"+ this.idUser +"]");
 			
 			scanner : while (true) {
-				switch(msg = this.receptionMessage()) {
-					case "quit" : this.envoiMessage(msg);
+				switch(msg = this.receiveMessage()) {
+					case "quit" : this.sendMessage(msg);
 								  System.out.println("[SERVER] : Client disconnected.");
 								  
 					case "close" : break scanner;
@@ -56,7 +55,7 @@ public class Connexion extends Thread{
 		}
 	}
 	
-	public void envoiMessage(String msgRecu){
+	public void sendMessage(String msgRecu){
 		try {
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 	
@@ -73,7 +72,7 @@ public class Connexion extends Thread{
 		}
 	}
 	
-	public String receptionMessage(){
+	public String receiveMessage(){
 		String msg = "";
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -95,7 +94,7 @@ public class Connexion extends Thread{
 	}
 	
 	public void broadcast(String msgRecu) {
-		ArrayList<Connexion> listCo = server.getListCo();
+		ArrayList<Connection> listCo = server.getListCo();
 		
 		for (int i=0 ; i<listCo.size() ; i++) {
 			Socket socketBroad = listCo.get(i).socket;
