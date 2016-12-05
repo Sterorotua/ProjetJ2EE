@@ -3,11 +3,11 @@ package client;
 import java.io.IOException;
 import java.util.Properties;
 
-public class Config {
+public class ClientConfig {
 
 	private String serverAddr = "";
 	
-	public Config() {
+	public ClientConfig() {
 		Properties properties = new Properties();
 		try {
 			properties.load(Client.class.getResourceAsStream("ressources/config.properties"));

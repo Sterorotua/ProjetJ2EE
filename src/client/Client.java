@@ -16,7 +16,7 @@ public class Client {
 	
 	public Socket Connect(int port) {
 		
-		Config conf = new Config();
+		ClientConfig conf = new ClientConfig();
 		serverAddr = conf.getServerAddr();
 		System.out.println(serverAddr);
 		

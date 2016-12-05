@@ -5,11 +5,13 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
 public class Server {
 	
     private boolean acceptMore = true;
     private ServerSocket serverSocket = null;
-    private int port = 1984;
+    private int port;
+    private int nbUsersMax;
     private int nbUsers = 1;
     
     private ArrayList<Connection> listCo;
@@ -19,6 +21,10 @@ public class Server {
 	}
 	
 	public Server(){
+		
+		ServerConfig conf = new ServerConfig();
+		port = conf.getServerPort();
+		nbUsersMax = conf.getNbUsersMax();
 		
 		try {
 			this.listCo = new ArrayList<Connection>();
@@ -30,7 +36,7 @@ public class Server {
    				System.out.println("[SERVER] : Waiting for a client to connect ...");
 	         	Socket socket = serverSocket.accept();
 
-        	   if (this.listCo.size() < 5) {
+        	   if (this.listCo.size() < nbUsersMax) {
         		   Connection Co = new Connection(this, socket, this.nbUsers);
 	               this.listCo.add(Co);
 	               System.out.println("[SERVER] : [CLIENT n°"+ this.nbUsers +"] connected.");
