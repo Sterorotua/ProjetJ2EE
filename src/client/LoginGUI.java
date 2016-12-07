@@ -28,13 +28,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
+import sun.security.util.Password;
+
 public class LoginGUI extends JFrame implements WindowListener, ActionListener, KeyListener{
 
 	private JButton validAdmin = null;
 	private JButton validUser = null;
-	private TextField nickname = null;
-	private TextField login = null;
-	private JPasswordField password = null;
+	private TextField fieldNickname = null;
+	private TextField fieldLogin = null;
+	private JPasswordField fieldPassword = null;
 	private JLabel labelLogin = null;
 	private JLabel labelNickname = null;
 	private JLabel labelPassword = null;
@@ -49,6 +51,11 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	private JPanel flowUser = null;
 	private JPanel vide = null;
 	
+	public String loginSent = "";
+	public char[] passwordSent = null;
+	public String nicknameSent = "";	
+	
+	
 	
 	private Client client = null;
 	public String msgSent = "";
@@ -62,7 +69,7 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		// A l'ouverture, focus sur le champs nickname
 		this.addWindowListener( new WindowAdapter() {
 		    public void windowOpened( WindowEvent e ){
-		        nickname.requestFocus();
+		        fieldLogin.requestFocus();
 		    }
 		}); 
 		
@@ -77,10 +84,14 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		//Définition des objets
 
 		validAdmin = new JButton("Log as an admin");
+		validAdmin.addActionListener(this);
+		
 		validUser = new JButton("Log as an user");
-		nickname = new TextField();
-		login = new TextField();
-		password = new JPasswordField();
+		validUser.addActionListener(this);
+		
+		fieldNickname = new TextField();
+		fieldLogin = new TextField();
+		fieldPassword = new JPasswordField();
 		labelLogin = new JLabel("Login :");
 		labelPassword = new JLabel("Password :");
 		labelNickname = new JLabel("Nickname :");
@@ -112,9 +123,9 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		labelNickname.setSize(5, 1);
 		labelPassword.setSize(5, 1);
 		labelLogin.setSize(5, 1);
-		login.setSize(5, 1);
-		password.setSize(5, 1);
-		nickname.setSize(5, 1);
+		fieldLogin.setSize(5, 1);
+		fieldPassword.setSize(5, 1);
+		fieldNickname.setSize(5, 1);
 		validUser.setSize(5,1);
 		validAdmin.setSize(5,1);
 
@@ -123,36 +134,36 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		
 		// réglage de la couleur
 		
-		nickname.setBackground(Color.WHITE);
-		login.setBackground(Color.WHITE);
-		password.setBackground(Color.WHITE);
+		fieldNickname.setBackground(Color.WHITE);
+		fieldLogin.setBackground(Color.WHITE);
+		fieldPassword.setBackground(Color.WHITE);
 		validAdmin.setBackground(Color.RED);
 		validUser.setBackground(Color.RED);
 		
 		
 		// Ne peut pas être modifier
-		this.nickname.setEditable(false);
-		this.login.setEditable(false);
-		this.password.setEditable(false);
+		this.fieldNickname.setEditable(true);
+		this.fieldLogin.setEditable(true);
+		this.fieldPassword.setEditable(true);
 		
 		// Règle police
-		nickname.setFont(new Font("Arial", Font.PLAIN, 12));
-		login.setFont(new Font("Arial", Font.PLAIN, 12));
-		password.setFont(new Font("Arial", Font.PLAIN, 12));
-		password.setFont(new Font("Arial", Font.PLAIN, 12));
-		password.setFont(new Font("Arial", Font.PLAIN, 12));
+		fieldNickname.setFont(new Font("Arial", Font.PLAIN, 12));
+		fieldLogin.setFont(new Font("Arial", Font.PLAIN, 12));
+		fieldPassword.setFont(new Font("Arial", Font.PLAIN, 12));
+		fieldPassword.setFont(new Font("Arial", Font.PLAIN, 12));
+		fieldPassword.setFont(new Font("Arial", Font.PLAIN, 12));
 		
 
 		//Ajout des objets dans les layouts
 		gridAdmin.add(labelAdmin);
 		gridAdmin.add(labelLogin);
-		gridAdmin.add(login);
+		gridAdmin.add(fieldLogin);
 		gridAdmin.add(labelPassword);
-		gridAdmin.add(password);
+		gridAdmin.add(fieldPassword);
 		
 		gridUser.add(labelUser);
 		gridUser.add(labelNickname);
-		gridUser.add(nickname);
+		gridUser.add(fieldNickname);
 		
 		flowAdmin.add(validAdmin);
 		flowUser.add(validUser);
@@ -171,13 +182,19 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		
 		
 		this.add(border);
-		
-
-		
+	
+		enablingWriting(true);
+		fieldLogin.requestFocusInWindow();
 		this.setVisible(true);
 		
 	}
 
+	public void enablingWriting(boolean enabled){
+		this.fieldLogin.setEnabled(enabled);
+		this.fieldPassword.setEnabled(enabled);
+		this.fieldNickname.setEnabled(enabled);
+	}
+	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
@@ -197,9 +214,26 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getActionCommand().equals("Log as an admin")){
+			loginSent = fieldLogin.getText();
+			passwordSent = fieldPassword.getPassword();
+			
+			//client.connectionAdmin(client.socket, loginSent, passwordSent);
+			System.out.println(loginSent + passwordSent.toString());
+			this.setVisible(false);
+			this.dispose();
+		}
+		else if (ae.getActionCommand().equals("Log as an user"))
+		{
+			nicknameSent = fieldNickname.getText();
+			//client.connectionUser(client.socket,nicknameSent);
+			System.out.println(nicknameSent);
+			this.setVisible(false);
+			this.dispose();
+		}
 		
+
 	}
 
 	@Override
@@ -243,4 +277,5 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		// TODO Auto-generated method stub
 		
 	}
+
 }
