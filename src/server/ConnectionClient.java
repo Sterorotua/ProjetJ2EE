@@ -8,13 +8,13 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
 
-public class Connection extends Thread{
+public class ConnectionClient extends Thread{
 
 	private Server server;
 	private Socket socket;
 	private int idUser;
 	
-	Connection(Server server, Socket socket, int idUser){
+	ConnectionClient(Server server, Socket socket, int idUser){
 		this.server = server;
 		this.socket = socket;
 		this.idUser = idUser;
@@ -94,7 +94,7 @@ public class Connection extends Thread{
 	}
 	
 	public void broadcast(String msgRecu) {
-		ArrayList<Connection> listCo = server.getListCo();
+		ArrayList<ConnectionClient> listCo = server.getListCo();
 		
 		for (int i=0 ; i<listCo.size() ; i++) {
 			Socket socketBroad = listCo.get(i).socket;

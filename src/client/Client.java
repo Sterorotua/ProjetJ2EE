@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
 
 public class Client {
 	
-	Socket socket = null;
-	String serverAddr = "";
+	Socket socket;
+	String serverAddr;
 	
 	public Socket Connect(int port) {
 		
@@ -31,10 +31,13 @@ public class Client {
 		return socket;
 	}
 	
-	public void sendMessage(Socket socket, String msg){
+	public boolean sendMessage(Socket socket, String msg){
+		boolean sent = false;
+		
 		try{
 			PrintStream ps = new PrintStream(socket.getOutputStream());
 			ps.println(msg);
+			sent = true;
 		} catch (SocketException exp){
 			JOptionPane.showMessageDialog(null,"Connexion with the server lost.", "Error",JOptionPane.ERROR_MESSAGE);
 			try {
@@ -47,6 +50,7 @@ public class Client {
 		} catch (IOException exp) {
 			exp.printStackTrace();
 		}
+		return sent;
 	}
 	
 	public String receiveMessage(Socket socket){

@@ -3,8 +3,6 @@ package server;
 import java.io.IOException;
 import java.util.Properties;
 
-import client.Client;
-
 public class ServerConfig {
 private int serverPort;
 private int nbUsersMax;
