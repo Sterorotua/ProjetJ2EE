@@ -1,32 +1,37 @@
 package client;
 
-import java.net.Socket;
+import javax.swing.JOptionPane;
 
 public class MainClient {
 
 	public static void main(String[] args) {
 
-		String msgReceived;
-		String serverAddr;
-		int port = 1984;
+		String msgReceived = "";
+		boolean connectionGranted = false;
 
 		Client client = new Client();
 		LoginGUI lg = new LoginGUI(client);
+
+		client.connect();
+						
+		while(connectionGranted == false){
+			msgReceived = client.receiveMessage();
+			if(!msgReceived.equals("connectionGranted")) {
+				JOptionPane.showMessageDialog(null,"Error Login.", "Can't connect as "+client.getNickname(),JOptionPane.INFORMATION_MESSAGE);
+			}
+			else {
+				JOptionPane.showMessageDialog(null,"Connected as "+client.getNickname()+".", "Connected",JOptionPane.INFORMATION_MESSAGE);
+				connectionGranted = true;
+				lg.setVisible(false);
+				lg.dispose();
+			}	
+		}
+		
 		ClientGUI cg = new ClientGUI(client);
-		ClientConfig conf = new ClientConfig();
 		
-		serverAddr = conf.getServerAddr();
 
-		cg.getTextArea().append("\n[ME] : Asking server for connexion...");
-		Socket socket = client.Connect(serverAddr, port);
-		
-		cg.enablingWriting(true);
-		
-		msgReceived = client.receiveMessage(socket);
-		cg.getTextArea().append("\n"+msgReceived);
-
-		while (!cg.msgSent.equals("quit")) {
-			msgReceived = client.receiveMessage(socket);
+		while (!cg.msgSent.equals("/q")) {
+			msgReceived = client.receiveMessage();
 			cg.getTextArea().append("\n"+msgReceived);
 		}
 

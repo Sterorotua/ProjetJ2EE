@@ -26,11 +26,14 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 	private TextField writeMessageArea = null;
 	private Client client = null;
 	public String msgSent = "";
+	private String nickname;
 	
 	ClientGUI(Client client) {
 		
-		super("Chat V1.0");
+		super("Connected as "+client.getNickname());
 		this.client = client;
+		nickname = client.getNickname();
+
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -58,7 +61,6 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 		this.writeMessageArea = new TextField(30);
 		this.writeMessageArea.addKeyListener(this);
 		this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
-		this.writeMessageArea.setEnabled(false);
 		p.add(writeMessageArea);
 		
 		Button send = new Button("Send");
@@ -81,7 +83,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 			msgSent = writeMessageArea.getText();
 			readMessageArea.append("\n[ME] : " + msgSent);
 			writeMessageArea.setText("");
-			client.sendMessage(client.socket, msgSent);
+			client.sendMessage("/w "+msgSent);
 			writeMessageArea.requestFocus();
 		}
 	}
@@ -92,7 +94,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 			msgSent = writeMessageArea.getText();
 			readMessageArea.append("\n[ME] : " + msgSent);
 			writeMessageArea.setText("");
-			client.sendMessage(client.socket, msgSent);
+			client.sendMessage("/b "+msgSent);
 			writeMessageArea.requestFocus();	
 		}
 	}
@@ -114,13 +116,13 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 
 	@Override
 	public void windowClosed(WindowEvent arg0) {
-		client.sendMessage(client.socket, "quit");
+		client.sendMessage("quit");
 
 	}
 
 	@Override
 	public void windowClosing(WindowEvent arg0) {
-		client.sendMessage(client.socket, "quit");
+		client.sendMessage("quit");
 	}
 
 	@Override

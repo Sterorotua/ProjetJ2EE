@@ -2,17 +2,10 @@ package client;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
-import java.awt.Panel;
-import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +20,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-
-import sun.security.util.Password;
 
 public class LoginGUI extends JFrame implements WindowListener, ActionListener, KeyListener{
 
@@ -227,10 +218,8 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{
 			nicknameSent = fieldNickname.getText();
-			//client.connectionUser(client.socket,nicknameSent);
-			System.out.println(nicknameSent);
-			this.setVisible(false);
-			this.dispose();
+			client.setNickname(nicknameSent);
+			client.sendMessage("/g "+nicknameSent);
 		}
 		
 

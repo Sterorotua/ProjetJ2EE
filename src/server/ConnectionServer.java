@@ -7,6 +7,7 @@ import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 
 public class ConnectionServer extends Thread{
 
@@ -24,14 +25,21 @@ public class ConnectionServer extends Thread{
 		String msg;
 		
 		try {
-			serverSocket.setSoTimeout(2000);
-			while(true) {
-				this.socket = new Socket("172.20.10.2", 1984);
+			this.socket = new Socket("127.0.0.1", 1984);
+		} catch (SocketException e) {
+			System.out.println("[SERVER] : No other server connected. Waiting for one to connect ...");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-				this.socket = serverSocket.accept();
-			}
-			//ps = new PrintStream(socket.getOutputStream());
-			//ps.println("[SERVER] : You are connected linked to the other server");
+		
+		try {
+			this.socket = serverSocket.accept();
+			
+			ps = new PrintStream(socket.getOutputStream());
+			ps.println("[SERVER] : You are connected linked to the other server");
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
