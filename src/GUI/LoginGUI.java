@@ -1,4 +1,4 @@
-package client;
+package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -28,6 +28,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
+import client.Client;
 import sun.security.util.Password;
 
 public class LoginGUI extends JFrame implements WindowListener, ActionListener, KeyListener{
@@ -220,6 +221,11 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 			passwordSent = fieldPassword.getPassword();
 			
 			//client.connectionAdmin(client.socket, loginSent, passwordSent);
+			
+			for(int i=0;i<passwordSent.length;i++)
+			{
+				passwordSent[i]='0';
+			}
 			System.out.println(loginSent + passwordSent.toString());
 			this.setVisible(false);
 			this.dispose();

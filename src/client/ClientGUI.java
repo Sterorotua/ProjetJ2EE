@@ -72,7 +72,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 	}
 	
 	public void enablingWriting(boolean enabled){
-		this.writeMessageArea.setEnabled(enabled);;
+		this.writeMessageArea.setEnabled(enabled);
 	}
 	
 	@Override
