@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="D:/Dev/Java/mockito-all-1.9.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="D:/Dev/Java/mockito-all-1.9.5.jar"/>
 	<classpathentry kind="lib" path="D:/Dev/Java/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="lib" path="D:/Dev/Java/log4j-1.2-api-2.7.jar"/>
 	<classpathentry kind="lib" path="D:/Dev/Java/log4j-1.2-api-2.7-javadoc.jar"/>

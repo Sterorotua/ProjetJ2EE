@@ -12,18 +12,15 @@ import javax.swing.JOptionPane;
 public class Client {
 	
 	Socket socket;
-	String serverAddr;
 	
-	public Socket Connect(int port) {
+	public Socket Connect(String serverAddr, int port) {
 		
-		ClientConfig conf = new ClientConfig();
-		serverAddr = conf.getServerAddr();
 		System.out.println(serverAddr);
 		
 		try{
 			socket = new Socket(serverAddr,port);
 		} catch (SocketException exp){
-			JOptionPane.showMessageDialog(null,"Can't established connexion with server.", "Error",JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null,"Can't established connexion with server.\n", "Error",JOptionPane.ERROR_MESSAGE);
 			System.exit(0);
 		} catch (IOException exp) {
 			exp.printStackTrace();

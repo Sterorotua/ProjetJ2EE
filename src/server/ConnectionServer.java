@@ -26,10 +26,9 @@ public class ConnectionServer extends Thread{
 		try {
 			serverSocket.setSoTimeout(2000);
 			while(true) {
-				System.out.println("ecoute");
-				this.socket = serverSocket.accept();
-				System.out.println("connexion");
 				this.socket = new Socket("172.20.10.2", 1984);
+
+				this.socket = serverSocket.accept();
 			}
 			//ps = new PrintStream(socket.getOutputStream());
 			//ps.println("[SERVER] : You are connected linked to the other server");

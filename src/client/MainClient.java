@@ -6,13 +6,19 @@ public class MainClient {
 
 	public static void main(String[] args) {
 
-		String msgReceived = "";
+		String msgReceived;
+		String serverAddr;
+		int port = 1984;
 
 		Client client = new Client();
+		LoginGUI lg = new LoginGUI(client);
 		ClientGUI cg = new ClientGUI(client);
+		ClientConfig conf = new ClientConfig();
+		
+		serverAddr = conf.getServerAddr();
 
 		cg.getTextArea().append("\n[ME] : Asking server for connexion...");
-		Socket socket = client.Connect(1984);
+		Socket socket = client.Connect(serverAddr, port);
 		
 		cg.enablingWriting(true);
 		
