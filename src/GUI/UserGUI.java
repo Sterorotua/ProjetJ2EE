@@ -151,11 +151,11 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		
 		onglets.setOpaque(true);
 		
+		
 		borderFinal.add(onglets,BorderLayout.CENTER);
 		
 		this.add(borderFinal);
 		this.setVisible(true);
-		
 		
 	}
 	
