@@ -95,7 +95,9 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
             		 //Only show the list's popup menu if an item is not selected and positioned where the mouse was right-clicked
                     int closestIndexToClick = userList.locationToIndex(event.getPoint());
                     Rectangle cellBounds = userList.getCellBounds(closestIndexToClick, closestIndexToClick); 
-                    if( cellBounds != null && !cellBounds.contains(event.getPoint()) );
+                    if( cellBounds != null && !cellBounds.contains(event.getPoint()) ){
+                    	popupMenu.setVisible(false);
+                    }
                     else{
                     	popupMenu.setVisible(true);
                     	popupMenu.setLocation(event.getX(),event.getY());
@@ -103,7 +105,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
                     
                 }
                 else{
-                	System.out.println("Clic Gauche");
+                	popupMenu.setVisible(false);
             	}
             }      
 		});
@@ -112,7 +114,6 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		statusList.setLayoutOrientation(JList.VERTICAL);
 		statusList.setVisibleRowCount(-1);
 		statusList.addMouseListener(new MouseAdapter(){
-            //Utilise la méthode que tu veux, mais je te conseil celle-ci       
             public void mouseReleased(MouseEvent event){
             	if(event.isPopupTrigger());            	
             	else{

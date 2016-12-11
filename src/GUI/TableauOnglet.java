@@ -10,7 +10,6 @@ public class TableauOnglet extends JTabbedPane {
 		super(SwingConstants.TOP);
 		
 		broadcast = new Onglet();
-		
 		this.addTab("Broadcast", broadcast);
 		
 	}

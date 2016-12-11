@@ -44,6 +44,8 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 		this.writeMessageArea.setEnabled(false);
 		p.add(writeMessageArea);
 		
+		enablingWriting(true);
+		
 		Button send = new Button("Send");
 		send.addActionListener(this);
 		p.add(send);
