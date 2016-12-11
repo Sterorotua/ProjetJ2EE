@@ -2,12 +2,8 @@ package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.TextArea;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -22,25 +18,23 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
-
-import com.sun.prism.paint.Color;
-
 import client.Client;
 
 public class UserGUI extends JFrame implements WindowListener, ActionListener, KeyListener, MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TableauOnglet onglets=null;	
-	private JList userList = null;
-	private JList statusList = null;
+	private JList<String> userList = null;
+	private JList<String> statusList = null;
 	private JButton myStatus = null;		
-	public MenuDeroulant popupMenu = new MenuDeroulant();
+	public MenuDeroulant popupMenu = null;
 	
 	private DefaultListModel<String> userConnected = null; // doit être lié a la database
 	private DefaultListModel<String> status = null; 
@@ -59,8 +53,8 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		
 		userConnected= new DefaultListModel<String>();
 		status = new DefaultListModel<String>();
-		userList = new JList(userConnected);
-		statusList = new JList(status);
+		userList = new JList<String>(userConnected);
+		statusList = new JList<String>(status);
 		onglets = new TableauOnglet();
 		myStatus = new JButton();
 		
@@ -89,24 +83,52 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		userList.setLayoutOrientation(JList.VERTICAL);
 		userList.setVisibleRowCount(-1);
 		userList.addMouseListener(new MouseAdapter(){
-            //Utilise la méthode que tu veux, mais je te conseil celle-ci       
             public void mouseReleased(MouseEvent event){
             	if(event.isPopupTrigger()){
             		 //Only show the list's popup menu if an item is not selected and positioned where the mouse was right-clicked
                     int closestIndexToClick = userList.locationToIndex(event.getPoint());
                     Rectangle cellBounds = userList.getCellBounds(closestIndexToClick, closestIndexToClick); 
                     if( cellBounds != null && !cellBounds.contains(event.getPoint()) ){
-                    	popupMenu.setVisible(false);
-                    }
+                    	
+                    	if((popupMenu!=null)){
+                    		popupMenu.setVisible(false);
+                    		popupMenu=null;
+                        }
+                    }                        	                   
                     else{
-                    	popupMenu.setVisible(true);
-                    	popupMenu.setLocation(event.getX(),event.getY());
+                    	if(popupMenu==null){                    		
+                    	
+	                    	event.getSource();
+	                		Point p = new Point(event.getX(), event.getY());
+	                		int indexClick = userList.locationToIndex(p);
+	                		popupMenu = new MenuDeroulant(userConnected.getElementAt(indexClick));	                		
+	                		popupMenu.setVisible(true);
+	                		popupMenu.setLocation(event.getLocationOnScreen());
+	                    	borderFinal.addMouseListener(new MouseAdapter(){
+	                    		public void mouseReleased(MouseEvent event){		                    			 
+	                		        if(event.getComponent()!=popupMenu){
+	                		        	if((popupMenu!=null)){
+	                		        		popupMenu.setVisible(false);
+	                		        		popupMenu=null;
+	                                    }	                               		       	     
+	                		        }
+                    			}
+	                    		});
+                			}
+                    	else{
+                			if((popupMenu!=null)){
+                			popupMenu.setVisible(false);
+                			popupMenu=null;
+                			}                        	
+                		}
                     }
-                    
-                }
-                else{
-                	popupMenu.setVisible(false);
             	}
+                 else{                	
+                	 	if((popupMenu!=null)){
+                	 		popupMenu.setVisible(false);
+                	 		popupMenu=null;
+                    	}
+                }                                            
             }      
 		});
 		
