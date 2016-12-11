@@ -1,5 +1,6 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -22,35 +23,32 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 	private TextField writeMessageArea = null;
 	public String msgSent = "";
 	
-	private Panel areaText = null;
 	private Panel p = null;
 	
 	Onglet(){
 		super();
-		areaText = new Panel();
-		p = new Panel();
-		
-		this.setLayout(new FlowLayout());
+		p = new Panel(new FlowLayout());		
+		this.setLayout(new BorderLayout());
 				
 		this.readMessageArea = new TextArea();
 		this.readMessageArea.setBackground(Color.WHITE);
 		this.readMessageArea.setEditable(false);
 		this.readMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
-		areaText.add(readMessageArea);
+		this.add(readMessageArea,BorderLayout.CENTER);
 				
 		this.writeMessageArea = new TextField(30);
 		this.writeMessageArea.addKeyListener(this);
 		this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
 		this.writeMessageArea.setEnabled(false);
-		p.add(writeMessageArea);
+		p.add(writeMessageArea,FlowLayout.LEFT);
 		
 		enablingWriting(true);
 		
 		Button send = new Button("Send");
 		send.addActionListener(this);
 		p.add(send);
-		this.add(areaText);
-		this.add(p);
+		
+		this.add(p,BorderLayout.SOUTH);
 	}
 
 	public TextArea getReadMessageArea() {
