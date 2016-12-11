@@ -1,11 +1,18 @@
-package client;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.Panel;
+import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +27,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+
+import client.Client;
+import sun.security.util.Password;
 
 public class LoginGUI extends JFrame implements WindowListener, ActionListener, KeyListener{
 
@@ -43,7 +53,8 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	private JPanel vide = null;
 	
 	public String loginSent = "";
-	public char[] passwordSent = null;
+	public char[] password = null;
+	public String passwordSent;
 	public String nicknameSent = "";	
 	
 	
@@ -51,7 +62,7 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	private Client client = null;
 	public String msgSent = "";
 	
-	LoginGUI(Client client){
+	public LoginGUI(Client client){
 		
 		super("Communit'ISEN : Welcome to your Community !");
 		this.client = client;
@@ -208,12 +219,9 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getActionCommand().equals("Log as an admin")){
 			loginSent = fieldLogin.getText();
-			passwordSent = fieldPassword.getPassword();
-			
-			//client.connectionAdmin(client.socket, loginSent, passwordSent);
-			System.out.println(loginSent + passwordSent.toString());
-			this.setVisible(false);
-			this.dispose();
+			password = fieldPassword.getPassword();
+			passwordSent = new String(password);
+			client.sendMessage("/l "+loginSent+" "+ passwordSent);		
 		}
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{
@@ -221,8 +229,6 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 			client.setNickname(nicknameSent);
 			client.sendMessage("/g "+nicknameSent);
 		}
-		
-
 	}
 
 	@Override

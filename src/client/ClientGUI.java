@@ -149,8 +149,7 @@ public class ClientGUI extends JFrame implements WindowListener, ActionListener,
 	}
 	
 	public TextArea getTextArea(){
-		return readMessageArea;
-		
+		return readMessageArea;	
 	}
 
 }

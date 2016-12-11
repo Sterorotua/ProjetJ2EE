@@ -1,4 +1,5 @@
 package server;
+import database.Database;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -10,6 +11,7 @@ public class Server {
 	
     private boolean acceptMore = true;
     private ServerSocket serverSocket;
+    private Database db;
     private int port;
     private int nbUsersMax;
     private int nbUsers = 1;
@@ -22,12 +24,13 @@ public class Server {
 		ServerConfig conf = new ServerConfig();
 		this.port = conf.getServerPort();
 		this.nbUsersMax = conf.getNbUsersMax();
+		this.db = new Database();
 		
 		try {
 			this.listCo = new ArrayList<ConnectionClient>();
 			this.port = 1984;
             serverSocket = new ServerSocket(port);
-   			System.out.println("[SERVER] : Server online.");
+   			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
    			//ConnectionServer coServer = new ConnectionServer(this,serverSocket);
    			//coServer.start();
    			
@@ -36,7 +39,7 @@ public class Server {
 	         	Socket socket = this.serverSocket.accept();
 
         	   if (this.listCo.size() < nbUsersMax) {
-        		   ConnectionClient Co = new ConnectionClient(this, socket, this.nbUsers);
+        		   ConnectionClient Co = new ConnectionClient(this, socket, this.db, this.nbUsers);
 	               this.listCo.add(Co);
 	               System.out.println("[SERVER] : [CLIENT n°"+ this.nbUsers +"] connected.");
 	               Co.start();
@@ -54,6 +57,7 @@ public class Server {
           }
        }
 	}
+	
 	
 	public ArrayList<ConnectionClient> getListCo(){
 		return this.listCo;

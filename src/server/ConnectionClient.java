@@ -9,17 +9,23 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import database.Database;
+
 public class ConnectionClient extends Thread{
 
 	private Server server;
 	private Socket socket;
+	private Database db;
 	private int idUser;
 	private String nicknameUser;
+	private boolean admin;
 	
-	ConnectionClient(Server server, Socket socket, int idUser){
+	ConnectionClient(Server server, Socket socket, Database db, int idUser){
 		this.server = server;
 		this.socket = socket;
 		this.idUser = idUser;
+		this.admin = false;
+		this.db = db;
 	}
 	
 	public void run(){
@@ -63,7 +69,7 @@ public class ConnectionClient extends Thread{
 							System.out.println("[SERVER] : Client disconnected.");
 							break;
 							  
-				case "/g" : this.sendMessage("connectionGranted");
+				case "/g" : this.sendMessage("connectionUserGranted");
 							this.nicknameUser = msg;
 							System.out.println("pseudo : "+this.nicknameUser);
 							break;
@@ -79,8 +85,19 @@ public class ConnectionClient extends Thread{
 							this.sendPrivateMessage(msg, nicknameReceiver);
 							break;
 				
+				case "/l" : String login = st.nextToken();
+							msg = msg.replace(login+" ", "");
+							String password = st.nextToken();
+							System.out.println(login);
+							System.out.println(password);
+							if(db.getAdmin(login, password)){
+								this.sendMessage("connectionAdminGranted");
+							}
+							break;
+				
 				default : System.out.println("normal message : "+msg);
 			}
+			
 		}
 	}
 	
@@ -109,7 +126,7 @@ public class ConnectionClient extends Thread{
 		else {
 			try {
 				PrintStream ps = new PrintStream(coReceiver.socket.getOutputStream());
-				ps.println("["+this.nicknameUser+" whishp] : "+msgToSend);
+				ps.println("/w ["+this.nicknameUser+"] : "+msgToSend);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -146,7 +163,7 @@ public class ConnectionClient extends Thread{
 				if(!socketBroadcast.equals(socket)){
 				try {
 					PrintStream ps = new PrintStream(socketBroadcast.getOutputStream());
-					ps.println("["+this.nicknameUser+"] : "+msgToBroadcast);
+					ps.println("/b ["+this.nicknameUser+"] : "+msgToBroadcast);
 				} catch (IOException exp) {
 					exp.printStackTrace();
 				}

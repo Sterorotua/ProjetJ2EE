@@ -15,6 +15,7 @@ public class Client {
 	private String serverAddr;
 	private int port;
 	private Socket socket;
+	private boolean admin;
 	
 	private String nickname;
 
@@ -23,6 +24,7 @@ public class Client {
 		this.serverAddr = conf.getServerAddr();
 		this.port = conf.getServerPort();
 		this.socket = new Socket();
+		this.admin = false;
 	}
 	
 	public void connect() {
@@ -89,6 +91,13 @@ public class Client {
 			exp.printStackTrace();
 		}
 		return msg;
+	}
+	
+	public boolean getAdmin(){
+		return this.admin;
+	}
+	public void setAdmin(boolean admin){
+		this.admin = admin;
 	}
 	
 	/*public void reconnectionAttempt() {
