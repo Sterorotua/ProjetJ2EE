@@ -8,7 +8,7 @@ public class MainTest {
 
 		Client client = new Client();
 		//LoginGUI login = new LoginGUI(client);
-		UserGUI User = new UserGUI(client);
+		AdminGUI admin = new AdminGUI(client);
 		
 		
 	}
