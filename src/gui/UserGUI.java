@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.StringTokenizer;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -97,10 +98,10 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		borderNotifiedUser.setLayout(new BorderLayout());
 		
 		//initialisation d'une liste d'utilisateur pour tests
-		userConnected.addElement("paul");
+		/*userConnected.addElement("paul");
 		userConnected.addElement("stephane");
 		userConnected.addElement("jordan");
-		userConnected.addElement("remy");
+		userConnected.addElement("remy");*/
 		
 		//Différents status possible
 		status.addElement("Available");
@@ -459,6 +460,26 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	
 	public TableauOnglet getOnglets(){
 		return this.onglets;
+	}
+	
+	public void updConnectedList(String list){
+		System.out.println(list);
+
+		userConnected.removeAllElements();
+		
+		StringTokenizer st = new StringTokenizer(list);
+		while(st.hasMoreTokens()){
+			String nickname = st.nextToken();
+			list = list.replace(nickname+" ", "");
+			userConnected.addElement(nickname);	
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 	}
 	
 	@Override

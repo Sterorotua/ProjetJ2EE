@@ -27,7 +27,7 @@ public class Server {
 		this.db = new Database();
 		
 		try {
-			this.listCo = new ArrayList<ConnectionClient>();
+			this.listCo = new ArrayList<ConnectionClient>(); //Liste des Thread de connexion avec les clients 
 			this.port = 1984;
             serverSocket = new ServerSocket(port);
    			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
@@ -36,11 +36,11 @@ public class Server {
    			
    			while (acceptMore) {
    				System.out.println("[SERVER] : Waiting for a client to connect ...");
-	         	Socket socket = this.serverSocket.accept();
+	         	Socket socket = this.serverSocket.accept(); //Attente de la connexion d'un client
 
-        	   if (this.listCo.size() < nbUsersMax) {
-        		   ConnectionClient Co = new ConnectionClient(this, socket, this.db, this.nbUsers);
-	               this.listCo.add(Co);
+        	   if (this.listCo.size() < nbUsersMax) { 
+        		   ConnectionClient Co = new ConnectionClient(this, socket, this.db, this.nbUsers); //Création d'un objet connexion client (qui est un thread)
+	               this.listCo.add(Co); //on ajout cet objet à la liste des connexions avec les clients
 	               System.out.println("[SERVER] : [CLIENT n°"+ this.nbUsers +"] connected.");
 	               Co.start();
         	   }
@@ -63,10 +63,11 @@ public class Server {
 		return this.listCo;
 	}
 	
+	//Récupération d'une connexion en fonction du nom de l'utilisateur
 	public ConnectionClient getCo(String nickname){
 		ConnectionClient coToReturn = null;
 		for(ConnectionClient co : listCo) {
-			if(co.getNickname() != null && co.getNickname().equals(nickname)){
+			if(co.getInfoUser().getNickname() != null && co.getInfoUser().getNickname().equals(nickname)){
 				coToReturn = co;
 			}
 		}
@@ -77,6 +78,7 @@ public class Server {
 		this.nbUsers ++;
 	}
 	
+	//Supprime un objet connexionClient de la liste
 	public synchronized void removeClient(ConnectionClient co){
 		Iterator<ConnectionClient> it = this.listCo.iterator();
 		while (!it.next().equals(co)){}

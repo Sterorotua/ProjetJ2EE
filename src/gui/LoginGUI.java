@@ -25,6 +25,7 @@ import java.awt.event.WindowListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 
@@ -221,7 +222,12 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 			loginSent = fieldLogin.getText();
 			password = fieldPassword.getPassword();
 			passwordSent = new String(password);
-			client.sendMessage("/l "+loginSent+" "+ passwordSent);		
+			if((loginSent == null || loginSent.isEmpty()) || passwordSent == null || passwordSent.isEmpty()){
+				JOptionPane.showMessageDialog(getParent(),"You must enter a nickname AND a password.", "Error Login",JOptionPane.WARNING_MESSAGE);
+			}
+			else{
+				client.sendMessage("/l "+loginSent+" "+ passwordSent);		
+			}
 		}
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{

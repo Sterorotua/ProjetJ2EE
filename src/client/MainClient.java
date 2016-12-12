@@ -19,26 +19,31 @@ public class MainClient {
 		LoginGUI lg = new LoginGUI(client);
 
 		client.connect();
-						
+		
+		//Réception de la vérification des info de connexion
 		while(connectionGranted == false){
 			msgReceived = client.receiveMessage();
-			if(msgReceived.equals("connectionUserGranted")) {
+			System.out.println(msgReceived);
+			if(msgReceived != null && msgReceived.equals("connectionUserGranted")) {
 				connectionGranted = true;
 				lg.setVisible(false);
 				lg.dispose();
 			}
-			else if(msgReceived.equals("connectionAdminGranted")){
+			else if(msgReceived != null && msgReceived.equals("connectionAdminGranted")){
 				connectionGranted = true;
 				client.setAdmin(true);
 				lg.setVisible(false);
 				lg.dispose();
 			}
+			else if(msgReceived != null && msgReceived.equals("userBanned")){
+				JOptionPane.showMessageDialog(null,"Can't connect as "+client.getNickname()+".\nThis user is banned.", "User Banned",JOptionPane.WARNING_MESSAGE);
+			}
 			else {
-				JOptionPane.showMessageDialog(null,"Error Login.", "Can't connect as "+client.getNickname(),JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null,"Can't connect as "+client.getNickname()+".", "Error Login",JOptionPane.INFORMATION_MESSAGE);
 			}	
 		}
 		
-
+		
 		UserGUI userGUI = new UserGUI(client);			
 
 		HashMap listPM = new HashMap();
@@ -52,15 +57,19 @@ public class MainClient {
 			
 			switch(cmd) {
 				case "/b" : Onglet ongletBroad = (Onglet) userGUI.getOnglets().getComponentAt(0);
-				ongletBroad.getReadMessageArea().append("\n"+msgReceived);
+							ongletBroad.getReadMessageArea().append("\n"+msgReceived);
 							break;
 							
 				case "/w" : if(listPM.get("") == null){
-					userGUI.getOnglets().addPrivate("toto");
-					Onglet ongletPriv = (Onglet) userGUI.getOnglets().getComponentAt(1);
-					ongletPriv.getReadMessageArea().append("\n"+msgReceived);
-								
+							userGUI.getOnglets().addPrivate("toto");
+							Onglet ongletPriv = (Onglet) userGUI.getOnglets().getComponentAt(1);
+							ongletPriv.getReadMessageArea().append("\n"+msgReceived);
 							}
+							break;
+				
+				case "/updListUsers" : userGUI.updConnectedList(msgReceived);
+							break;
+				
 				default : System.out.println("normal message : "+msgReceived);
 			}
 		}
