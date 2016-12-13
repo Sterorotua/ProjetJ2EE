@@ -57,7 +57,6 @@ public class MainClient {
 			System.out.println(msgReceived);
 			StringTokenizer st = new StringTokenizer(msgReceived);
 			String cmd = st.nextToken();
-			System.out.println(cmd);
 
 			msgReceived = msgReceived.replace(cmd+" ", "");
 			
@@ -77,12 +76,28 @@ public class MainClient {
 							break;
 							
 				case "/banned" :client.sendMessage("/banned");
-								JOptionPane.showMessageDialog(null,"You have been banned.", "Banned",JOptionPane.INFORMATION_MESSAGE);
+								JOptionPane.showMessageDialog(null,"You have been BANNED.", "Banned",JOptionPane.INFORMATION_MESSAGE);
 								System.exit(0);
 								break;
-
+								
+				case "/kicked" :client.sendMessage("/kicked");
+								JOptionPane.showMessageDialog(null,"You have been KICKED.", "Kicked",JOptionPane.INFORMATION_MESSAGE);
+								System.exit(0);
+								break;
 				
-				case "/updListUsers" : userGUI.updConnectedList(msgReceived);
+				case "/updIHM" : String[] toUpdate = msgReceived.split("/banned");
+							userGUI.updConnectedList(toUpdate[0]);
+							if (client.getAdmin()){
+								toUpdate = toUpdate[1].split("/notified");
+								userGUI.updBannedList(toUpdate[0]);
+								userGUI.updNotifiedList(toUpdate[1]); 
+							}
+							
+							/*else {
+								userGUI.clearBannedList();
+							}*/
+
+							//userGUI.updConnectedList(msgReceived);
 							break;
 				
 				default : System.out.println("normal message : "+msgReceived);

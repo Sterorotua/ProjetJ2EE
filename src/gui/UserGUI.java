@@ -37,8 +37,8 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	private JList statusList = null;
 	private JButton myStatus = null;		
 	private MenuDeroulant popupMenu;
-	public MenuDeroulantAdmin1 popupMenuAdmin1 = null;
-	public MenuDeroulantAdmin2 popupMenuAdmin2 = null;
+	public MenuDeroulantAdmin1 popupMenuAdmin1;
+	public MenuDeroulantAdmin2 popupMenuAdmin2;
 	
 	private DefaultListModel<String> userConnected = null; // doit être lié a la database
 	private DefaultListModel<String> status = null; 
@@ -65,8 +65,10 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		userList = new JList(userConnected);
 		statusList = new JList(status);
 		bannedUserList = new JList(bannedUser);
-		notifiedUserList = new JList(bannedUser);
+		notifiedUserList = new JList(notifiedUser);
 		popupMenu = new MenuDeroulant(this);
+		popupMenuAdmin1 = new MenuDeroulantAdmin1(this);
+		popupMenuAdmin2 = new MenuDeroulantAdmin2(this);
 
 		
 		bannedUserListLabel = new JLabel("Banned user");
@@ -129,62 +131,52 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	                    Rectangle cellBounds = userList.getCellBounds(closestIndexToClick, closestIndexToClick); 
 	                    if( cellBounds != null && !cellBounds.contains(event.getPoint()) ){
 	                    	
-	                    	if((popupMenuAdmin1!=null)){
-	                        	popupMenuAdmin1.setVisible(false);
-	                        	popupMenuAdmin1=null;
-	                        	}
-	                    	else if((popupMenuAdmin2!=null)){
-	                        	popupMenuAdmin2.setVisible(false);
-	                        	popupMenuAdmin2=null;
-	                    	}
+	                    	if((popupMenuAdmin1.isVisible())){
+	                    		popupMenuAdmin1.setVisible(false);
+	                        }
+	                    	else if((popupMenuAdmin2.isVisible())){
+	                    		popupMenuAdmin2.setVisible(false);
+	                        }
 	                        	
 	                    }
 	                    else{
-	                    	if(popupMenuAdmin1==null){                    		
+	                    	if(!popupMenuAdmin1.isVisible()){                    		
 	                    	
 		                    	event.getSource();
 		                		Point p = new Point(event.getX(), event.getY());
 		                		int indexClick = userList.locationToIndex(p);
-		                		popupMenuAdmin1 = new MenuDeroulantAdmin1(userConnected.getElementAt(indexClick));	                		
+		                		popupMenuAdmin1.setUserClicked(userConnected.getElementAt(indexClick));	                		
 		                    	popupMenuAdmin1.setVisible(true);
 		                    	popupMenuAdmin1.setLocation(event.getLocationOnScreen());
 		                    	borderFinal.addMouseListener(new MouseAdapter(){
 		                    		public void mouseReleased(MouseEvent event){		                    			 
-		                		        if(event.getComponent()!=popupMenuAdmin1){
-		                		        	if((popupMenuAdmin1!=null)){
-		                                    	popupMenuAdmin1.setVisible(false);
-		                                    	popupMenuAdmin1=null;
-		                                    	}
-		                                	else if((popupMenuAdmin2!=null)){
-		                                    	popupMenuAdmin2.setVisible(false);
-		                                    	popupMenuAdmin2=null;
-		                                	}         		       	      
-		                		      }
-		                    		}
-		                    	});
+		                    			if((popupMenuAdmin1.isVisible())){
+		    	                    		popupMenuAdmin1.setVisible(false);
+		    	                        }
+		    	                    	else if((popupMenuAdmin2.isVisible())){
+		    	                    		popupMenuAdmin2.setVisible(false);
+		    	                        }
+		                            }	                               		       	     
+		                      	});
 	                    	}
 	                    	else{
-	                    		if((popupMenuAdmin1!=null)){
-	                            	popupMenuAdmin1.setVisible(false);
-	                            	popupMenuAdmin1=null;
-	                            	}
-	                        	else if((popupMenuAdmin2!=null)){
-	                            	popupMenuAdmin2.setVisible(false);
-	                            	popupMenuAdmin2=null;
-	                        	}
+	                    		if((popupMenuAdmin1.isVisible())){
+		                    		popupMenuAdmin1.setVisible(false);
+		                        }
+		                    	else if((popupMenuAdmin2.isVisible())){
+		                    		popupMenuAdmin2.setVisible(false);
+		                        }
 	                    	}
 	                    }
 	                    
 	                }
 	                else{                	
-	                	if((popupMenuAdmin1!=null)){
-	                    	popupMenuAdmin1.setVisible(false);
-	                    	popupMenuAdmin1=null;
-	                    	}
-	                	else if((popupMenuAdmin2!=null)){
-	                    	popupMenuAdmin2.setVisible(false);
-	                    	popupMenuAdmin2=null;
-	                	}
+	                	if((popupMenuAdmin1.isVisible())){
+                    		popupMenuAdmin1.setVisible(false);
+                        }
+                    	else if((popupMenuAdmin2.isVisible())){
+                    		popupMenuAdmin2.setVisible(false);
+                        }
 	            	}
 	            }      
 			});
@@ -268,62 +260,52 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	                   Rectangle cellBounds = bannedUserList.getCellBounds(closestIndexToClick, closestIndexToClick); 
 	                   if( cellBounds != null && !cellBounds.contains(event.getPoint()) ){
 	                   	
-	                   	if((popupMenuAdmin1!=null)){
-	                       	popupMenuAdmin1.setVisible(false);
-	                       	popupMenuAdmin1=null;
-	                       	}
-	                   	else if((popupMenuAdmin2!=null)){
-	                       	popupMenuAdmin2.setVisible(false);
-	                       	popupMenuAdmin2=null;
-	                   	}
+	                	   if((popupMenuAdmin1.isVisible())){
+	                    		popupMenuAdmin1.setVisible(false);
+	                        }
+	                    	else if((popupMenuAdmin2.isVisible())){
+	                    		popupMenuAdmin2.setVisible(false);
+	                        }
 	                       	
 	                   }
 	                   else{
-	                   	if(popupMenuAdmin2==null){                    		
+	                    	if(!popupMenuAdmin2.isVisible()){                    		
 	                   	
 		                    	event.getSource();
 		                		Point p = new Point(event.getX(), event.getY());
 		                		int indexClick = bannedUserList.locationToIndex(p);
-		                		popupMenuAdmin2 = new MenuDeroulantAdmin2(bannedUser.getElementAt(indexClick));	                		
+		                		popupMenuAdmin2.setUserClicked(bannedUser.getElementAt(indexClick));	                		
 		                		popupMenuAdmin2.setVisible(true);
 		                    	popupMenuAdmin2.setLocation(event.getLocationOnScreen());
 		                    	borderFinal.addMouseListener(new MouseAdapter(){
 		                    		public void mouseReleased(MouseEvent event){		                    			 
-		                		        if(event.getComponent()!=popupMenuAdmin2){
-		                		        	if((popupMenuAdmin1!=null)){
-		                                    	popupMenuAdmin1.setVisible(false);
-		                                    	popupMenuAdmin1=null;
-		                                    	}
-		                                	else if((popupMenuAdmin2!=null)){
-		                                    	popupMenuAdmin2.setVisible(false);
-		                                    	popupMenuAdmin2=null;
-		                                	}         		       	      
-		                		      }
-		                    		}
-		                    	});
+		                    			if((popupMenuAdmin1.isVisible())){
+		    	                    		popupMenuAdmin1.setVisible(false);
+		    	                        }
+		    	                    	else if((popupMenuAdmin2.isVisible())){
+		    	                    		popupMenuAdmin2.setVisible(false);
+		    	                        }
+		                            }	                               		       	     
+		                      	});
 	                   	}
 	                   	else{
-	                   		if((popupMenuAdmin1!=null)){
-	                           	popupMenuAdmin1.setVisible(false);
-	                           	popupMenuAdmin1=null;
-	                           	}
-	                       	else if((popupMenuAdmin2!=null)){
-	                           	popupMenuAdmin2.setVisible(false);
-	                           	popupMenuAdmin2=null;
-	                       	}
+	                   		if((popupMenuAdmin1.isVisible())){
+	                    		popupMenuAdmin1.setVisible(false);
+	                        }
+	                    	else if((popupMenuAdmin2.isVisible())){
+	                    		popupMenuAdmin2.setVisible(false);
+	                        }
 	                   	}
 	                   }
 	                   
 	               }
 	               else{                	
-	               	if((popupMenuAdmin1!=null)){
-	                   	popupMenuAdmin1.setVisible(false);
-	                   	popupMenuAdmin1=null;
-	                   	}
-	               	else if((popupMenuAdmin2!=null)){
-	                   	popupMenuAdmin2.setVisible(false);
-	                   	popupMenuAdmin2=null;
-	               	}
+	            	   if((popupMenuAdmin1.isVisible())){
+                   		popupMenuAdmin1.setVisible(false);
+                       }
+                   	else if((popupMenuAdmin2.isVisible())){
+                   		popupMenuAdmin2.setVisible(false);
+                       }
 	           	}
 	            }      
 			});
@@ -339,62 +321,52 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	                   Rectangle cellBounds = notifiedUserList.getCellBounds(closestIndexToClick, closestIndexToClick); 
 	                   if( cellBounds != null && !cellBounds.contains(event.getPoint()) ){
 	                   	
-	                   	if((popupMenuAdmin1!=null)){
-	                       	popupMenuAdmin1.setVisible(false);
-	                       	popupMenuAdmin1=null;
-	                       	}
-	                   	else if((popupMenuAdmin2!=null)){
-	                       	popupMenuAdmin2.setVisible(false);
-	                       	popupMenuAdmin2=null;
-	                   	}
+	                	   if((popupMenuAdmin1.isVisible())){
+	                    		popupMenuAdmin1.setVisible(false);
+	                        }
+	                    	else if((popupMenuAdmin2.isVisible())){
+	                    		popupMenuAdmin2.setVisible(false);
+	                        }
 	                       	
 	                   }
 	                   else{
-	                   	if(popupMenuAdmin1==null){                    		
+	                    	if(!popupMenuAdmin1.isVisible()){                    		
 	                   	
 		                    	event.getSource();
 		                		Point p = new Point(event.getX(), event.getY());
 		                		int indexClick = notifiedUserList.locationToIndex(p);
-		                		popupMenuAdmin1 = new MenuDeroulantAdmin1(notifiedUser.getElementAt(indexClick));	                		
+		                		popupMenuAdmin1.setUserClicked(notifiedUser.getElementAt(indexClick));	                		
 		                		popupMenuAdmin1.setVisible(true);
 		                		popupMenuAdmin1.setLocation(event.getLocationOnScreen());
-		                    	borderFinal.addMouseListener(new MouseAdapter(){
+		                		borderFinal.addMouseListener(new MouseAdapter(){
 		                    		public void mouseReleased(MouseEvent event){		                    			 
-		                		        if(event.getComponent()!=popupMenuAdmin1){
-		                		        	if((popupMenuAdmin1!=null)){
-		                                    	popupMenuAdmin1.setVisible(false);
-		                                    	popupMenuAdmin1=null;
-		                                    	}
-		                                	else if((popupMenuAdmin2!=null)){
-		                                    	popupMenuAdmin2.setVisible(false);
-		                                    	popupMenuAdmin2=null;
-		                                	}         		       	      
-		                		      }
-		                    		}
-		                    	});
+		                    			if((popupMenuAdmin1.isVisible())){
+		    	                    		popupMenuAdmin1.setVisible(false);
+		    	                        }
+		    	                    	else if((popupMenuAdmin2.isVisible())){
+		    	                    		popupMenuAdmin2.setVisible(false);
+		    	                        }
+		                            }	                               		       	     
+		                      	});
 	                   	}
 	                   	else{
-	                   		if((popupMenuAdmin1!=null)){
-	                           	popupMenuAdmin1.setVisible(false);
-	                           	popupMenuAdmin1=null;
-	                           	}
-	                       	else if((popupMenuAdmin2!=null)){
-	                           	popupMenuAdmin2.setVisible(false);
-	                           	popupMenuAdmin2=null;
-	                       	}
+	                   		if((popupMenuAdmin1.isVisible())){
+	                    		popupMenuAdmin1.setVisible(false);
+	                        }
+	                    	else if((popupMenuAdmin2.isVisible())){
+	                    		popupMenuAdmin2.setVisible(false);
+	                        }
 	                   	}
 	                   }
 	                   
 	               }
 	               else{                	
-	               	if((popupMenuAdmin1!=null)){
-	                   	popupMenuAdmin1.setVisible(false);
-	                   	popupMenuAdmin1=null;
-	                   	}
-	               	else if((popupMenuAdmin2!=null)){
-	                   	popupMenuAdmin2.setVisible(false);
-	                   	popupMenuAdmin2=null;
-	               	}
+	            	   if((popupMenuAdmin1.isVisible())){
+                   		popupMenuAdmin1.setVisible(false);
+                       }
+                   	else if((popupMenuAdmin2.isVisible())){
+                   		popupMenuAdmin2.setVisible(false);
+                       }
 	           	}
 	            }      
 			});
@@ -480,6 +452,43 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 				e.printStackTrace();
 			}
 		}
+	}
+	public void updBannedList(String list){
+		bannedUser.removeAllElements();
+		
+		StringTokenizer st = new StringTokenizer(list);
+		while(st.hasMoreTokens()){
+			String nickname = st.nextToken();
+			list = list.replace(nickname+" ", "");
+			bannedUser.addElement(nickname);	
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void updNotifiedList(String list){
+		notifiedUser.removeAllElements();
+		
+		StringTokenizer st = new StringTokenizer(list);
+		while(st.hasMoreTokens()){
+			String nickname = st.nextToken();
+			list = list.replace(nickname+" ", "");
+			notifiedUser.addElement(nickname);	
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void clearBannedList(){
+		bannedUser.removeAllElements();
 	}
 	
 	public Client getClient(){

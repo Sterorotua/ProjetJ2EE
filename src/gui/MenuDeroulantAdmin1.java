@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -12,26 +13,31 @@ public class MenuDeroulantAdmin1 extends JPopupMenu{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	MenuDeroulantAdmin1 menu;
+	private String nickname;
+	private boolean isAdmin;
+	private HashMap<String,Onglet> listOnglets;
 	
-	 
-	MenuDeroulantAdmin1(String nickname){
-		super(nickname);
+	MenuDeroulantAdmin1(UserGUI userGUI){
+		super();
+		this.menu = this;
 		
 		ActionListener menuListener = new ActionListener() {
 		      public void actionPerformed(ActionEvent event) {	
 		        if(event.getActionCommand()=="Kick this User"){
-		        	// Kick a user - A implementer
-        		System.out.println("Kick a user :" + nickname);
+		        	userGUI.getClient().sendMessage("/kick "+nickname);
 		        }
 		        else if(event.getActionCommand()=="Ban this User"){
-		        	// Ban un user - A implementer
-        		System.out.println("ban a user: " + nickname);
-        		
+		        	userGUI.getClient().sendMessage("/ban "+nickname);        		
 		        }
 		        else if(event.getActionCommand()=="Private Message"){
-		        	// Lancer une nouvelle conversation privée - A implementer
-        		System.out.println("message privé: " + nickname);
-		        }		        
+		        	listOnglets = userGUI.getOnglets().getListTabs();
+		        	Onglet onglet = listOnglets.get(nickname);
+		        	if(onglet == null){
+			        	userGUI.getOnglets().addPrivate(nickname);
+		        	}
+		        }	
+		        menu.setVisible(false);
 		      }
 		    };
 		    
@@ -60,5 +66,8 @@ public class MenuDeroulantAdmin1 extends JPopupMenu{
 		    
 
 		   }
+	public void setUserClicked(String nickname){
+		this.nickname = nickname;
+	}
 }
 

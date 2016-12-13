@@ -101,10 +101,36 @@ public class ConnectionClient extends Thread{
 								this.broadcastServer("User ["+nicknameNotified+"] BANNED (has been notified 3 time).");
 							}
 							break;
+								 
+				case "/ban" : if (this.infoUser.isAdmin()){
+								  String nicknameBanned = st.nextToken();
+								  ConnectionClient coToBan = server.getCo(nicknameBanned);
+								  coToBan.sendMessage("/banned "+nicknameBanned);
+								  this.broadcastServer("User ["+nicknameBanned+"] BANNED by ["+this.infoUser.getNickname()+"].");
+							  }
+							  break;
+							  
+				case "/banned" : this.db.setBan(this.infoUser.getNickname(), true);
+				 			     break;
+							  
+				case "/kick" : if (this.infoUser.isAdmin()){
+								  String nicknameKicked = st.nextToken();
+								  ConnectionClient coToKick = server.getCo(nicknameKicked);
+								  coToKick.sendMessage("/kicked "+nicknameKicked);
+								  this.broadcastServer("User ["+nicknameKicked+"] KICKED by ["+this.infoUser.getNickname()+"].");
+							  }	
+							  break;
+							  
+				case "/kicked" : break;
+							  
 				
-				case "/banned" : 
-							this.db.setBan(this.infoUser.getNickname(), true);
-							break;
+							
+				case "/authorize" : if (this.infoUser.isAdmin()){
+									   String nicknameAuthorized = st.nextToken();
+									   this.db.clearNotifications(nicknameAuthorized);
+									   this.db.setBan(nicknameAuthorized, false);
+								    }
+								   break;
 				
 				default : System.out.println("normal message : "+msg);
 			}

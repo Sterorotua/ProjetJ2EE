@@ -12,16 +12,19 @@ public class MenuDeroulantAdmin2 extends JPopupMenu{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	 
-	MenuDeroulantAdmin2(String nickname){
-		super(nickname);
+	MenuDeroulantAdmin2 menu;
+	String nickname;
+
+	MenuDeroulantAdmin2(UserGUI userGUI){
+		super();
+		this.menu = this;
+		
 		ActionListener menuListener = new ActionListener() {
 		      public void actionPerformed(ActionEvent event) {	
 		        if(event.getActionCommand()=="Authorize this user"){
-		        	// Authorize a user - A implementer
-            		System.out.println("Authorize this user :" + nickname);
-		        }		        
+		        	userGUI.getClient().sendMessage("/authorize "+nickname);
+		        }	
+		        menu.setVisible(false);
 		      }
 		    };
 		    
@@ -34,6 +37,9 @@ public class MenuDeroulantAdmin2 extends JPopupMenu{
 		    
 
 		   }
+	public void setUserClicked(String nickname){
+		this.nickname = nickname;
+	}
 }
 
 

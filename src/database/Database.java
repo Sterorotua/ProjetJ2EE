@@ -74,6 +74,7 @@ public class Database {
 		}
 	}
 	
+	
 	// Enléve l'admin de la BDD
 	public void removeAdmin(String nickname) {
 		
@@ -88,6 +89,7 @@ public class Database {
 			e.printStackTrace();
 		} 
 	}
+	
 	
 	//Verifie si le pseudo existe deja dans ADMIN
 	public boolean getAdminExist(String nickname){
@@ -106,6 +108,7 @@ public class Database {
 		}
 		return exist;
 	}
+	
 	
 	// Vérifie les information de connexion de l'admin
 	public InfoUser getAdminConnection (String nickname, String password){
@@ -134,6 +137,7 @@ public class Database {
 		return user;
 	}
 	
+	
 	public boolean getConnectedAdmin(String nickname){
 		boolean connected = false;
 		String query = "SELECT Count(*) AS connected FROM admins WHERE nickname='"+nickname.trim()+"' AND status=1";	
@@ -150,6 +154,7 @@ public class Database {
 		}
 		return connected;
 	}
+	
 	
 	// Récupére tous les admins connectés
 	public ArrayList<InfoUser> getConnectedAdmins(){
@@ -188,6 +193,7 @@ public class Database {
 		}
 	}
 	
+	
 	//Verifie si le pseudo existe déjà dans USER
 	public boolean getUserExist(String nickname){
 		boolean exist = false;
@@ -205,6 +211,7 @@ public class Database {
 		}
 		return exist;
 	}
+
 	
 	// Regarde si le pseudo est déjà pris, sinon l'ajoute en BDD
 	public InfoUser getUserConnection(String nickname){
@@ -248,6 +255,7 @@ public class Database {
 		return user;
 	}
 	
+	
 	//Verifie si un utilisateur est déjà connecté
 	public boolean getConnectedUser(String nickname){
 		boolean connected = false;
@@ -265,6 +273,7 @@ public class Database {
 		}
 		return connected;
 	}
+	
 	
 	//Récupére tous les utilisateurs connectés
 	public ArrayList<InfoUser> getConnectedUsers(){
@@ -286,14 +295,48 @@ public class Database {
 			e.printStackTrace();
 		}
 		return listInfoUser;
-
 	}
+	
+	//Récupére les utilisateur bannis
+	public ArrayList<InfoUser> getBannedUsers(){
+		ArrayList<InfoUser> listInfoBannedUser = new ArrayList<InfoUser> ();
+		String query = "SELECT * FROM users WHERE banned = 1";
+		
+		try {
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				InfoUser user = new InfoUser();
+				user.setNickname(rs.getString("nickname"));
+				user.setStatus(rs.getInt("status"));
+				user.setAdmin(false);
+				user.setNotifications(rs.getInt("notifications"));
+				user.setBanned(true);
+				listInfoBannedUser.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listInfoBannedUser;
+	}
+	
+	
+	// Ajoute une notification à l'utilisateur
+	public void addNotification(String nickname) {
+		String query;
+		query = "UPDATE users SET notifications = notifications + 1 WHERE nickname ='" + nickname + "'";
+		try {
+			stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+	
 	
 	// Récupére le nombre de notifications d'un utilisateur
 	public int getNotifications (String nickname) {
-		String query;
 		int notifications = 0;
-		query = "SELECT notifications FROM users WHERE nickname = '" + nickname + "'";
+		String query = "SELECT notifications FROM users WHERE nickname = '" + nickname + "'";
 		try {
 			ResultSet rs = stmt.executeQuery(query);
 			if (rs.next()) {
@@ -304,6 +347,39 @@ public class Database {
 		}		
 		return notifications;
 	}
+	
+	public void clearNotifications(String nickname){
+		String query = "UPDATE users SET notifications = 0 WHERE nickname ='" + nickname + "'";
+		try {
+			stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+	
+	
+	public ArrayList<InfoUser> getNotifiedUsers(){
+		ArrayList<InfoUser> listInfoNotifiedUser = new ArrayList<InfoUser> ();
+		String query = "SELECT * FROM users WHERE notifications > 0";
+		
+		try {
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				InfoUser user = new InfoUser();
+				user.setNickname(rs.getString("nickname"));
+				user.setStatus(rs.getInt("status"));
+				user.setAdmin(false);
+				user.setNotifications(rs.getInt("notifications"));
+				user.setBanned(rs.getBoolean("banned"));
+				listInfoNotifiedUser.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listInfoNotifiedUser;
+	}
+	
 	
 	// Récupére le status d'un utilisateur
 	public String getStatus(String nickname) {
@@ -329,6 +405,7 @@ public class Database {
 		return status;
 	}
 	
+	
 	// Met à jour le status d'un utilisateur
 	public void setStatus(String nickname, String status) {
 		Map<String, Integer> myMap = new HashMap<String, Integer>();
@@ -348,6 +425,7 @@ public class Database {
 		}
 	}
 	
+	
 	// Met à jour le status d'un utilisateur
 	public void setStatus(String nickname, boolean admin, int status) {
 		String query;
@@ -365,6 +443,7 @@ public class Database {
 		}
 	}
 	
+	
 	public void setBan(String nickname, boolean  ban){
 		String query = "UPDATE users SET banned = " + ban + " WHERE nickname = '" + nickname + "'";
 		try {
@@ -375,17 +454,8 @@ public class Database {
 		}
 	}
 	
-	// Ajoute une notification à l'utilisateur
-	public void addNotification(String nickname) {
-		String query;
-		query = "UPDATE users SET notifications = notifications + 1 WHERE nickname ='" + nickname + "'";
-		try {
-			stmt.executeUpdate(query);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}
+	
+
 	
 
 

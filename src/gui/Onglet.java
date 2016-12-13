@@ -79,10 +79,21 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 		this.writeMessageArea.setEnabled(enabled);
 	}
 	
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void keyPressed(KeyEvent ke) {
+		if (ke.getKeyCode()==KeyEvent.VK_ENTER){
+			msgSent = writeMessageArea.getText();
+			readMessageArea.append("\n[ME] : " + msgSent);
+			writeMessageArea.setText("");
+			if(receiver.equals("broadcast")){
+				client.sendMessage("/b "+msgSent);
+				System.out.println("/b "+msgSent);
+			}
+			else{
+				client.sendMessage("/w "+receiver+" "+msgSent);
+				System.out.println("/w "+receiver+" "+msgSent);
+			}
+			writeMessageArea.requestFocus();	
+		}
 	}
 	
 	@Override
