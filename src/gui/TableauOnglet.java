@@ -1,6 +1,7 @@
 package gui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
@@ -10,27 +11,27 @@ import client.Client;
 public class TableauOnglet extends JTabbedPane {
 	public Onglet broadcast=null;
 	private Client client;
-	private ArrayList<String> listTab;
+	private HashMap<String,Onglet> listTab;
 	
 	public TableauOnglet(Client client){
 		super(SwingConstants.TOP);
 		
 		this.client = client;
-		listTab = new ArrayList();
+		listTab = new HashMap<String,Onglet>();
 		
 		broadcast = new Onglet(this.client, "broadcast");
 		this.addTab("Broadcast", broadcast);
-		this.listTab.add("Broadcast");
+		this.listTab.put("Broadcast",broadcast);
 	}
 
 	public void addPrivate(String pseudo){
 		
 		Onglet messagePrivate = new Onglet(this.client, pseudo);
 		this.addTab(pseudo, messagePrivate);
-		this.listTab.add(pseudo);
+		this.listTab.put(pseudo,messagePrivate);
 	}
 	
-	public ArrayList getListTabs(){
+	public HashMap<String,Onglet> getListTabs(){
 		return this.listTab;
 	}	
 }

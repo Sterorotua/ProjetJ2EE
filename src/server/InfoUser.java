@@ -6,6 +6,7 @@ public class InfoUser {
 	private int status;
 	private int notifications;
 	private boolean admin;
+	private boolean banned;
 	
 	public InfoUser(){
 	}
@@ -46,6 +47,14 @@ public class InfoUser {
 	
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
+	}
+	
+	public void setBanned(boolean banned){
+		this.banned = banned;
+	}
+	
+	public boolean isBanned(){
+		return this.banned;
 	}
 	
 }

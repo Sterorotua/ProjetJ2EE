@@ -220,6 +220,7 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getActionCommand().equals("Log as an admin")){
 			loginSent = fieldLogin.getText();
+			client.setNickname(loginSent);
 			password = fieldPassword.getPassword();
 			passwordSent = new String(password);
 			if((loginSent == null || loginSent.isEmpty()) || passwordSent == null || passwordSent.isEmpty()){
@@ -232,8 +233,13 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{
 			nicknameSent = fieldNickname.getText();
-			client.setNickname(nicknameSent);
-			client.sendMessage("/g "+nicknameSent);
+			if(nicknameSent == null || nicknameSent.isEmpty() || nicknameSent.length() < 3){
+				JOptionPane.showMessageDialog(getParent(),"Your nickname must contain 3 char at least.", "Error Login",JOptionPane.WARNING_MESSAGE);
+			}
+			else {
+				client.setNickname(nicknameSent);
+				client.sendMessage("/g "+nicknameSent);
+			}
 		}
 	}
 

@@ -35,8 +35,14 @@ public class MainClient {
 				lg.setVisible(false);
 				lg.dispose();
 			}
+			else if (msgReceived != null && msgReceived.equals("usedByAdmin")){
+				JOptionPane.showMessageDialog(null,"An admin is already named "+client.getNickname()+".\nChoose an other nickname.", "Error Nickname",JOptionPane.WARNING_MESSAGE);
+			}
 			else if(msgReceived != null && msgReceived.equals("userBanned")){
 				JOptionPane.showMessageDialog(null,"Can't connect as "+client.getNickname()+".\nThis user is banned.", "User Banned",JOptionPane.WARNING_MESSAGE);
+			}
+			else if (msgReceived != null && msgReceived.equals("userAlreadyConnected")){
+				JOptionPane.showMessageDialog(null,"User "+client.getNickname()+" is already connected.", "User already connected",JOptionPane.WARNING_MESSAGE);
 			}
 			else {
 				JOptionPane.showMessageDialog(null,"Can't connect as "+client.getNickname()+".", "Error Login",JOptionPane.INFORMATION_MESSAGE);
@@ -46,13 +52,13 @@ public class MainClient {
 		
 		UserGUI userGUI = new UserGUI(client);			
 
-		HashMap listPM = new HashMap();
-
-		while (true) {
+		scanner : while (true) {
 			msgReceived = client.receiveMessage();
-			
+			System.out.println(msgReceived);
 			StringTokenizer st = new StringTokenizer(msgReceived);
 			String cmd = st.nextToken();
+			System.out.println(cmd);
+
 			msgReceived = msgReceived.replace(cmd+" ", "");
 			
 			switch(cmd) {
@@ -60,12 +66,21 @@ public class MainClient {
 							ongletBroad.getReadMessageArea().append("\n"+msgReceived);
 							break;
 							
-				case "/w" : if(listPM.get("") == null){
-							userGUI.getOnglets().addPrivate("toto");
-							Onglet ongletPriv = (Onglet) userGUI.getOnglets().getComponentAt(1);
-							ongletPriv.getReadMessageArea().append("\n"+msgReceived);
+				case "/w" : HashMap<String,Onglet> listPM = userGUI.getOnglets().getListTabs();
+							String sender = st.nextToken();
+							msgReceived = msgReceived.replace(sender+" ", "");
+							if(listPM.get(sender) == null){
+								userGUI.getOnglets().addPrivate(sender);
 							}
+							Onglet ongletPriv = listPM.get(sender);
+							ongletPriv.getReadMessageArea().append("\n"+msgReceived);
 							break;
+							
+				case "/banned" :client.sendMessage("/banned");
+								JOptionPane.showMessageDialog(null,"You have been banned.", "Banned",JOptionPane.INFORMATION_MESSAGE);
+								System.exit(0);
+								break;
+
 				
 				case "/updListUsers" : userGUI.updConnectedList(msgReceived);
 							break;

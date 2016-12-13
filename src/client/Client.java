@@ -28,11 +28,7 @@ public class Client {
 	}
 	
 	public void connect() {
-		
-		System.out.println(this.serverAddr);
-		System.out.println(this.port);
-
-		
+				
 		try{
 			socket = new Socket(this.serverAddr, this.port);
 		} catch (SocketException exp){

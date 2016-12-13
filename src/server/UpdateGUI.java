@@ -31,7 +31,6 @@ public class UpdateGUI extends Thread{
 				usersConnected = usersConnected.concat(" "+infoAdmin.getNickname());
 			}
 			
-			
 			connectionClient.sendMessage(usersConnected);
 			try {
 				Thread.sleep(3000);

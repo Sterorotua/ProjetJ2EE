@@ -55,28 +55,19 @@ public class Database {
 	// Ajoute un admin dans la BDD
 	public void addAdmin (String nickname, String password) {
 		
-		String queryAdmin = "SELECT Count(*) AS exist FROM admins WHERE nickname='"+nickname.trim()+"'";	
-		String queryUser = "SELECT Count(*) AS exist FROM users WHERE nickname='"+nickname.trim()+"'";	
-
 		try {
-			ResultSet rsUser = stmt.executeQuery(queryUser); //On vérifie que le pseudo n'est pas pris par un USER
-			if(rsUser.next()){
-				if(rsUser.getInt("exist")==0){
-					ResultSet rsAdmin = stmt.executeQuery(queryAdmin);
-					if(rsAdmin.next()){ //Puis on vérifie que le pseudo n'est pas pris par un ADMIN
-						if(rsAdmin.getInt("exist") == 0){
-							queryAdmin = "INSERT INTO admins (nickname,password) VALUES ('" + nickname + "','" + password + "')";
-							stmt.executeUpdate(queryAdmin);
-							System.out.println(nickname + " added");
-						}
-						else{
-							System.out.println("[SERVER] : An admin is already named "+nickname+".");
-						}
-					}
+			if(this.getUserExist(nickname) == false){
+				if(this.getAdminExist(nickname) == false){ //Puis on vérifie que le pseudo n'est pas pris par un ADMIN
+					String queryAdmin = "INSERT INTO admins (nickname,password) VALUES ('" + nickname + "','" + password + "')";
+					stmt.executeUpdate(queryAdmin);
+					System.out.println(nickname + " added");
 				}
-				else{
-					System.out.println("[SERVER] : A user is already named "+nickname+".");
-				}
+				else {
+					System.out.println("[SERVER] : An admin is already named "+nickname+".");
+				}	
+			}
+			else{
+				System.out.println("[SERVER] : A user is already named "+nickname+".");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,25 +89,66 @@ public class Database {
 		} 
 	}
 	
+	//Verifie si le pseudo existe deja dans ADMIN
+	public boolean getAdminExist(String nickname){
+		boolean exist = false;
+		String query = "SELECT Count(*) AS exist FROM admins WHERE nickname='"+nickname.trim()+"'";	
+		
+		try {
+			ResultSet rsAdmin = stmt.executeQuery(query);
+			if(rsAdmin.next()){
+				if(rsAdmin.getInt("exist") != 0){
+					exist = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return exist;
+	}
+	
 	// Vérifie les information de connexion de l'admin
 	public InfoUser getAdminConnection (String nickname, String password){
 		InfoUser user = new InfoUser();
 		String query;
 		query = "SELECT * FROM admins WHERE nickname='"+nickname.trim()+"' AND password='"+password.trim()+"'";
 		try {
-			ResultSet rs = stmt.executeQuery(query);
-			if(rs.next()){
-				user.setAdmin(true);
+			if(this.getConnectedAdmin(nickname) == false){
+				ResultSet rs = stmt.executeQuery(query);
+				if(rs.next()){
+					user.setAdmin(true);
+					this.setStatus(nickname, true, 1);
+				}
+				else {
+					user.setAdmin(false);
+				}
+				user.setNickname(nickname);
+				user.setStatus(1);
 			}
 			else {
-				user.setAdmin(false);
+				user.setStatus(7);
 			}
-			user.setNickname(nickname);
-			user.setStatus(1);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return user;
+	}
+	
+	public boolean getConnectedAdmin(String nickname){
+		boolean connected = false;
+		String query = "SELECT Count(*) AS connected FROM admins WHERE nickname='"+nickname.trim()+"' AND status=1";	
+		
+		try {
+			ResultSet rsAdmin = stmt.executeQuery(query);
+			if(rsAdmin.next()){
+				if(rsAdmin.getInt("connected") != 0){
+					connected = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return connected;
 	}
 	
 	// Récupére tous les admins connectés
@@ -156,48 +188,82 @@ public class Database {
 		}
 	}
 	
+	//Verifie si le pseudo existe déjà dans USER
+	public boolean getUserExist(String nickname){
+		boolean exist = false;
+		String query = "SELECT Count(*) AS exist FROM users WHERE nickname='"+nickname.trim()+"'";	
+		
+		try {
+			ResultSet rsUser = stmt.executeQuery(query);
+			if(rsUser.next()){
+				if(rsUser.getInt("exist") != 0){
+					exist = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return exist;
+	}
+	
 	// Regarde si le pseudo est déjà pris, sinon l'ajoute en BDD
 	public InfoUser getUserConnection(String nickname){
 		InfoUser user = new InfoUser();
-		String queryAdmin = "SELECT Count(*) AS exist FROM admins WHERE nickname='"+nickname.trim()+"'";	
 		String queryUser = "SELECT * FROM users WHERE nickname='" +nickname+ "'";
 		try {
-			ResultSet rsAdmin = stmt.executeQuery(queryAdmin);
-			if(rsAdmin.next()){ //Si un admin à déjà ce pseudo
-				if(rsAdmin.getInt("exist") == 0){
-					System.out.println("[exist] : "+rsAdmin.getInt("exist")+".");
+			if(this.getAdminExist(nickname) == false){
+				if(this.getConnectedUser(nickname) == false){
 					ResultSet rsUser = stmt.executeQuery(queryUser);
 					if(rsUser.next()){ //Si un user à déjà ce pseudo
 						user.setNotifications(rsUser.getInt("notifications"));
-						if(rsUser.getInt("status") == 5){
+						if(rsUser.getBoolean("banned")){
 							user.setStatus(5);
+							user.setBanned(true);
 						}
 						else{
 							user.setStatus(1);
+							this.setStatus(nickname, false, 1);
 						}
-						System.out.println("[SERVER] : A user is already named "+nickname+".");
 					}
 					else { //Sinon on ajoute le user en BDD
 						addUser(nickname);
 						user.setNotifications(0);
 						user.setStatus(1);
-						System.out.println("[SERVER] : No user named "+nickname+".");
 					}
-					user.setNickname(nickname);
-					user.setAdmin(false);
 				}
-				else {
-					user.setNickname(nickname);
-					user.setAdmin(false);
-					user.setStatus(6); //Status à 6 n'existe pas en réalité. C'est pour dire que le pseudo est pris par un admin.
-					System.out.println("[SERVER] : An admin is already named "+nickname+".");
+				else{
+					user.setStatus(7);
 				}
+				user.setNickname(nickname);
+				user.setAdmin(false);
 			}
-
+			else {
+				user.setNickname(nickname);
+				user.setAdmin(false);
+				user.setStatus(6); //Status à 6 n'existe pas en réalité. C'est pour dire que le pseudo est pris par un admin.
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return user;
+	}
+	
+	//Verifie si un utilisateur est déjà connecté
+	public boolean getConnectedUser(String nickname){
+		boolean connected = false;
+		String query = "SELECT Count(*) AS connected FROM users WHERE nickname='"+nickname.trim()+"' AND status=1";	
+		
+		try {
+			ResultSet rsUser = stmt.executeQuery(query);
+			if(rsUser.next()){
+				if(rsUser.getInt("connected") != 0){
+					connected = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return connected;
 	}
 	
 	//Récupére tous les utilisateurs connectés
@@ -226,22 +292,16 @@ public class Database {
 	// Récupére le nombre de notifications d'un utilisateur
 	public int getNotifications (String nickname) {
 		String query;
-		int notifications = -1;
-		query = "SELECT notifications FROM users WHERE nickname = \"" + nickname + "\"";
+		int notifications = 0;
+		query = "SELECT notifications FROM users WHERE nickname = '" + nickname + "'";
 		try {
 			ResultSet rs = stmt.executeQuery(query);
-			ResultSetMetaData rsmd = rs.getMetaData();
-			int columnsNumber = rsmd.getColumnCount();
-			while (rs.next()) {
-				for (int i = 1; i <= columnsNumber; i++) {
-					notifications = rs.getInt(i);
-				}
+			if (rs.next()) {
+				notifications = rs.getInt("notifications");
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		return notifications;
 	}
 	
@@ -276,7 +336,6 @@ public class Database {
 		myMap.put("Busy", 2);
 		myMap.put("Absent", 3);
 		myMap.put("Offline", 4);
-		myMap.put("Banned", 5);
 		int status_id = myMap.get(status);
 
 		String query;
@@ -306,10 +365,20 @@ public class Database {
 		}
 	}
 	
+	public void setBan(String nickname, boolean  ban){
+		String query = "UPDATE users SET banned = " + ban + " WHERE nickname = '" + nickname + "'";
+		try {
+			stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	// Ajoute une notification à l'utilisateur
-	public void notifyUser(String nickname) {
+	public void addNotification(String nickname) {
 		String query;
-		query = "UPDATE users SET notifications = notifications + 1 WHERE nickname =\"" + nickname + "\"";
+		query = "UPDATE users SET notifications = notifications + 1 WHERE nickname ='" + nickname + "'";
 		try {
 			stmt.executeUpdate(query);
 		} catch (SQLException e) {

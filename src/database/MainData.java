@@ -10,6 +10,7 @@ public class MainData {
 
 		db.addAdmin("jordan", "aze");
 		db.addAdmin("aze", "aze");
+		db.addAdmin("remi", "aze");
 
 		
 		InfoUser user = db.getUserConnection("test");

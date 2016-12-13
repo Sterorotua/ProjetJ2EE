@@ -208,14 +208,16 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		                    	event.getSource();
 		                		Point p = new Point(event.getX(), event.getY());
 		                		int indexClick = userList.locationToIndex(p);
-		                		popupMenu.setUserClicked(userConnected.getElementAt(indexClick));	                		
-		                		popupMenu.setVisible(true);
-		                		popupMenu.setLocation(event.getLocationOnScreen());
-		                    	borderFinal.addMouseListener(new MouseAdapter(){
-		                    		public void mouseReleased(MouseEvent event){		                    			 
-		                		        popupMenu.setVisible(false);
-		                            }	                               		       	     
-		                      	});
+		                		if (!userConnected.getElementAt(indexClick).equals(client.getNickname())){
+			                		popupMenu.setUserClicked(userConnected.getElementAt(indexClick));
+			                		popupMenu.setVisible(true);
+			                		popupMenu.setLocation(event.getLocationOnScreen());
+			                    	borderFinal.addMouseListener(new MouseAdapter(){
+			                    		public void mouseReleased(MouseEvent event){		                    			 
+			                		        popupMenu.setVisible(false);
+			                            }	                               		       	     
+			                      	});
+		                		}
 	                		}
 	                    	else{
 	                			if((popupMenu.isVisible())){
@@ -463,7 +465,6 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	}
 	
 	public void updConnectedList(String list){
-		System.out.println(list);
 
 		userConnected.removeAllElements();
 		
@@ -479,7 +480,10 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 				e.printStackTrace();
 			}
 		}
-
+	}
+	
+	public Client getClient(){
+		return this.client;
 	}
 	
 	@Override

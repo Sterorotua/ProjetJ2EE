@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -19,44 +20,40 @@ import client.Client;
 public class Onglet extends Panel implements WindowListener, ActionListener, KeyListener{ 
 
 	private Client client;
-	private String type;
+	private String receiver;
 	
 	private TextArea readMessageArea = null;
 	private TextField writeMessageArea = null;
 	public String msgSent = "";
 	
-	private Panel areaText = null;
 	private Panel p = null;
 	
-	public Onglet(Client client, String type){
+	public Onglet(Client client, String receiver){
 		super();
 		this.client = client;
-		this.type = type;
+		this.receiver = receiver;
 		
-		areaText = new Panel();
-		p = new Panel();
-		
-		this.setLayout(new FlowLayout());
+		p = new Panel(new FlowLayout());		
+		this.setLayout(new BorderLayout());
 				
 		this.readMessageArea = new TextArea();
 		this.readMessageArea.setBackground(Color.WHITE);
 		this.readMessageArea.setEditable(false);
 		this.readMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
-		areaText.add(readMessageArea);
+		this.add(readMessageArea);
 				
 		this.writeMessageArea = new TextField(30);
 		this.writeMessageArea.addKeyListener(this);
 		this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
 		this.writeMessageArea.setEnabled(false);
-		p.add(writeMessageArea);
+		p.add(writeMessageArea,FlowLayout.LEFT);
 		
 		enablingWriting(true);
 		
 		Button send = new Button("Send");
 		send.addActionListener(this);
 		p.add(send);
-		this.add(areaText);
-		this.add(p);
+		this.add(p,BorderLayout.SOUTH);
 	}
 
 	public TextArea getReadMessageArea() {
@@ -106,11 +103,13 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 			msgSent = writeMessageArea.getText();
 			readMessageArea.append("\n[ME] : " + msgSent);
 			writeMessageArea.setText("");
-			if(type.equals("broadcast")){
+			if(receiver.equals("broadcast")){
 				client.sendMessage("/b "+msgSent);
+				System.out.println("/b "+msgSent);
 			}
 			else{
-				client.sendMessage("/w toto "+msgSent);
+				client.sendMessage("/w "+receiver+" "+msgSent);
+				System.out.println("/w "+receiver+" "+msgSent);
 			}
 			writeMessageArea.requestFocus();
 		}
