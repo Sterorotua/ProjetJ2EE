@@ -15,128 +15,136 @@ import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.JButton;
+
+
 public class Onglet extends Panel implements WindowListener, ActionListener, KeyListener{ 
-
-	private TextArea readMessageArea = null;
 	
-
-	private TextField writeMessageArea = null;
-	public String msgSent = "";
-	
-	private Panel p = null;
-	
-	Onglet(){
-		super();
-		p = new Panel(new FlowLayout());		
-		this.setLayout(new BorderLayout());
-				
-		this.readMessageArea = new TextArea();
-		this.readMessageArea.setBackground(Color.WHITE);
-		this.readMessageArea.setEditable(false);
-		this.readMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
-		this.add(readMessageArea,BorderLayout.CENTER);
-				
-		this.writeMessageArea = new TextField(30);
-		this.writeMessageArea.addKeyListener(this);
-		this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
-		this.writeMessageArea.setEnabled(false);
-		p.add(writeMessageArea,FlowLayout.LEFT);
+		private TextArea readMessageArea = null;
 		
-		enablingWriting(true);
+		private JButton button; 
+		private TextField writeMessageArea = null;
+		public String msgSent = "";
 		
-		Button send = new Button("Send");
-		send.addActionListener(this);
-		p.add(send);
+		private Panel p = null;
 		
-		this.add(p,BorderLayout.SOUTH);
-	}
-
-	public TextArea getReadMessageArea() {
-		return readMessageArea;
-	}
-
-
-	public void setReadMessageArea(TextArea readMessageArea) {
-		this.readMessageArea = readMessageArea;
-	}
-
-
-	public TextField getWriteMessageArea() {
-		return writeMessageArea;
-	}
-
-
-	public void setWriteMessageArea(TextField writeMessageArea) {
-		this.writeMessageArea = writeMessageArea;
-	}
+		Onglet(TableauOnglet moi){
+			super();
+			p = new Panel(new FlowLayout());		
+			this.setLayout(new BorderLayout());
+			
+			 button = new TabButton(moi);
+		     add(button);
+		  
+					
+			this.readMessageArea = new TextArea();
+			this.readMessageArea.setBackground(Color.WHITE);
+			this.readMessageArea.setEditable(false);
+			this.readMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
+			this.add(readMessageArea,BorderLayout.CENTER);
+					
+			this.writeMessageArea = new TextField(30);
+			this.writeMessageArea.addKeyListener(this);
+			this.writeMessageArea.setFont(new Font("Arial", Font.PLAIN, 12));
+			this.writeMessageArea.setEnabled(false);
+			p.add(writeMessageArea,FlowLayout.LEFT);
+			
+			enablingWriting(true);
+			
+			Button send = new Button("Send");
+			send.addActionListener(this);
+			p.add(send);
+			
+			
+			this.add(p,BorderLayout.SOUTH);
+		}
 	
-	public void enablingWriting(boolean enabled){
-		this.writeMessageArea.setEnabled(enabled);
-	}
+		public TextArea getReadMessageArea() {
+			return readMessageArea;
+		}
 	
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+		public void setReadMessageArea(TextArea readMessageArea) {
+			this.readMessageArea = readMessageArea;
+		}
 	
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+		public TextField getWriteMessageArea() {
+			return writeMessageArea;
+		}
 	
-	@Override
-	public void windowActivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	@Override
-	public void windowClosed(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		public void setWriteMessageArea(TextField writeMessageArea) {
+			this.writeMessageArea = writeMessageArea;
+		}
 		
-	}
-	
-	@Override
-	public void windowClosing(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		public void enablingWriting(boolean enabled){
+			this.writeMessageArea.setEnabled(enabled);
+		}
 		
-	}
-	
-	@Override
-	public void windowDeactivated(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		@Override
+		public void keyPressed(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 		
-	}
-	
-	@Override
-	public void windowDeiconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 		
-	}
-	
-	@Override
-	public void windowIconified(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 		
-	}
-	
-	@Override
-	public void windowOpened(WindowEvent arg0) {
-		// TODO Auto-generated method stub
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 		
+		@Override
+		public void windowActivated(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowClosed(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowClosing(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowDeactivated(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowDeiconified(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowIconified(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void windowOpened(WindowEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
 	}
-}
