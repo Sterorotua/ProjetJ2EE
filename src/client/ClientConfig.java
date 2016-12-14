@@ -1,29 +1,36 @@
 package client;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class ClientConfig {
 
-	private String serverAddr;
-	private int serverPort;
+	private ArrayList <String> serversAddr;
+	private ArrayList <Integer> serversPort;
+
 	
 	public ClientConfig() {
 		Properties properties = new Properties();
+		serversAddr = new ArrayList <String>();
+		serversPort = new ArrayList <Integer>();
 		try {
 			properties.load(Client.class.getResourceAsStream("ressources/config.properties"));
-			serverAddr = properties.getProperty("SERVER_ADDRESS").trim();
-			serverPort = Integer.parseInt(properties.getProperty("SERVER_PORT").trim());
+			serversAddr.add(properties.getProperty("SERVER1_ADDRESS").trim());
+			serversAddr.add(properties.getProperty("SERVER2_ADDRESS").trim());
+			serversPort.add(Integer.parseInt(properties.getProperty("SERVER1_PORT").trim()));
+			serversPort.add(Integer.parseInt(properties.getProperty("SERVER2_PORT").trim()));
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public String getServerAddr() {
-		return this.serverAddr;
+	public ArrayList <String> getServersAddr() {
+		return this.serversAddr;
 	}
 	
-	public int getServerPort() {
-		return this.serverPort;
+	public ArrayList <Integer> getServersPort() {
+		return this.serversPort;
 	}
 }

@@ -6,14 +6,15 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 public class Client {
 	
-	private String serverAddr;
-	private int port;
+	private ArrayList <String> serversAddr;
+	private ArrayList <Integer> serversPort;
 	private Socket socket;
 	private boolean admin;
 	
@@ -21,16 +22,20 @@ public class Client {
 
 	public Client(){
 		ClientConfig conf = new ClientConfig();
-		this.serverAddr = conf.getServerAddr();
-		this.port = conf.getServerPort();
+		this.serversAddr = conf.getServersAddr();
+		this.serversPort = conf.getServersPort();
 		this.socket = new Socket();
 		this.admin = false;
 	}
 	
-	public void connect() {
+	public void connect(int numServer) {
 				
 		try{
-			socket = new Socket(this.serverAddr, this.port);
+			String serverAddr = this.serversAddr.get(numServer);
+			int serverPort = this.serversPort.get(numServer);
+			
+			System.out.println("Connecting to "+serverAddr+" on port "+serverPort);
+			socket = new Socket(serverAddr, serverPort);
 		} catch (SocketException exp){
 			//if(!this.socket.isConnected()){
 				JOptionPane.showMessageDialog(null,"Can't established connexion with server.\n", "Error",JOptionPane.ERROR_MESSAGE);

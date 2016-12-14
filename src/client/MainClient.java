@@ -16,9 +16,10 @@ public class MainClient {
 		boolean connectionGranted = false;
 
 		Client client = new Client();
-		LoginGUI lg = new LoginGUI(client);
+		LoginGUI loginGUI = new LoginGUI(client);
+		ClientProcess clientProcess;
 
-		client.connect();
+		client.connect(0);
 		
 		//Réception de la vérification des info de connexion
 		while(connectionGranted == false){
@@ -26,14 +27,14 @@ public class MainClient {
 			System.out.println(msgReceived);
 			if(msgReceived != null && msgReceived.equals("connectionUserGranted")) {
 				connectionGranted = true;
-				lg.setVisible(false);
-				lg.dispose();
+				loginGUI.setVisible(false);
+				loginGUI.dispose();
 			}
 			else if(msgReceived != null && msgReceived.equals("connectionAdminGranted")){
 				connectionGranted = true;
 				client.setAdmin(true);
-				lg.setVisible(false);
-				lg.dispose();
+				loginGUI.setVisible(false);
+				loginGUI.dispose();
 			}
 			else if (msgReceived != null && msgReceived.equals("usedByAdmin")){
 				JOptionPane.showMessageDialog(null,"An admin is already named "+client.getNickname()+".\nChoose an other nickname.", "Error Nickname",JOptionPane.WARNING_MESSAGE);
@@ -49,59 +50,10 @@ public class MainClient {
 			}	
 		}
 		
+		//Thread qui lance l'IHM et gére les commandes reçues
+		clientProcess = new ClientProcess(client);
+		clientProcess.start();
 		
-		UserGUI userGUI = new UserGUI(client);			
-
-		scanner : while (true) {
-			msgReceived = client.receiveMessage();
-			System.out.println(msgReceived);
-			StringTokenizer st = new StringTokenizer(msgReceived);
-			String cmd = st.nextToken();
-
-			msgReceived = msgReceived.replace(cmd+" ", "");
-			
-			switch(cmd) {
-				case "/b" : Onglet ongletBroad = (Onglet) userGUI.getOnglets().getComponentAt(0);
-							ongletBroad.getReadMessageArea().append("\n"+msgReceived);
-							break;
-							
-				case "/w" : HashMap<String,Onglet> listPM = userGUI.getOnglets().getListTabs();
-							String sender = st.nextToken();
-							msgReceived = msgReceived.replace(sender+" ", "");
-							if(listPM.get(sender) == null){
-								userGUI.getOnglets().addPrivate(sender);
-							}
-							Onglet ongletPriv = listPM.get(sender);
-							ongletPriv.getReadMessageArea().append("\n"+msgReceived);
-							break;
-							
-				case "/banned" :client.sendMessage("/banned");
-								JOptionPane.showMessageDialog(null,"You have been BANNED.", "Banned",JOptionPane.INFORMATION_MESSAGE);
-								System.exit(0);
-								break;
-								
-				case "/kicked" :client.sendMessage("/kicked");
-								JOptionPane.showMessageDialog(null,"You have been KICKED.", "Kicked",JOptionPane.INFORMATION_MESSAGE);
-								System.exit(0);
-								break;
-				
-				case "/updIHM" : String[] toUpdate = msgReceived.split("/banned");
-							userGUI.updConnectedList(toUpdate[0]);
-							if (client.getAdmin()){
-								toUpdate = toUpdate[1].split("/notified");
-								userGUI.updBannedList(toUpdate[0]);
-								userGUI.updNotifiedList(toUpdate[1]); 
-							}
-							
-							/*else {
-								userGUI.clearBannedList();
-							}*/
-
-							//userGUI.updConnectedList(msgReceived);
-							break;
-				
-				default : System.out.println("normal message : "+msgReceived);
-			}
-		}
+		
 	}
 }
