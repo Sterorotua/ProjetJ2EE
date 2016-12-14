@@ -33,8 +33,6 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 			p = new Panel(new FlowLayout());		
 			this.setLayout(new BorderLayout());
 			
-			 button = new TabButton(moi);
-		     add(button);
 		  
 					
 			this.readMessageArea = new TextArea();

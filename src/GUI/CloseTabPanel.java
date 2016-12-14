@@ -17,13 +17,17 @@ public class CloseTabPanel extends JPanel{
     JButton button; 
 
 //constructeur sans boolean  qui de base met un bouton close
-    public CloseTabPanel(String titre, TableauOnglet moi) {
+    public CloseTabPanel(String titre, TableauOnglet moi,boolean b) {
             super(new FlowLayout(FlowLayout.LEFT, 0, 0));
             setOpaque(false);
             JLabel label = new JLabel(titre);
             add(label);
-            button = new TabButton(moi);
-            add(button);
-            setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
-	}
-}    
+            button = new TabButton(moi,titre);
+            if(b){
+                add(button);
+                }
+                //add more space to the top of the component
+                setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
+            }
+            
+	}   

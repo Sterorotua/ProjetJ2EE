@@ -31,27 +31,37 @@ import javax.swing.plaf.basic.BasicButtonUI;
 public class TableauOnglet extends JTabbedPane {
 	public Onglet broadcast=null;
 	public TableauOnglet moi = null;
-	public int i;
+	
 	
 	TableauOnglet(){
 		super(SwingConstants.TOP);
 		moi = this;
-		broadcast = new Onglet(moi);		
-		i = this.getComponentCount();		
+		broadcast = new Onglet(moi);				
+		
 		
 		this.addTab("Broadcast", broadcast);
-
+		moi.setTabComponentAt((this.getTabCount()-1), new CloseTabPanel("Broadcast",moi,false));	
+		setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));	
+		
+		this.addPrivate("pol");
+		this.addPrivate("jean");
+		this.addPrivate("lolo");
+		this.addPrivate("dede");
+			
+		
 	}
 	
 	public void addPrivate(String pseudo){
 		
 		Onglet messagePrivate = new Onglet(moi);
 		
+			
 		this.addTab(pseudo, messagePrivate);
-		super.setTabComponentAt((this.getComponentCount()-1), new CloseTabPanel("Broadcast",moi));
+		moi.setTabComponentAt((this.getTabCount()-1), new CloseTabPanel(pseudo,moi,true));	
 		setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));		
 		
 	}
+
 
 	
 
