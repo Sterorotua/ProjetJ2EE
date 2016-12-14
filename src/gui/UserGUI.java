@@ -432,10 +432,12 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		this.setVisible(true);
 	}
 	
+	//Récupére TableauOnglet
 	public TableauOnglet getOnglets(){
 		return this.onglets;
 	}
 	
+	//Met à jour la liste des utilisateurs / admins connectés
 	public void updConnectedList(String list){
 
 		userConnected.removeAllElements();
@@ -453,6 +455,8 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 			}
 		}
 	}
+	
+	//Met à jour la liste des utilisateurs bannis
 	public void updBannedList(String list){
 		bannedUser.removeAllElements();
 		
@@ -470,6 +474,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		}
 	}
 	
+	//Met à jour la liste des utilisateurs notifiés
 	public void updNotifiedList(String list){
 		notifiedUser.removeAllElements();
 		

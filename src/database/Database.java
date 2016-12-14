@@ -52,6 +52,7 @@ public class Database {
 	//****************************************************************************************************************************************
 	/* Fonctions pour ADMIN */
 	
+	//*******************************************************
 	// Ajoute un admin dans la BDD
 	public void addAdmin (String nickname, String password) {
 		
@@ -74,7 +75,7 @@ public class Database {
 		}
 	}
 	
-	
+	//*******************************************************
 	// Enléve l'admin de la BDD
 	public void removeAdmin(String nickname) {
 		
@@ -90,7 +91,7 @@ public class Database {
 		} 
 	}
 	
-	
+	//*******************************************************
 	//Verifie si le pseudo existe deja dans ADMIN
 	public boolean getAdminExist(String nickname){
 		boolean exist = false;
@@ -109,7 +110,7 @@ public class Database {
 		return exist;
 	}
 	
-	
+	//*******************************************************
 	// Vérifie les information de connexion de l'admin
 	public InfoUser getAdminConnection (String nickname, String password){
 		InfoUser user = new InfoUser();
@@ -137,7 +138,8 @@ public class Database {
 		return user;
 	}
 	
-	
+	//*******************************************************
+	//Check si l'admin est déjà connecté
 	public boolean getConnectedAdmin(String nickname){
 		boolean connected = false;
 		String query = "SELECT Count(*) AS connected FROM admins WHERE nickname='"+nickname.trim()+"' AND status=1";	
@@ -155,7 +157,7 @@ public class Database {
 		return connected;
 	}
 	
-	
+	//*******************************************************
 	// Récupére tous les admins connectés
 	public ArrayList<InfoUser> getConnectedAdmins(){
 		String query;
@@ -182,6 +184,7 @@ public class Database {
 	//****************************************************************************************************************************************
 	/* Fonctions pour USERS */
 	
+	//*******************************************************
 	// Ajoute un utilisateur dans la BDD
 	public void addUser(String nickname) {
 		String query;
@@ -193,7 +196,7 @@ public class Database {
 		}
 	}
 	
-	
+	//*******************************************************
 	//Verifie si le pseudo existe déjà dans USER
 	public boolean getUserExist(String nickname){
 		boolean exist = false;
@@ -212,7 +215,7 @@ public class Database {
 		return exist;
 	}
 
-	
+	//*******************************************************
 	// Regarde si le pseudo est déjà pris, sinon l'ajoute en BDD
 	public InfoUser getUserConnection(String nickname){
 		InfoUser user = new InfoUser();
@@ -255,7 +258,7 @@ public class Database {
 		return user;
 	}
 	
-	
+	//*******************************************************
 	//Verifie si un utilisateur est déjà connecté
 	public boolean getConnectedUser(String nickname){
 		boolean connected = false;
@@ -274,7 +277,7 @@ public class Database {
 		return connected;
 	}
 	
-	
+	//*******************************************************
 	//Récupére tous les utilisateurs connectés
 	public ArrayList<InfoUser> getConnectedUsers(){
 		String query;
@@ -296,7 +299,8 @@ public class Database {
 		}
 		return listInfoUser;
 	}
-	
+		
+	//*******************************************************
 	//Récupére les utilisateur bannis
 	public ArrayList<InfoUser> getBannedUsers(){
 		ArrayList<InfoUser> listInfoBannedUser = new ArrayList<InfoUser> ();
@@ -319,7 +323,7 @@ public class Database {
 		return listInfoBannedUser;
 	}
 	
-	
+	//*******************************************************
 	// Ajoute une notification à l'utilisateur
 	public void addNotification(String nickname) {
 		String query;
@@ -332,7 +336,7 @@ public class Database {
 		} 
 	}
 	
-	
+	//*******************************************************
 	// Récupére le nombre de notifications d'un utilisateur
 	public int getNotifications (String nickname) {
 		int notifications = 0;
@@ -358,7 +362,8 @@ public class Database {
 		} 
 	}
 	
-	
+	//*******************************************************
+	//Récupére la liste des utilisateurs notifiés
 	public ArrayList<InfoUser> getNotifiedUsers(){
 		ArrayList<InfoUser> listInfoNotifiedUser = new ArrayList<InfoUser> ();
 		String query = "SELECT * FROM users WHERE notifications > 0";
@@ -380,7 +385,7 @@ public class Database {
 		return listInfoNotifiedUser;
 	}
 	
-	
+	//*******************************************************
 	// Récupére le status d'un utilisateur
 	public String getStatus(String nickname) {
 		String query;
@@ -405,7 +410,7 @@ public class Database {
 		return status;
 	}
 	
-	
+	//*******************************************************
 	// Met à jour le status d'un utilisateur
 	public void setStatus(String nickname, String status) {
 		Map<String, Integer> myMap = new HashMap<String, Integer>();
@@ -425,7 +430,7 @@ public class Database {
 		}
 	}
 	
-	
+	//*******************************************************
 	// Met à jour le status d'un utilisateur
 	public void setStatus(String nickname, boolean admin, int status) {
 		String query;
@@ -443,7 +448,8 @@ public class Database {
 		}
 	}
 	
-	
+	//*******************************************************
+	//set le ban d'un utilisateur en bdd
 	public void setBan(String nickname, boolean  ban){
 		String query = "UPDATE users SET banned = " + ban + " WHERE nickname = '" + nickname + "'";
 		try {
@@ -454,12 +460,7 @@ public class Database {
 		}
 	}
 	
-	
-
-	
-
-
-
+	//*******************************************************
 	public void finalize() {
 
 		try {

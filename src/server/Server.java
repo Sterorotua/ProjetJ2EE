@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public class Server {
 	
-    private boolean acceptMore = true;
     private ServerSocket serverSocket;
     private Database db;
     private int port;
@@ -31,10 +30,8 @@ public class Server {
 			this.port = 1984;
             serverSocket = new ServerSocket(port);
    			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
-   			//ConnectionServer coServer = new ConnectionServer(this,serverSocket);
-   			//coServer.start();
    			
-   			while (acceptMore) {
+   			while (true) {
    				System.out.println("[SERVER] : Waiting for a client to connect ...");
 	         	Socket socket = this.serverSocket.accept(); //Attente de la connexion d'un client
 
@@ -57,7 +54,6 @@ public class Server {
           }
        }
 	}
-	
 	
 	public ArrayList<ConnectionClient> getListCo(){
 		return this.listCo;
