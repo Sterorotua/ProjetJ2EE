@@ -36,7 +36,7 @@ public class TableauOnglet extends JTabbedPane {
 	TableauOnglet(){
 		super(SwingConstants.TOP);
 		moi = this;
-		broadcast = new Onglet(moi);				
+		broadcast = new Onglet(moi);				 
 		
 		
 		this.addTab("Broadcast", broadcast);
@@ -47,8 +47,6 @@ public class TableauOnglet extends JTabbedPane {
 		this.addPrivate("jean");
 		this.addPrivate("lolo");
 		this.addPrivate("dede");
-			
-		
 	}
 	
 	public void addPrivate(String pseudo){

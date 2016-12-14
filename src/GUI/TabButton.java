@@ -46,7 +46,7 @@ public class TabButton extends JButton implements ActionListener, MouseListener 
 			public void mouseExited(MouseEvent e)
 			{
 				setBorder( BorderFactory.createEmptyBorder( 0, 0, 0, 0 ) );
-				validate();
+				validate(); 
 			}
 
 			public void mouseClicked(MouseEvent e)

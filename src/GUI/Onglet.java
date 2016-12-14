@@ -27,7 +27,7 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 		public String msgSent = "";
 		
 		private Panel p = null;
-		
+		 
 		Onglet(TableauOnglet moi){
 			super();
 			p = new Panel(new FlowLayout());		
