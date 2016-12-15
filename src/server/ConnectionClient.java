@@ -64,13 +64,18 @@ public class ConnectionClient extends Thread{
 		String msg;
 		scanner : while (true) {
 			msg = this.receiveMessage();
-
 			StringTokenizer st = new StringTokenizer(msg); //Sépare la commande du message
 			String cmd = st.nextToken();
 			msg = msg.replace(cmd+" ", "");
 			
 			switch(cmd) {
 											
+				case "/nbClient" : this.sendMessage(""+server.getListCo().size());
+							break;
+							
+				case "/clearCoDB" : db.clearCoDB();
+							break;
+			
 				//Demande de connexion d'un utilisateur
 				case "/g" : this.connectionUser(msg);
 							logger.info("User asked a connection. /g command");
@@ -145,7 +150,11 @@ public class ConnectionClient extends Thread{
 							  
 				case "/kicked" : break;
 							  
-				
+				case "/getHisto" : String dest = st.nextToken();
+									if(dest.equals("Broadcast")){
+										this.sendHistoryBroacast();	
+								}
+									break;
 							
 				case "/authorize" : if (this.infoUser.isAdmin()){
 									   String nicknameAuthorized = st.nextToken();
@@ -244,7 +253,7 @@ public class ConnectionClient extends Thread{
 	//Envoie un message à tous les utilisateurs
 	public void broadcast(String msgToBroadcast) {
 		ArrayList<ConnectionClient> listCo = server.getListCo(); //Liste contenant toutes les connexion de client au serveur
-		
+		this.db.insertMsg(msgToBroadcast, this.infoUser.getNickname(), "Broadcast");
 		for (int i=0 ; i<listCo.size() ; i++) {
 			Socket socketBroadcast = listCo.get(i).socket;
 				if(!socketBroadcast.equals(socket)){ //On ne broadcast pas sur l'utilisateur qui envoie le message
@@ -294,6 +303,22 @@ public class ConnectionClient extends Thread{
 			}
 		}
 		System.out.println("[SERVER] broadcast : "+msgToBroadcast);
+	}
+	
+	
+	public void sendHistoryBroacast(){
+		ArrayList <InfoMessage> listMsg = this.db.getHistoryBroadcast();
+		String msgToSend = "/history Broadcast ";
+		for(InfoMessage message : listMsg){
+			if(this.infoUser.getNickname().equals(message.getSender())){
+				msgToSend = msgToSend.concat("[ME] : ");
+			}
+			else{
+				msgToSend = msgToSend.concat("["+message.getSender()+"] : ");
+			}
+			msgToSend = msgToSend.concat(message.getMsg()+"|||||");
+		}
+		this.sendMessage(msgToSend);
 	}
 	
 	

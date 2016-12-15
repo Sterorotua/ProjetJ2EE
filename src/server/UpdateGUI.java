@@ -66,7 +66,7 @@ public class UpdateGUI extends Thread{
 				msgIHM = msgIHM.concat(" "+usersBanned);
 				msgIHM = msgIHM.concat(" "+usersNotified+" ");
 			}
-			System.out.println(msgIHM);
+			//System.out.println(msgIHM);
 
 			connectionClient.sendMessage(msgIHM);
 

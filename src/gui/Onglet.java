@@ -55,6 +55,20 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 		p.add(send);
 		this.add(p,BorderLayout.SOUTH);
 	}
+	
+	public void getHistory(String dest){
+		client.sendMessage("/getHisto "+dest);
+	}
+	
+	public void setHistory(String history){
+		System.out.println("historique "+history);
+
+		String[] historySplitted = history.split("\\|\\|\\|\\|\\|");
+		for(String split : historySplitted){
+			System.out.println(split);
+			this.readMessageArea.append("\n"+split);
+		}
+	}
 
 	public TextArea getReadMessageArea() {
 		return readMessageArea;
@@ -82,17 +96,19 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 	public void keyPressed(KeyEvent ke) {
 		if (ke.getKeyCode()==KeyEvent.VK_ENTER){
 			msgSent = writeMessageArea.getText();
-			readMessageArea.append("\n[ME] : " + msgSent);
-			writeMessageArea.setText("");
-			if(receiver.equals("broadcast")){
-				client.sendMessage("/b "+msgSent);
-				System.out.println("/b "+msgSent);
+			if(!msgSent.trim().isEmpty() || !msgSent.trim().equals("")){
+				readMessageArea.append("\n[ME] : " + msgSent);
+				writeMessageArea.setText("");
+				if(receiver.equals("broadcast")){
+					client.sendMessage("/b "+msgSent);
+					System.out.println("/b "+msgSent);
+				}
+				else{
+					client.sendMessage("/w "+receiver+" "+msgSent);
+					System.out.println("/w "+receiver+" "+msgSent);
+				}
+				writeMessageArea.requestFocus();	
 			}
-			else{
-				client.sendMessage("/w "+receiver+" "+msgSent);
-				System.out.println("/w "+receiver+" "+msgSent);
-			}
-			writeMessageArea.requestFocus();	
 		}
 	}
 	
@@ -112,17 +128,19 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getActionCommand().equals("Send")){
 			msgSent = writeMessageArea.getText();
-			readMessageArea.append("\n[ME] : " + msgSent);
-			writeMessageArea.setText("");
-			if(receiver.equals("broadcast")){
-				client.sendMessage("/b "+msgSent);
-				System.out.println("/b "+msgSent);
+			if(!msgSent.trim().isEmpty() || !msgSent.trim().equals("")){
+				readMessageArea.append("\n[ME] : " + msgSent);
+				writeMessageArea.setText("");
+				if(receiver.equals("broadcast")){
+					client.sendMessage("/b "+msgSent);
+					System.out.println("/b "+msgSent);
+				}
+				else{
+					client.sendMessage("/w "+receiver+" "+msgSent);
+					System.out.println("/w "+receiver+" "+msgSent);
+				}
+				writeMessageArea.requestFocus();
 			}
-			else{
-				client.sendMessage("/w "+receiver+" "+msgSent);
-				System.out.println("/w "+receiver+" "+msgSent);
-			}
-			writeMessageArea.requestFocus();
 		}
 	}
 	
