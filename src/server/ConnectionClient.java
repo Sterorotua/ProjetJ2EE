@@ -9,6 +9,8 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import org.apache.log4j.Logger;
+
 import database.Database;
 
 public class ConnectionClient extends Thread{
@@ -19,6 +21,8 @@ public class ConnectionClient extends Thread{
 	private int idUser;
 	InfoUser infoUser;
 	UpdateGUI updateGui;
+	
+	private static Logger logger = Logger.getLogger(Server.class);
 	
 	ConnectionClient(Server server, Socket socket, Database db, int idUser){
 		this.server = server;
@@ -35,6 +39,7 @@ public class ConnectionClient extends Thread{
 		try {
 			this.updateGui = new UpdateGUI(this, this.db);
 			
+			
 			this.processing(); //Lancement de la gestion des commandes
 	
 			socket.close();
@@ -42,8 +47,10 @@ public class ConnectionClient extends Thread{
 			
 		} catch (SocketException exp){
 			System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
+			logger.error("Connection lost with Client id = " + this.idUser);
 			try {
 				socket.close();
+				logger.info("Client socket has been close Client id = " + this.idUser);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -66,6 +73,7 @@ public class ConnectionClient extends Thread{
 											
 				//Demande de connexion d'un utilisateur
 				case "/g" : this.connectionUser(msg);
+							logger.info("User asked a connection. /g command");
 							break;
 						
 				//Demande de connexion d'un admin
@@ -73,22 +81,26 @@ public class ConnectionClient extends Thread{
 							msg = msg.replace(nickname+" ", "");
 							String password = st.nextToken();
 							this.connectionAdmin(nickname, password);
+							logger.info("Admin asked a connection. /l command");
 							break;
 				
 				//Demande d'envoie d'un broadcast
 				case "/b" : this.broadcast(msg);
+							logger.info("Broadcast message asked. /b command");
 							break;
 						
 				//Demande d'envoie d'un message privé
 				case "/w" : String nicknameReceiver = st.nextToken();
 							msg = msg.replace(nicknameReceiver+" ", "");
 							this.sendPrivateMessage(msg, nicknameReceiver);
+							logger.info("Private message asked. /w command");
 							break;
 							
 				case "/s" : nickname = st.nextToken();
 							msg = msg.replace(nickname+" ", "");
 							int status = Integer.parseInt(st.nextToken());
 							this.db.setStatus(nickname, this.infoUser.isAdmin(), status);
+							logger.info("Status change asked. /s command");
 							break;
 						
 				//Demande d'arret de la connexion
@@ -96,6 +108,7 @@ public class ConnectionClient extends Thread{
 							if (this.infoUser.getStatus() == 1 || this.infoUser.getStatus() == 2 || this.infoUser.getStatus() == 3){
 								this.disconnectInDB();
 							}
+							logger.info("Disconnect asked. /c command");
 							break scanner;
 				
 				//Demande de notification d'un utilisateur
@@ -104,6 +117,7 @@ public class ConnectionClient extends Thread{
 								ConnectionClient coToBan = server.getCo(nicknameNotified);
 								coToBan.sendMessage("/banned "+nicknameNotified);
 								this.broadcastServer("User ["+nicknameNotified+"] BANNED (has been notified 3 time).");
+								logger.info("Notification asked. /n command");
 							}
 							break;
 								 
@@ -112,10 +126,12 @@ public class ConnectionClient extends Thread{
 								  ConnectionClient coToBan = server.getCo(nicknameBanned);
 								  coToBan.sendMessage("/banned "+nicknameBanned);
 								  this.broadcastServer("User ["+nicknameBanned+"] BANNED by ["+this.infoUser.getNickname()+"].");
+								  logger.info("Ban asked. /ban command");
 							  }
 							  break;
 							  
 				case "/banned" : this.db.setBan(this.infoUser.getNickname(), true);
+								 logger.info("Banning a user. /banned comand");
 				 			     break;
 							  
 				case "/kick" : if (this.infoUser.isAdmin()){
@@ -123,6 +139,7 @@ public class ConnectionClient extends Thread{
 								  ConnectionClient coToKick = server.getCo(nicknameKicked);
 								  coToKick.sendMessage("/kicked "+nicknameKicked);
 								  this.broadcastServer("User ["+nicknameKicked+"] KICKED by ["+this.infoUser.getNickname()+"].");
+								  logger.info("Kicking a user. /kick command");
 							  }	
 							  break;
 							  
@@ -134,10 +151,12 @@ public class ConnectionClient extends Thread{
 									   String nicknameAuthorized = st.nextToken();
 									   this.db.clearNotifications(nicknameAuthorized);
 									   this.db.setBan(nicknameAuthorized, false);
+									   logger.info("Authorizing an admin. /authorize command");
 								    }
 								   break;
 				
 				default : System.out.println("normal message : "+msg);
+						  logger.info("Default output");
 			}
 			
 		}
@@ -151,15 +170,18 @@ public class ConnectionClient extends Thread{
 			if (msgToSend.equals("quit")){
 				System.out.println("[SERVER] : Sending GoodBye to [CLIENT "+ this.idUser +"].");
 				ps.println("[SERVER] : Message recu : ADIOS");
+				logger.info("quit message sent");
 			}
 			else {
 				ps.println(msgToSend);
 			}			
 		} catch (SocketException exp){
 			System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
+			logger.error("Connection lost with a client");
 			try {
 				socket.close();
 				this.disconnectInDB();
+				logger.info("Closing socket and disconnection from DB");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -179,11 +201,14 @@ public class ConnectionClient extends Thread{
 				PrintStream ps = new PrintStream(coReceiver.socket.getOutputStream());
 				ps.println("/w "+this.infoUser.getNickname()+" ["+this.infoUser.getNickname()+"] : "+msgToSend);
 				System.out.println("[SERVER] : "+"[CLIENT "+ this.idUser +"] - "+this.infoUser.getNickname()+" Sending a private message to "+nicknameReceiver+".");
+				logger.info("Private message sent");
 			} catch (SocketException exp){
 				System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
+				logger.error("Connection lost with a client");
 				try {
 					socket.close();
 					this.disconnectInDB();
+					logger.info("Closing socket and disconnection from DB");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -200,10 +225,12 @@ public class ConnectionClient extends Thread{
 			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			msgReceived = br.readLine();
 			//System.out.println("[CLIENT n°"+ this.idUser +"] : "+msg);
+			logger.info("Message received");
 		} catch (SocketException exp){
 			System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
 			try {
 				socket.close();
+				logger.info("Closing socket and ask disconnection with /c");
 				return "/c";
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -224,11 +251,14 @@ public class ConnectionClient extends Thread{
 				try {
 					PrintStream ps = new PrintStream(socketBroadcast.getOutputStream());
 					ps.println("/b ["+this.infoUser.getNickname()+"] : "+msgToBroadcast);
+					logger.info("Sending broadcast message");
 				} catch (SocketException exp){
 					System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
+					logger.error("Connection lost with Client");
 					try {
 						socket.close();
 						this.disconnectInDB();
+						logger.info("Closing socket and disconnecting from DB");
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -248,11 +278,14 @@ public class ConnectionClient extends Thread{
 			try {
 				PrintStream ps = new PrintStream(socketBroadcast.getOutputStream());
 				ps.println("/b [SERVER] : "+msgToBroadcast);
+				logger.info("Broadcast server message");
 			} catch (SocketException exp){
 				System.out.println("[SERVER] : Connexion lost with [CLIENT "+ this.idUser +"].");
+				logger.error("Connection lost with Client");
 				try {
 					socket.close();
 					this.disconnectInDB();
+					logger.info("Closing socket and disconnecting from DB");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -266,6 +299,7 @@ public class ConnectionClient extends Thread{
 	
 	//Recupére l'objet InfoUser contenant toutes les info de l'utilisateur
 	public InfoUser getInfoUser(){
+		logger.info("Retrieving infoUser");
 		return this.infoUser;
 	}
 	
@@ -275,19 +309,23 @@ public class ConnectionClient extends Thread{
 		if (this.infoUser.isBanned()){
 			System.out.println("[SERVER] : User banned ["+this.infoUser.getNickname()+"] tried to connect on [CLIENT"+this.idUser+"].");
 			this.sendMessage("userBanned");
+			logger.info("User is banned");
 		}
 		else if (this.infoUser.getStatus() == 6){
 			System.out.println("[SERVER] : Tried to connect with an admin pseudo ["+this.infoUser.getNickname()+"] as a guest on [CLIENT"+this.idUser+"].");
 			this.sendMessage("usedByAdmin");
+			logger.info("User is Admin");
 		}
 		else if (this.infoUser.getStatus() == 7){
 			System.out.println("[SERVER] : User tried to connect as an already connected user ["+this.infoUser.getNickname()+"] as a guest on [CLIENT"+this.idUser+"].");
 			this.sendMessage("userAlreadyConnected");
+			logger.info("User is already connected");
 		}
 		else {
 			this.sendMessage("connectionUserGranted");
 			this.updateGui.start(); //Lancement du Thread de mise à jour de l'IHM
 			System.out.println("[SERVER] : User connected as ["+this.infoUser.getNickname()+"] on [CLIENT"+this.idUser+"].");
+			logger.info("User is granted to connect");
 		}
 	}
 	
@@ -299,21 +337,25 @@ public class ConnectionClient extends Thread{
 				this.sendMessage("connectionAdminGranted");
 				this.updateGui.start();//Lancement du Thread de mise à jour de l'IHM
 				System.out.println("[SERVER] : Admin connected as ["+this.infoUser.getNickname()+"] on [CLIENT"+this.idUser+"].");
+				logger.info("Admin connected");
 			}
 			else{
 				System.out.println("[SERVER] : Tried to connected as Admin ["+this.infoUser.getNickname()+"] on [CLIENT"+this.idUser+"].");
 				this.sendMessage("");
+				logger.info("Try to connect as an admin");
 			}
 		}
 		else{
 			System.out.println("[SERVER] : User tried to connect as an already connected admin ["+this.infoUser.getNickname()+"] on [CLIENT"+this.idUser+"].");
 			this.sendMessage("userAlreadyConnected");
+			logger.info("Admin is already connected");
 		}
 	}
 	
 	//Déconnecte l'utilisateur de la BDD
 	public void disconnectInDB(){
 		this.db.setStatus(this.infoUser.getNickname(), this.infoUser.isAdmin(), 4);
+		logger.info("User disconnected from DB");
 	}
 	
 	//Notifie l'utilisateur
@@ -322,6 +364,7 @@ public class ConnectionClient extends Thread{
 		this.db.addNotification(nicknameNotified);
 		nbNotif = this.db.getNotifications(nicknameNotified);
 		this.broadcastServer("User ["+nicknameNotified+"] has been NOTIFIED.");
+		logger.info("User notified");
 		return nbNotif;		
 	}
 }

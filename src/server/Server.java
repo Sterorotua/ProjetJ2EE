@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Iterator;
-
+import org.apache.log4j.Logger;
 
 public class Server {
 	
@@ -17,6 +17,7 @@ public class Server {
     
     private ArrayList<ConnectionClient> listCo;
 
+    private static Logger logger = Logger.getLogger(Server.class);
 
 	public Server(){
 		
@@ -30,6 +31,7 @@ public class Server {
 			this.port = 1984;
             serverSocket = new ServerSocket(port);
    			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
+   			logger.info("Server online");
    			
    			while (true) {
    				System.out.println("[SERVER] : Waiting for a client to connect ...");
@@ -43,6 +45,7 @@ public class Server {
         	   }
         	   else {
         		   System.out.println("[SERVER] Too many client!");
+        		   logger.warn("Client limit has been reached");
         	   }
            }
        } catch (IOException exp) {
@@ -50,7 +53,9 @@ public class Server {
        } finally {
            try {
                this.serverSocket.close();
+               logger.info("Server socket has been closed properly");
            } catch (Exception e) {
+        	   logger.error("Error during server socket closing");
           }
        }
 	}
@@ -72,6 +77,7 @@ public class Server {
 	
 	public synchronized void addClient(){
 		this.nbUsers ++;
+		logger.info("Variable nbUsers incremented: nbUsers = " + this.nbUsers);
 	}
 	
 	//Supprime un objet connexionClient de la liste
@@ -79,5 +85,6 @@ public class Server {
 		Iterator<ConnectionClient> it = this.listCo.iterator();
 		while (!it.next().equals(co)){}
 		it.remove();
+		logger.info("Client has been removed properly");
 	}
 }

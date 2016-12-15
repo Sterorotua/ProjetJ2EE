@@ -28,7 +28,7 @@ public class Database {
 			+ "&useSSL=false" 
 			+ "&requireSSL=false";
 	static final String USER = "root";
-	static final String PASS = "root";
+	static final String PASS = "6Kbxau4*";
 
 	/* Function which add an user to the DB when it connects */
 	public Database() {
