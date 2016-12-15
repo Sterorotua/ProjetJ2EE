@@ -21,11 +21,14 @@ public class ClientProcess extends Thread{
 	
 	public void run(){
 		
-		this.userGUI = new UserGUI(this.client);			
+		this.userGUI = new UserGUI(this.client);	
+		userGUI.getOnglets().getListTabs().get("Broadcast").getHistory("Broadcast");
+
 
 		scanner : while (true) {
 			msgReceived = this.client.receiveMessage();
 			System.out.println(msgReceived);
+			//System.out.println(msgReceived);
 			StringTokenizer st = new StringTokenizer(msgReceived);
 			String cmd = st.nextToken();
 
@@ -59,12 +62,17 @@ public class ClientProcess extends Thread{
 								JOptionPane.showMessageDialog(null,"You have been KICKED.", "Kicked",JOptionPane.INFORMATION_MESSAGE);
 								System.exit(0);
 								break;
+								
+				case "/history" : String dest = st.nextToken();
+								System.out.println(msgReceived);
+								String history = msgReceived.replace(dest+" ", "");
+								userGUI.getOnglets().getListTabs().get(dest).setHistory(history);;
+								break;
 				
 				//Ordre de mettre à jour l'IHM
 				case "/updIHM" : ArrayList<InfoUser> listUsers = new ArrayList<InfoUser>();
 								 String[] toUpdate = msgReceived.split("/status ");
 								 String listCo = toUpdate[0];
-								 System.out.println(listCo);
 								 StringTokenizer stUpd = new StringTokenizer(listCo);
 								 while(stUpd.hasMoreTokens()){
 									 InfoUser user = new InfoUser();

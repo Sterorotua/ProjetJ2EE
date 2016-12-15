@@ -28,7 +28,7 @@ public class Server {
 		try {
 			this.listCo = new ArrayList<ConnectionClient>(); //Liste des Thread de connexion avec les clients 
 			this.port = 1984;
-            serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(1984);
    			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
    			
    			while (true) {

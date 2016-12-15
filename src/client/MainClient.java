@@ -19,7 +19,7 @@ public class MainClient {
 		LoginGUI loginGUI = new LoginGUI(client);
 		ClientProcess clientProcess;
 
-		client.connect(0);
+		client.chooseServer();
 		
 		//Réception de la vérification des info de connexion
 		while(connectionGranted == false){

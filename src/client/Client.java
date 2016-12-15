@@ -16,6 +16,10 @@ public class Client {
 	private ArrayList <String> serversAddr;
 	private ArrayList <Integer> serversPort;
 	private Socket socket;
+	private boolean server1Tried;
+	private boolean server2Tried;
+	private boolean server1Found;
+	private boolean server2Found;
 	private boolean admin;
 	
 	private String nickname;
@@ -29,19 +33,50 @@ public class Client {
 	}
 	
 	public void connect(int numServer) {
-				
+		String serverAddr = this.serversAddr.get(numServer);
+		int serverPort = this.serversPort.get(numServer);
+		System.out.println("Connecting to "+serverAddr+" on port "+serverPort);
+		if(numServer == 0){
+			this.server1Tried = true;
+			System.out.println("server1Tried");
+		}
+		else {
+			this.server2Tried = true;
+			System.out.println("server2Tried");
+		}
 		try{
-			String serverAddr = this.serversAddr.get(numServer);
-			int serverPort = this.serversPort.get(numServer);
-			
-			System.out.println("Connecting to "+serverAddr+" on port "+serverPort);
-			socket = new Socket(serverAddr, serverPort);
+			this.socket = new Socket(serverAddr, serverPort);
+			if(numServer == 0){
+				this.server1Found = true;
+				System.out.println("server1Found");
+			}
+			else {
+				this.server2Found = true;
+				System.out.println("server2Found");
+			}		
 		} catch (SocketException exp){
 			//if(!this.socket.isConnected()){
-				JOptionPane.showMessageDialog(null,"Can't established connexion with server.\n", "Error",JOptionPane.ERROR_MESSAGE);
-				System.exit(0);
-			/*}
-			else {
+				if(numServer == 0){
+					if(this.server2Tried == false){
+						System.out.println("Trying server2");
+						this.connect(1);
+						this.sendMessage("/nbClient");
+						if(Integer.parseInt(this.receiveMessage())-1 == 0){
+							this.sendMessage("/clearCoDB");
+						}
+					}
+					else {
+						JOptionPane.showMessageDialog(null,"Can't established connexion with both servers.\n", "Error",JOptionPane.ERROR_MESSAGE);
+						System.exit(0);
+					}
+				}
+				else if((this.server2Tried == true && !this.server2Found) && (this.server1Tried == true && !this.server1Found)){
+					JOptionPane.showMessageDialog(null,"Can't established connexion with both servers.\n", "Error",JOptionPane.ERROR_MESSAGE);
+					System.exit(0);
+				}
+
+			//}
+			/*else {
 				 Thread t = new Thread(new Runnable(){
 				        public void run(){
 				            JOptionPane.showMessageDialog(null,"Can't established connexion with server.\n", "Warning",JOptionPane.WARNING_MESSAGE);;
@@ -51,6 +86,46 @@ public class Client {
 			}*/
 		} catch (IOException exp) {
 			exp.printStackTrace();
+		}
+	}
+	
+	public void chooseServer(){
+		this.connect(0);
+		if(this.server1Found == true){
+			this.sendMessage("/nbClient");
+			int nbUserServer1 = Integer.parseInt(this.receiveMessage())-1;
+			System.out.println("nbUser server1 = "+nbUserServer1);
+			if(nbUserServer1 == 0){
+				try {
+					System.out.println("disconnect from server1");
+					this.sendMessage("/c");
+					this.socket.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				this.connect(1);
+				if(this.server2Found == true){
+					this.sendMessage("/nbClient");
+					int nbUserServer2 = Integer.parseInt(this.receiveMessage())-1;
+					System.out.println("nbUser server2 = "+nbUserServer2);
+
+					if(nbUserServer2 == 0){
+						try {
+							System.out.println("disconnect from server2");
+							this.sendMessage("/c");
+							this.socket.close();
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						this.connect(0);
+						this.sendMessage("/clearCoDB");
+					}
+				}
+				else{
+					this.connect(0);
+					this.sendMessage("/clearCoDB");
+				}
+			}
 		}
 	}
 	

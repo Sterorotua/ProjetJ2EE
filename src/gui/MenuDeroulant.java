@@ -51,8 +51,7 @@ public class MenuDeroulant extends JPopupMenu{
 
 		   }
 	public void setUserClicked(String nickname){
-		String[] split = nickname.split(" ");
-		this.nickname = split[0];
+		this.nickname = nickname;
 	}
 	public void setIsAdminUserClicked(boolean isAdmin){
 		this.isAdmin = isAdmin;

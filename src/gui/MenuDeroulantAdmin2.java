@@ -38,8 +38,8 @@ public class MenuDeroulantAdmin2 extends JPopupMenu{
 
 		   }
 	public void setUserClicked(String nickname){
-		String[] split = nickname.split(" ");
-		this.nickname = split[0];	}
+		this.nickname = nickname;
+	}
 }
 
 

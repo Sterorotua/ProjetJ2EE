@@ -30,6 +30,7 @@ public class TableauOnglet extends JTabbedPane {
 		setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
 		
 		this.listTab.put("Broadcast",broadcast);
+		
 	}
 
 	//Ajoute un onglet pour les message privé
@@ -39,10 +40,10 @@ public class TableauOnglet extends JTabbedPane {
 		this.tableauOnglet.setTabComponentAt((this.getComponentCount()-2), new CloseTabPanel(nickname, this, true)); //Ajout de la croix pour supprimer l'onglet
 		setBorder(BorderFactory.createEmptyBorder(2, 0, 0, 0));
 		
-		this.listTab.put(nickname,messagePrivate);//On ajout dans la Map <nom corespondant ; onglet>
-		
-
+		this.listTab.put(nickname,messagePrivate);//On ajout dans la Map <nom corespondant ; onglet>	
 	}
+	
+	
 	
 	public HashMap<String,Onglet> getListTabs(){
 		return this.listTab;
