@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import javax.swing.DefaultListModel;
@@ -25,6 +26,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 import client.Client;
+import client.InfoUser;
 
 public class UserGUI extends JFrame implements WindowListener, ActionListener, KeyListener, MouseListener {
 	private TableauOnglet onglets=null;	
@@ -238,12 +240,18 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
             		event.getSource();
             		Point p = new Point(event.getX(), event.getY());
             		int indexClick = statusList.locationToIndex(p);
-            		if(indexClick == 0)
+            		if(indexClick == 0){
             			myStatus.setBackground(java.awt.Color.GREEN);
-            		else if(indexClick == 1)
+            			client.sendMessage("/s "+client.getNickname()+" 1");
+            		}
+            		else if(indexClick == 1){
             			myStatus.setBackground(java.awt.Color.YELLOW);
-            		else if(indexClick == 2)
+            			client.sendMessage("/s "+client.getNickname()+" 2");
+            		}
+            		else if(indexClick == 2){
             			myStatus.setBackground(java.awt.Color.RED);
+            			client.sendMessage("/s "+client.getNickname()+" 3");
+            		}
             	}
             }
 		});
@@ -438,11 +446,29 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	}
 	
 	//Met à jour la liste des utilisateurs / admins connectés
-	public void updConnectedList(String list){
+	public void updConnectedList(ArrayList <InfoUser> listUsers){
 
 		userConnected.removeAllElements();
-		
-		StringTokenizer st = new StringTokenizer(list);
+		for(InfoUser user : listUsers){
+			String status ="";
+			if(user.getStatus() == 1){
+				status = " [online]";
+			}
+			else if (user.getStatus() == 2){
+				status = " [busy]";
+			}
+			else{
+				status = " [unavailable]";
+			}
+			userConnected.addElement(user.getNickname()+status);
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		/*StringTokenizer st = new StringTokenizer(list);
 		while(st.hasMoreTokens()){
 			String nickname = st.nextToken();
 			list = list.replace(nickname+" ", "");
@@ -453,7 +479,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		}*/
 	}
 	
 	//Met à jour la liste des utilisateurs bannis

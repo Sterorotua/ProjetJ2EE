@@ -54,8 +54,8 @@ public class Database {
 	
 	//*******************************************************
 	// Ajoute un admin dans la BDD
-	public void addAdmin (String nickname, String password) {
-		
+	public boolean addAdmin (String nickname, String password) {
+		boolean exists = false;
 		try {
 			if(this.getUserExist(nickname) == false){
 				if(this.getAdminExist(nickname) == false){ //Puis on vérifie que le pseudo n'est pas pris par un ADMIN
@@ -65,6 +65,7 @@ public class Database {
 				}
 				else {
 					System.out.println("[SERVER] : An admin is already named "+nickname+".");
+					exists = true;
 				}	
 			}
 			else{
@@ -73,6 +74,7 @@ public class Database {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return exists;
 	}
 	
 	//*******************************************************

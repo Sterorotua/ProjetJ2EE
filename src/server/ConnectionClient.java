@@ -80,10 +80,15 @@ public class ConnectionClient extends Thread{
 							break;
 						
 				//Demande d'envoie d'un message privé
-				case "/w" : System.out.println("[CLIENT "+ this.idUser +"] - Receiving : "+msg);
-							String nicknameReceiver = st.nextToken();
+				case "/w" : String nicknameReceiver = st.nextToken();
 							msg = msg.replace(nicknameReceiver+" ", "");
 							this.sendPrivateMessage(msg, nicknameReceiver);
+							break;
+							
+				case "/s" : nickname = st.nextToken();
+							msg = msg.replace(nickname+" ", "");
+							int status = Integer.parseInt(st.nextToken());
+							this.db.setStatus(nickname, this.infoUser.isAdmin(), status);
 							break;
 						
 				//Demande d'arret de la connexion

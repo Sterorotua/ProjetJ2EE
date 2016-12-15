@@ -61,7 +61,7 @@ public class UpdateGUI extends Thread{
 			//Préparation de la chaine contenant toutes les info pour l'update de l'IHM
 			String msgIHM = "/updIHM";
 			msgIHM = msgIHM.concat(usersConnected);
-			//msgIHM = msgIHM.concat(" "+usersStatus);
+			msgIHM = msgIHM.concat(" "+usersStatus);
 			if (this.connectionClient.infoUser.isAdmin()){
 				msgIHM = msgIHM.concat(" "+usersBanned);
 				msgIHM = msgIHM.concat(" "+usersNotified+" ");

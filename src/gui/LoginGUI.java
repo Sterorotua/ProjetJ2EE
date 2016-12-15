@@ -224,7 +224,7 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 			password = fieldPassword.getPassword();
 			passwordSent = new String(password);
 			if((loginSent == null || loginSent.isEmpty()) || passwordSent == null || passwordSent.isEmpty()){
-				JOptionPane.showMessageDialog(getParent(),"You must enter a nickname AND a password.", "Error Login",JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(getParent(),"You must enter a nickname AND a password.", "Error Login",JOptionPane.ERROR_MESSAGE);
 			}
 			else{
 				client.sendMessage("/l "+loginSent+" "+ passwordSent);		
@@ -233,8 +233,8 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{
 			nicknameSent = fieldNickname.getText();
-			if(nicknameSent == null || nicknameSent.isEmpty() || nicknameSent.length() < 3){
-				JOptionPane.showMessageDialog(getParent(),"Your nickname must contain 3 char at least.", "Error Login",JOptionPane.WARNING_MESSAGE);
+			if(nicknameSent == null || nicknameSent.isEmpty() || nicknameSent.length() < 3 || nicknameSent.contains(" ")){
+				JOptionPane.showMessageDialog(getParent(),"Your nickname must contain 3 char at least and no space.", "Error Login",JOptionPane.ERROR_MESSAGE);
 			}
 			else {
 				client.setNickname(nicknameSent);

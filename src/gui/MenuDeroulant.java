@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JMenuItem;
@@ -52,7 +51,8 @@ public class MenuDeroulant extends JPopupMenu{
 
 		   }
 	public void setUserClicked(String nickname){
-		this.nickname = nickname;
+		String[] split = nickname.split(" ");
+		this.nickname = split[0];
 	}
 	public void setIsAdminUserClicked(boolean isAdmin){
 		this.isAdmin = isAdmin;
