@@ -31,10 +31,12 @@ public class UpdateGUI extends Thread{
 				usersStatus = usersStatus.concat(" "+infoUser.getStatus());
 			}
 			
+			
 			//Liste des admins connectés
+			String adminConnected = "/admin";
 			listInfoAdmins = this.db.getConnectedAdmins();
 			for(InfoUser infoAdmin : listInfoAdmins){
-				usersConnected = usersConnected.concat(" "+infoAdmin.getNickname());
+				adminConnected = adminConnected.concat(" "+infoAdmin.getNickname());
 				usersStatus = usersStatus.concat(" "+infoAdmin.getStatus());
 			}	
 			
@@ -61,18 +63,18 @@ public class UpdateGUI extends Thread{
 			//Préparation de la chaine contenant toutes les info pour l'update de l'IHM
 			String msgIHM = "/updIHM";
 			msgIHM = msgIHM.concat(usersConnected);
+			msgIHM = msgIHM.concat(" "+adminConnected);
 			msgIHM = msgIHM.concat(" "+usersStatus);
 			if (this.connectionClient.infoUser.isAdmin()){
 				msgIHM = msgIHM.concat(" "+usersBanned);
 				msgIHM = msgIHM.concat(" "+usersNotified+" ");
 			}
-			//System.out.println(msgIHM);
 
 			connectionClient.sendMessage(msgIHM);
 
 			
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

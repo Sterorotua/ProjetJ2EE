@@ -27,8 +27,6 @@ public class ClientProcess extends Thread{
 
 		scanner : while (true) {
 			msgReceived = this.client.receiveMessage();
-			System.out.println(msgReceived);
-			//System.out.println(msgReceived);
 			StringTokenizer st = new StringTokenizer(msgReceived);
 			String cmd = st.nextToken();
 
@@ -46,9 +44,11 @@ public class ClientProcess extends Thread{
 							msgReceived = msgReceived.replace(sender+" ", "");
 							if(listPM.get(sender) == null){
 								this.userGUI.getOnglets().addPrivate(sender);
+								listPM.get(sender).getHistory(sender);
 							}
-							Onglet ongletPriv = listPM.get(sender);
-							ongletPriv.getReadMessageArea().append("\n"+msgReceived);
+							else{
+								listPM.get(sender).getReadMessageArea().append("\n"+msgReceived);
+							}
 							break;
 							
 				//Deconnexion apres reception d'un ban
@@ -64,19 +64,29 @@ public class ClientProcess extends Thread{
 								break;
 								
 				case "/history" : String dest = st.nextToken();
-								System.out.println(msgReceived);
 								String history = msgReceived.replace(dest+" ", "");
 								userGUI.getOnglets().getListTabs().get(dest).setHistory(history);;
 								break;
 				
 				//Ordre de mettre à jour l'IHM
 				case "/updIHM" : ArrayList<InfoUser> listUsers = new ArrayList<InfoUser>();
-								 String[] toUpdate = msgReceived.split("/status ");
-								 String listCo = toUpdate[0];
+								 String[] toUpdate = msgReceived.split("/admin ");
+								 String listCo = toUpdate[0]; //Les users en ligne
 								 StringTokenizer stUpd = new StringTokenizer(listCo);
-								 while(stUpd.hasMoreTokens()){
+								 while(stUpd.hasMoreTokens()){ //Tant qu'il y a des users co, on creer des objet user
 									 InfoUser user = new InfoUser();
 									 user.setNickname(stUpd.nextToken());
+									 user.setAdmin(false);
+									 listUsers.add(user);
+								 }
+								 
+								 toUpdate = toUpdate[1].split("/status ");
+								 listCo = toUpdate[0];
+								 stUpd = new StringTokenizer(listCo);
+								 while(stUpd.hasMoreTokens()){ //Tant qu'il y a des admins co, on creer des objet user
+									 InfoUser user = new InfoUser();
+									 user.setNickname(stUpd.nextToken());
+									 user.setAdmin(true);
 									 listUsers.add(user);
 								 }
 				
@@ -88,6 +98,7 @@ public class ClientProcess extends Thread{
 										 listUsers.get(i).setStatus(Integer.parseInt(stUpd.nextToken()));
 										 i++;
 									 }
+
 								 }				 
 								 else{
 									toUpdate = toUpdate[1].split("/banned ");

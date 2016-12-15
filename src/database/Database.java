@@ -16,14 +16,15 @@ import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
 
 import server.InfoMessage;
 import server.InfoUser;
+import org.apache.log4j.Logger;
 
 public class Database {
-
-	// private static Logger logger = Logger.getLogger(Database.class);
 
 	static Connection conn = null;
 	static Statement stmt = null;
 	static PreparedStatement stmtPrep;
+
+	private static Logger logger = Logger.getLogger(Database.class);
 
 	/* DATABASE INFORMATION */
 	static final String DB_URL = "jdbc:mysql://localhost/communitisen" + "?verifyServerCertificate=false"
@@ -65,9 +66,9 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// *******************************************************
-	//Insére un message dans la BDD
+	// Insére un message dans la BDD
 	public void insertMsg(String msg, String sender, String receiver) {
 		String query = "INSERT INTO history (message_data, sender, receiver) VALUES (?, ?, ?)";
 		try {
@@ -82,11 +83,11 @@ public class Database {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// *******************************************************
 	// Récupére l'hitorique de broadcast
 	public ArrayList<InfoMessage> getHistoryBroadcast() {
-		String query = "SELECT * FROM history WHERE receiver = 'Broadcast' ORDER BY message_id ASC LIMIT 10 ";
+		String query = "SELECT * FROM history WHERE receiver = 'Broadcast' ORDER BY message_id DESC LIMIT 10";
 		ArrayList<InfoMessage> listMsg = new ArrayList<InfoMessage>();
 		try {
 			ResultSet rs = stmt.executeQuery(query);
@@ -95,6 +96,28 @@ public class Database {
 				String sender = rs.getString("sender");
 				String receiver = rs.getString("receiver");
 				InfoMessage message = new InfoMessage(msg, sender, receiver);
+				listMsg.add(message);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listMsg;
+	}
+
+	// *******************************************************
+	// Récupére l'hitorique d'un conversation
+	public ArrayList<InfoMessage> getHistoryPM(String sender, String receiver) {
+		String query = "SELECT * FROM history WHERE receiver IN ('" + sender + "','" + receiver + "') AND sender IN ('"
+				+ sender + "','" + receiver + "') ORDER BY message_id DESC LIMIT 10";
+		ArrayList<InfoMessage> listMsg = new ArrayList<InfoMessage>();
+		try {
+			ResultSet rs = stmt.executeQuery(query);
+			while (rs.next()) {
+				String msgPM = rs.getString("message_data");
+				String senderPM = rs.getString("sender");
+				String receiverPM = rs.getString("receiver");
+				InfoMessage message = new InfoMessage(msgPM, senderPM, receiverPM);
 				listMsg.add(message);
 			}
 		} catch (SQLException e) {
@@ -140,7 +163,7 @@ public class Database {
 	public void removeAdmin(String nickname) {
 
 		if (nickname.equalsIgnoreCase("Administrator")) {
-			// logger.error("Can't delete Administrator");
+			logger.error("Can't delete Administrator");
 		}
 		String query;
 		query = "DELETE FROM admins WHERE nickname = \"" + nickname + "\"";
@@ -460,7 +483,7 @@ public class Database {
 			e.printStackTrace();
 		}
 		if (status.isEmpty()) {
-			// logger.error("Status vide");
+			logger.error("Status vide");
 		}
 		return status;
 	}
@@ -512,6 +535,7 @@ public class Database {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		this.clearNotifications(nickname);
 	}
 
 	// *******************************************************

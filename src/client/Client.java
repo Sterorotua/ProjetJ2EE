@@ -32,33 +32,33 @@ public class Client {
 		this.admin = false;
 	}
 	
+	// *******************************************************
+	// Essaie de se connecter sur le 1er serveur sinon sur le 2eme
 	public void connect(int numServer) {
 		String serverAddr = this.serversAddr.get(numServer);
 		int serverPort = this.serversPort.get(numServer);
 		System.out.println("Connecting to "+serverAddr+" on port "+serverPort);
 		if(numServer == 0){
-			this.server1Tried = true;
-			System.out.println("server1Tried");
+			this.server1Tried = true; //A tenté de se connecté au serveur 1
 		}
 		else {
-			this.server2Tried = true;
-			System.out.println("server2Tried");
+			this.server2Tried = true; //A tenté de se connecté au serveur 2
 		}
 		try{
 			this.socket = new Socket(serverAddr, serverPort);
 			if(numServer == 0){
 				this.server1Found = true;
-				System.out.println("server1Found");
+				System.out.println("Connected on "+serverAddr+" on port "+serverPort);
 			}
 			else {
 				this.server2Found = true;
-				System.out.println("server2Found");
+				System.out.println("Connected on "+serverAddr+" on port "+serverPort);
 			}		
 		} catch (SocketException exp){
 			//if(!this.socket.isConnected()){
-				if(numServer == 0){
+				if(numServer == 0){ //Si on ne peut pas se co sur le 1er serveur , on essaie le 2nd
+					System.out.println("Can't connect on "+serverAddr+" on port "+serverPort);
 					if(this.server2Tried == false){
-						System.out.println("Trying server2");
 						this.connect(1);
 						this.sendMessage("/nbClient");
 						if(Integer.parseInt(this.receiveMessage())-1 == 0){
@@ -89,45 +89,53 @@ public class Client {
 		}
 	}
 	
+	// *******************************************************
+	//Choisis le serveur sur lequel se connecter
 	public void chooseServer(){
 		this.connect(0);
 		if(this.server1Found == true){
-			this.sendMessage("/nbClient");
+			this.sendMessage("/nbClient"); //Demande combien de client co
 			int nbUserServer1 = Integer.parseInt(this.receiveMessage())-1;
 			System.out.println("nbUser server1 = "+nbUserServer1);
 			if(nbUserServer1 == 0){
+				System.out.println("No other user on "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 				try {
-					System.out.println("disconnect from server1");
 					this.sendMessage("/c");
 					this.socket.close();
+					System.out.println("Disctonnecting from server "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+				System.out.println("Trying to connect on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
 				this.connect(1);
 				if(this.server2Found == true){
 					this.sendMessage("/nbClient");
 					int nbUserServer2 = Integer.parseInt(this.receiveMessage())-1;
-					System.out.println("nbUser server2 = "+nbUserServer2);
-
 					if(nbUserServer2 == 0){
+						System.out.println("No other user on "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
 						try {
-							System.out.println("disconnect from server2");
 							this.sendMessage("/c");
 							this.socket.close();
+							System.out.println("Disctonnecting from server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
 						} catch (IOException e) {
 							e.printStackTrace();
 						}
+						System.out.println("Going back on server "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 						this.connect(0);
 						this.sendMessage("/clearCoDB");
 					}
+					System.out.println("Other users found on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
+					System.out.println("Staying on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
 				}
 				else{
+					System.out.println("Going back on server "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 					this.connect(0);
 					this.sendMessage("/clearCoDB");
 				}
 			}
 		}
 	}
+	
 	
 	public void sendMessage(String msg){		
 		try{

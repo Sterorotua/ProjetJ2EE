@@ -36,6 +36,7 @@ public class MenuDeroulantAdmin1 extends JPopupMenu{
 		        	if(onglet == null){
 			        	userGUI.getOnglets().addPrivate(nickname);
 		        	}
+		        	userGUI.getOnglets().getListTabs().get(nickname).getHistory(nickname);
 		        }	
 		        menu.setVisible(false);
 		      }
@@ -46,28 +47,28 @@ public class MenuDeroulantAdmin1 extends JPopupMenu{
 		    privateMessage.setHorizontalTextPosition(JMenuItem.RIGHT);
 		    privateMessage.addActionListener(menuListener);		    
 		    
-		    this.addSeparator();		    
 		    
-		    JMenuItem kickUser=null;
-		    this.add(kickUser = new JMenuItem("Kick this User"));
-		    kickUser.setHorizontalTextPosition(JMenuItem.RIGHT);
-		    kickUser.addActionListener(menuListener);
 		    
-		    JMenuItem banUser=null;
-		    this.add(banUser = new JMenuItem("Ban this User"));
-		    banUser.setHorizontalTextPosition(JMenuItem.RIGHT);
-		    banUser.addActionListener(menuListener);
+		   // if(userGUI.getUser(nickname).isAdmin()){
+			    this.addSeparator();		    
+			    
+			    JMenuItem kickUser=null;
+			    this.add(kickUser = new JMenuItem("Kick this User"));
+			    kickUser.setHorizontalTextPosition(JMenuItem.RIGHT);
+			    kickUser.addActionListener(menuListener);
+			    
+			    JMenuItem banUser=null;
+			    this.add(banUser = new JMenuItem("Ban this User"));
+			    banUser.setHorizontalTextPosition(JMenuItem.RIGHT);
+			    banUser.addActionListener(menuListener);
+		  //  }
 		 
-		   
-		    
-		    
-		   
-		    
-		    
+   
 
 		   }
 	public void setUserClicked(String nickname){
-		this.nickname = nickname;
+		String[] split = nickname.split(" ");
+		this.nickname = split[0];
 	}
 }
 

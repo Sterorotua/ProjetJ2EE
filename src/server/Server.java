@@ -1,5 +1,7 @@
 package server;
 import database.Database;
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -16,6 +18,7 @@ public class Server {
     private int nbUsers = 1;
     
     private ArrayList<ConnectionClient> listCo;
+	private static Logger logger = Logger.getLogger(Server.class);
 
 
 	public Server(){
@@ -25,10 +28,12 @@ public class Server {
 		this.nbUsersMax = conf.getNbUsersMax();
 		this.db = new Database();
 		
+
+		
 		try {
 			this.listCo = new ArrayList<ConnectionClient>(); //Liste des Thread de connexion avec les clients 
-			this.port = 1984;
-            serverSocket = new ServerSocket(1984);
+            serverSocket = new ServerSocket(this.port);
+            logger.info("Server online");
    			System.out.println("[SERVER] : Server online at "+serverSocket.getInetAddress()+":"+serverSocket.getLocalPort());
    			
    			while (true) {
@@ -42,6 +47,7 @@ public class Server {
 	               Co.start();
         	   }
         	   else {
+        		   logger.warn("Client limit has been reached");
         		   System.out.println("[SERVER] Too many client!");
         	   }
            }
@@ -49,8 +55,10 @@ public class Server {
            exp.printStackTrace();
        } finally {
            try {
+               logger.info("Server socket has been closed properly");
                this.serverSocket.close();
            } catch (Exception e) {
+        	   logger.error("Error during server socket closing");
           }
        }
 	}
@@ -71,6 +79,7 @@ public class Server {
 	}
 	
 	public synchronized void addClient(){
+		//logger.info("Variable nbUsers incremented: nbUsers = " + this.nbUsers);
 		this.nbUsers ++;
 	}
 	
@@ -79,5 +88,6 @@ public class Server {
 		Iterator<ConnectionClient> it = this.listCo.iterator();
 		while (!it.next().equals(co)){}
 		it.remove();
+		//logger.info("Client has been removed properly");
 	}
 }

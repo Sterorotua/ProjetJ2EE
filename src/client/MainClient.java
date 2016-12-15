@@ -24,7 +24,6 @@ public class MainClient {
 		//Réception de la vérification des info de connexion
 		while(connectionGranted == false){
 			msgReceived = client.receiveMessage();
-			System.out.println(msgReceived);
 			if(msgReceived != null && msgReceived.equals("connectionUserGranted")) {
 				connectionGranted = true;
 				loginGUI.setVisible(false);

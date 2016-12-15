@@ -31,6 +31,7 @@ public class MenuDeroulant extends JPopupMenu{
 		        	if(onglet == null){
 			        	userGUI.getOnglets().addPrivate(nickname);
 		        	}
+		        	userGUI.getOnglets().getListTabs().get(nickname).getHistory(nickname);
 		        }
 		        getComponent().setVisible(false);
 		      }
@@ -51,7 +52,8 @@ public class MenuDeroulant extends JPopupMenu{
 
 		   }
 	public void setUserClicked(String nickname){
-		this.nickname = nickname;
+		String[] split = nickname.split(" ");
+		this.nickname = split[0];
 	}
 	public void setIsAdminUserClicked(boolean isAdmin){
 		this.isAdmin = isAdmin;

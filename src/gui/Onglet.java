@@ -61,12 +61,9 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 	}
 	
 	public void setHistory(String history){
-		System.out.println("historique "+history);
-
 		String[] historySplitted = history.split("\\|\\|\\|\\|\\|");
-		for(String split : historySplitted){
-			System.out.println(split);
-			this.readMessageArea.append("\n"+split);
+		for(int i=historySplitted.length-1 ; i>=0 ; i--){
+			this.readMessageArea.append("\n"+historySplitted[i]);
 		}
 	}
 

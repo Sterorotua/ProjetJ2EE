@@ -27,6 +27,7 @@ import javax.swing.ListSelectionModel;
 
 import client.Client;
 import client.InfoUser;
+import server.ConnectionClient;
 
 public class UserGUI extends JFrame implements WindowListener, ActionListener, KeyListener, MouseListener {
 	private TableauOnglet onglets = null;
@@ -42,10 +43,14 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 	public MenuDeroulantAdmin1 popupMenuAdmin1;
 	public MenuDeroulantAdmin2 popupMenuAdmin2;
 
-	private DefaultListModel<String> userConnected = null;
+	private DefaultListModel<String> userConnected = null; // doit être lié a la
+															// database
 	private DefaultListModel<String> status = null;
-	private DefaultListModel<String> bannedUser = null;
-	private DefaultListModel<String> notifiedUser = null;
+	private DefaultListModel<String> bannedUser = null; // doit être lié a la
+														// database
+	private DefaultListModel<String> notifiedUser = null; // doit être lié a la
+															// database
+
 	private Client client = null;
 
 	public UserGUI(Client client) {
@@ -73,7 +78,6 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		userListLabel = new JLabel("User connected");
 
 		onglets = new TableauOnglet(client);
-
 		myStatus = new JButton();
 
 		JPanel borderList = new JPanel();
@@ -96,6 +100,13 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 
 		JPanel borderNotifiedUser = new JPanel();
 		borderNotifiedUser.setLayout(new BorderLayout());
+
+		// initialisation d'une liste d'utilisateur pour tests
+		/*
+		 * userConnected.addElement("paul");
+		 * userConnected.addElement("stephane");
+		 * userConnected.addElement("jordan"); userConnected.addElement("remy");
+		 */
 
 		// Différents status possible
 		status.addElement("Available");
@@ -132,7 +143,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 								String[] split = userConnected.getElementAt(indexClick).split(" ");
 								String nicknameClicked = split[0];
 								if (!nicknameClicked.equals(client.getNickname())) {
-									popupMenuAdmin1.setUserClicked(nicknameClicked);
+									popupMenuAdmin1.setUserClicked(userConnected.getElementAt(indexClick));
 									popupMenuAdmin1.setVisible(true);
 									popupMenuAdmin1.setLocation(event.getLocationOnScreen());
 									borderFinal.addMouseListener(new MouseAdapter() {
@@ -186,7 +197,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 								String[] split = userConnected.getElementAt(indexClick).split(" ");
 								String nicknameClicked = split[0];
 								if (!nicknameClicked.equals(client.getNickname())) {
-									popupMenu.setUserClicked(nicknameClicked);
+									popupMenu.setUserClicked(userConnected.getElementAt(indexClick));
 									popupMenu.setVisible(true);
 									popupMenu.setLocation(event.getLocationOnScreen());
 									borderFinal.addMouseListener(new MouseAdapter() {
@@ -264,7 +275,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 								String[] split = userConnected.getElementAt(indexClick).split(" ");
 								String nicknameClicked = split[0];
 								if (!nicknameClicked.equals(client.getNickname())) {
-									popupMenuAdmin2.setUserClicked(nicknameClicked);
+									popupMenuAdmin2.setUserClicked(bannedUser.getElementAt(indexClick));
 									popupMenuAdmin2.setVisible(true);
 									popupMenuAdmin2.setLocation(event.getLocationOnScreen());
 									borderFinal.addMouseListener(new MouseAdapter() {
@@ -321,22 +332,18 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 								event.getSource();
 								Point p = new Point(event.getX(), event.getY());
 								int indexClick = notifiedUserList.locationToIndex(p);
-								String[] split = userConnected.getElementAt(indexClick).split(" ");
-								String nicknameClicked = split[0];
-								if (!nicknameClicked.equals(client.getNickname())) {
-									popupMenuAdmin1.setUserClicked(nicknameClicked);
-									popupMenuAdmin1.setVisible(true);
-									popupMenuAdmin1.setLocation(event.getLocationOnScreen());
-									borderFinal.addMouseListener(new MouseAdapter() {
-										public void mouseReleased(MouseEvent event) {
-											if ((popupMenuAdmin1.isVisible())) {
-												popupMenuAdmin1.setVisible(false);
-											} else if ((popupMenuAdmin2.isVisible())) {
-												popupMenuAdmin2.setVisible(false);
-											}
+								popupMenuAdmin1.setUserClicked(notifiedUser.getElementAt(indexClick));
+								popupMenuAdmin1.setVisible(true);
+								popupMenuAdmin1.setLocation(event.getLocationOnScreen());
+								borderFinal.addMouseListener(new MouseAdapter() {
+									public void mouseReleased(MouseEvent event) {
+										if ((popupMenuAdmin1.isVisible())) {
+											popupMenuAdmin1.setVisible(false);
+										} else if ((popupMenuAdmin2.isVisible())) {
+											popupMenuAdmin2.setVisible(false);
 										}
-									});
-								}
+									}
+								});
 							} else {
 								if ((popupMenuAdmin1.isVisible())) {
 									popupMenuAdmin1.setVisible(false);
@@ -425,7 +432,7 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 		for (InfoUser user : listUsers) {
 			String status = "";
 			if (user.getStatus() == 1) {
-				status = " [online]";
+				status = " [available]";
 			} else if (user.getStatus() == 2) {
 				status = " [busy]";
 			} else {
@@ -439,13 +446,6 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 				e.printStackTrace();
 			}
 		}
-		/*
-		 * StringTokenizer st = new StringTokenizer(list);
-		 * while(st.hasMoreTokens()){ String nickname = st.nextToken(); list =
-		 * list.replace(nickname+" ", ""); userConnected.addElement(nickname);
-		 * try { Thread.sleep(1); } catch (InterruptedException e) { // TODO
-		 * Auto-generated catch block e.printStackTrace(); } }
-		 */
 	}
 
 	// Met à jour la liste des utilisateurs bannis
@@ -475,12 +475,10 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 			String nickname = st.nextToken();
 			list = list.replace(nickname + " ", "");
 			notifiedUser.addElement(nickname);
-			try {
-				Thread.sleep(1);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			/*
+			 * try { Thread.sleep(1); } catch (InterruptedException e) { // TODO
+			 * Auto-generated catch block e.printStackTrace(); }
+			 */
 		}
 	}
 
