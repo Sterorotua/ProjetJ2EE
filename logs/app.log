@@ -1,0 +1,36 @@
+2016-13-15 15:13:32.830 [main] INFO  server.Server - Server online
+2016-13-15 15:13:37.115 [Thread-1] INFO  server.Server - Variable nbUsers incremented: nbUsers = 2
+2016-13-15 15:13:39.029 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:39.040 [Thread-1] INFO  server.Server - User is already connected
+2016-13-15 15:13:39.040 [Thread-1] INFO  server.Server - User asked a connection. /g command
+2016-13-15 15:13:46.234 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:46.240 [Thread-1] INFO  server.Server - User is granted to connect
+2016-13-15 15:13:46.240 [Thread-1] INFO  server.Server - User asked a connection. /g command
+2016-13-15 15:13:47.928 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:47.929 [Thread-1] INFO  server.Server - Broadcast message asked. /b command
+2016-13-15 15:13:49.136 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:49.137 [Thread-1] INFO  server.Server - Broadcast message asked. /b command
+2016-13-15 15:13:53.855 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:53.856 [Thread-1] INFO  server.Server - Broadcast message asked. /b command
+2016-13-15 15:13:55.832 [Thread-1] INFO  server.Server - Message received
+2016-13-15 15:13:55.832 [Thread-1] INFO  server.Server - Broadcast message asked. /b command
+2016-14-15 15:14:02.341 [Thread-1] INFO  server.Server - Closing socket and ask disconnection with /c
+2016-14-15 15:14:02.344 [Thread-1] INFO  server.Server - User disconnected from DB
+2016-14-15 15:14:02.344 [Thread-1] INFO  server.Server - Disconnect asked. /c command
+2016-14-15 15:14:02.344 [Thread-1] INFO  server.Server - Client has been removed properly
+2016-17-15 16:17:21.949 [main] INFO  server.Server - Server online
+2016-17-15 16:17:28.212 [Thread-1] INFO  server.Server - Variable nbUsers incremented: nbUsers = 2
+2016-17-15 16:17:28.214 [Thread-1] INFO  server.Server - Message received
+2016-17-15 16:17:28.216 [Thread-1] INFO  server.Server - Message received
+2016-17-15 16:17:28.219 [Thread-1] INFO  server.Server - Disconnect asked. /c command
+2016-17-15 16:17:28.221 [Thread-1] INFO  server.Server - Client has been removed properly
+2016-17-15 16:17:29.221 [Thread-3] INFO  server.Server - Variable nbUsers incremented: nbUsers = 3
+2016-17-15 16:17:29.222 [Thread-3] INFO  server.Server - Message received
+2016-17-15 16:17:30.718 [Thread-3] INFO  server.Server - Message received
+2016-17-15 16:17:30.724 [Thread-3] INFO  server.Server - User is granted to connect
+2016-17-15 16:17:30.724 [Thread-3] INFO  server.Server - User asked a connection. /g command
+2016-17-15 16:17:30.838 [Thread-3] INFO  server.Server - Message received
+2016-17-15 16:17:38.852 [Thread-3] INFO  server.Server - Closing socket and ask disconnection with /c
+2016-17-15 16:17:38.856 [Thread-3] INFO  server.Server - User disconnected from DB
+2016-17-15 16:17:38.856 [Thread-3] INFO  server.Server - Disconnect asked. /c command
+2016-17-15 16:17:38.857 [Thread-3] INFO  server.Server - Client has been removed properly
