@@ -98,11 +98,9 @@ public class Onglet extends Panel implements WindowListener, ActionListener, Key
 				writeMessageArea.setText("");
 				if(receiver.equals("broadcast")){
 					client.sendMessage("/b "+msgSent);
-					System.out.println("/b "+msgSent);
 				}
 				else{
 					client.sendMessage("/w "+receiver+" "+msgSent);
-					System.out.println("/w "+receiver+" "+msgSent);
 				}
 				writeMessageArea.requestFocus();	
 			}

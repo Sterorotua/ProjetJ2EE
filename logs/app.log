@@ -41,3 +41,1257 @@
 2016-25-15 22:25:54.959 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
 2016-25-15 22:25:56.379 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
 2016-25-15 22:25:56.383 [Thread-3] ERROR server.ConnectionClient - Connection lost with a client
+2016-55-16 08:55:32.816 [main] INFO  server.Server - Server online
+2016-55-16 08:55:40.318 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-55-16 08:55:45.344 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-55-16 08:55:45.345 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-55-16 08:55:55.813 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-55-16 08:55:55.813 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-56-16 08:56:06.628 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-56-16 08:56:06.631 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-56-16 08:56:44.483 [Thread-9] INFO  server.ConnectionClient - Admin connected
+2016-56-16 08:56:44.484 [Thread-9] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-56-16 08:56:55.105 [Thread-11] INFO  server.ConnectionClient - Admin connected
+2016-56-16 08:56:55.106 [Thread-11] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-09-16 09:09:57.398 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-09-16 09:09:57.462 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-10-16 09:10:00.562 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-10-16 09:10:00.600 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-10-16 09:10:04.091 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-10-16 09:10:04.191 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-10-16 09:10:06.405 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-10-16 09:10:06.445 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-10-16 09:10:08.306 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-10-16 09:10:08.381 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-18-16 09:18:09.076 [main] INFO  server.Server - Server online
+2016-18-16 09:18:11.771 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-18-16 09:18:14.277 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-18-16 09:18:14.277 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-18-16 09:18:21.001 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-18-16 09:18:21.002 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-19-16 09:19:06.642 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-19-16 09:19:06.643 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-19-16 09:19:12.426 [Thread-9] INFO  server.ConnectionClient - Admin connected
+2016-19-16 09:19:12.426 [Thread-9] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-19-16 09:19:19.493 [Thread-11] INFO  server.ConnectionClient - Admin connected
+2016-19-16 09:19:19.494 [Thread-11] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-19-16 09:19:19.496 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:19.496 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:26.529 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:27.534 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:28.104 [Thread-13] INFO  server.ConnectionClient - Admin connected
+2016-19-16 09:19:28.104 [Thread-13] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-19-16 09:19:28.539 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:28.541 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:29.545 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:29.546 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:30.549 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:30.551 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:37.641 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:37.641 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:37.643 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:37.643 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:37.646 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:38.651 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:39.658 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:40.663 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:40.665 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:40.666 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:41.670 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:41.671 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:41.674 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:42.677 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:42.678 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:42.681 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:43.683 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:43.685 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:43.688 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:44.690 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:44.691 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:44.694 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:45.697 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:45.698 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:45.701 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:46.702 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:46.704 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:46.707 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:47.708 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:47.710 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:47.712 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:48.714 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:48.716 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:48.719 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:49.721 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:49.723 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:49.726 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:50.728 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:50.729 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:50.732 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:51.737 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:52.740 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:53.744 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:53.746 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:54.748 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:54.750 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:54.753 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:55.754 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:55.756 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:55.758 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:56.761 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:56.763 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:56.765 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:57.767 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:57.769 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:57.771 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:58.772 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:58.774 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:58.776 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:59.779 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:59.780 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-19-16 09:19:59.783 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:00.784 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:00.786 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:00.789 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:01.790 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:01.792 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:01.793 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:01.796 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:01.796 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:02.798 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:02.800 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:02.800 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:02.803 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:02.804 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:03.807 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:03.807 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:03.808 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:03.811 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:05.815 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:06.820 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:07.823 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:08.829 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:09.834 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 09:20:10.867 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:10.907 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 09:20:11.785 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:11.803 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 09:20:12.625 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:12.663 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 09:20:13.162 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:13.187 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 09:20:14.225 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:14.252 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 09:20:15.448 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 09:20:15.498 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-21-16 09:21:20.248 [Thread-15] INFO  server.ConnectionClient - Connection lost with a client
+2016-21-16 09:21:22.300 [Thread-17] INFO  server.ConnectionClient - User is granted to connect
+2016-21-16 09:21:22.300 [Thread-17] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-21-16 09:21:26.732 [Thread-19] INFO  server.ConnectionClient - User is granted to connect
+2016-21-16 09:21:26.732 [Thread-19] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-21-16 09:21:42.635 [Thread-21] INFO  server.ConnectionClient - User is granted to connect
+2016-21-16 09:21:42.636 [Thread-21] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-21-16 09:21:49.002 [Thread-23] INFO  server.ConnectionClient - Admin connected
+2016-21-16 09:21:49.002 [Thread-23] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-21-16 09:21:56.681 [Thread-25] INFO  server.ConnectionClient - Admin connected
+2016-21-16 09:21:56.682 [Thread-25] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-21-16 09:21:56.683 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-21-16 09:21:56.689 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-21-16 09:21:57.694 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-21-16 09:21:57.696 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-21-16 09:21:58.700 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-21-16 09:21:59.704 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-22-16 09:22:05.502 [Thread-27] INFO  server.ConnectionClient - Admin connected
+2016-22-16 09:22:05.502 [Thread-27] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-23-16 09:23:21.935 [Thread-20] WARN  database.Database - Can't get the resultset.
+2016-23-16 09:23:23.941 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-23-16 09:23:24.943 [Thread-20] WARN  database.Database - Can't get the resultset.
+2016-23-16 09:23:24.945 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-24-16 09:24:13.571 [Thread-17] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:13.619 [Thread-17] INFO  server.ConnectionClient - Connection lost with a client
+2016-24-16 09:24:16.026 [Thread-19] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:16.064 [Thread-19] INFO  server.ConnectionClient - Connection lost with a client
+2016-24-16 09:24:17.543 [Thread-21] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:17.589 [Thread-21] INFO  server.ConnectionClient - Connection lost with a client
+2016-24-16 09:24:19.239 [Thread-23] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:19.263 [Thread-23] INFO  server.ConnectionClient - Connection lost with a client
+2016-24-16 09:24:20.456 [Thread-25] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:20.489 [Thread-25] INFO  server.ConnectionClient - Connection lost with a client
+2016-24-16 09:24:21.574 [Thread-27] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-24-16 09:24:21.601 [Thread-27] INFO  server.ConnectionClient - Connection lost with a client
+2016-26-16 09:26:10.874 [main] INFO  server.Server - Server online
+2016-26-16 09:26:13.126 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-26-16 09:26:14.842 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-26-16 09:26:14.842 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-26-16 09:26:21.849 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-26-16 09:26:21.850 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-26-16 09:26:28.489 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-26-16 09:26:28.490 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-27-16 09:27:11.029 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-27-16 09:27:11.030 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 09:27:13.805 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-27-16 09:27:13.886 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 09:27:15.997 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-27-16 09:27:16.056 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 09:27:17.635 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-27-16 09:27:17.679 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 09:27:20.480 [main] INFO  server.Server - Server socket has been closed properly
+2016-27-16 09:27:20.481 [main] ERROR server.Server - Error during server socket closing
+2016-27-16 09:27:29.255 [main] INFO  server.Server - Server online
+2016-27-16 09:27:30.758 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 09:27:32.055 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-27-16 09:27:32.056 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-27-16 09:27:35.666 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-27-16 09:27:35.667 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-27-16 09:27:39.646 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-27-16 09:27:39.647 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-27-16 09:27:44.744 [Thread-9] INFO  server.ConnectionClient - Admin connected
+2016-27-16 09:27:44.745 [Thread-9] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-27-16 09:27:52.169 [Thread-11] INFO  server.ConnectionClient - Admin connected
+2016-27-16 09:27:52.170 [Thread-11] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-27-16 09:27:52.170 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-27-16 09:27:52.172 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-27-16 09:27:53.176 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:04.692 [Thread-13] INFO  server.ConnectionClient - Admin connected
+2016-28-16 09:28:04.693 [Thread-13] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-28-16 09:28:14.796 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:15.799 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:15.801 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:16.802 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:16.803 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-28-16 09:28:17.805 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-29-16 09:29:21.589 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 09:29:21.752 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 09:29:22.968 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 09:29:23.073 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 09:29:24.362 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 09:29:24.549 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 09:29:26.684 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 09:29:26.817 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 09:29:27.278 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 09:29:27.344 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 09:29:37.565 [Thread-15] INFO  server.ConnectionClient - User is granted to connect
+2016-29-16 09:29:37.565 [Thread-15] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-29-16 09:29:41.551 [Thread-17] INFO  server.ConnectionClient - User is granted to connect
+2016-29-16 09:29:41.551 [Thread-17] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-29-16 09:29:46.643 [Thread-19] INFO  server.ConnectionClient - Admin connected
+2016-29-16 09:29:46.643 [Thread-19] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-31-16 09:31:08.818 [Thread-21] INFO  server.ConnectionClient - User is granted to connect
+2016-31-16 09:31:08.819 [Thread-21] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-31-16 09:31:14.190 [Thread-23] INFO  server.ConnectionClient - Admin connected
+2016-31-16 09:31:14.193 [Thread-23] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-31-16 09:31:16.893 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:16.893 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:16.894 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:16.894 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.323 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.324 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.324 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.325 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.896 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:17.897 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.336 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.337 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.899 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.900 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.901 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:18.901 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:19.341 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:19.343 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:19.344 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:19.902 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:19.905 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:20.350 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:20.905 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:20.907 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:20.907 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:21.352 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:21.357 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:21.909 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:21.910 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:21.911 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.362 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.363 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.365 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.912 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.915 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:22.915 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.368 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.369 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.371 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.372 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.917 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.919 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:23.921 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:24.373 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:24.374 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:24.375 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:24.376 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:24.923 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:26.385 [Thread-24] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:26.388 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:27.928 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:28.937 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:28.938 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:28.939 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-31-16 09:31:29.944 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-32-16 09:32:27.652 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:27.706 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-16 09:32:28.953 [Thread-15] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:29.056 [Thread-15] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-16 09:32:30.114 [Thread-17] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:30.151 [Thread-17] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-16 09:32:31.286 [Thread-19] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:31.418 [Thread-19] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-16 09:32:32.260 [Thread-21] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:32.310 [Thread-21] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-16 09:32:33.619 [Thread-23] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-32-16 09:32:33.733 [Thread-23] INFO  server.ConnectionClient - Connection lost with a client
+2016-34-16 09:34:49.429 [Thread-25] INFO  server.ConnectionClient - Connection lost with a client
+2016-34-16 09:34:51.441 [Thread-27] INFO  server.ConnectionClient - User is granted to connect
+2016-34-16 09:34:51.442 [Thread-27] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-35-16 09:35:49.323 [Thread-27] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-35-16 09:35:49.366 [Thread-27] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-16 09:39:04.593 [main] INFO  server.Server - Server online
+2016-39-16 09:39:06.453 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-16 09:39:08.392 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-39-16 09:39:08.392 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-39-16 09:39:12.437 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-39-16 09:39:12.438 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-39-16 09:39:12.440 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-39-16 09:39:25.404 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-39-16 09:39:25.437 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-16 09:39:26.186 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-39-16 09:39:26.214 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-42-16 09:42:13.757 [main] INFO  server.Server - Server online
+2016-42-16 09:42:18.636 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-42-16 09:42:22.217 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-42-16 09:42:22.219 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-42-16 09:42:30.761 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-42-16 09:42:30.761 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-42-16 09:42:35.683 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-42-16 09:42:35.684 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-42-16 09:42:43.328 [Thread-9] INFO  server.ConnectionClient - User is granted to connect
+2016-42-16 09:42:43.328 [Thread-9] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-42-16 09:42:48.952 [Thread-11] INFO  server.ConnectionClient - User is granted to connect
+2016-42-16 09:42:48.953 [Thread-11] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-42-16 09:42:56.129 [Thread-13] INFO  server.ConnectionClient - Admin connected
+2016-42-16 09:42:56.129 [Thread-13] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-43-16 09:43:01.808 [Thread-15] INFO  server.ConnectionClient - Admin connected
+2016-43-16 09:43:01.809 [Thread-15] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-43-16 09:43:01.810 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:01.817 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:02.820 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:02.821 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:03.822 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:03.822 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:04.825 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:04.827 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:05.831 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:05.833 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:08.978 [Thread-17] INFO  server.ConnectionClient - Admin connected
+2016-43-16 09:43:08.978 [Thread-17] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-43-16 09:43:26.899 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:26.901 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:27.905 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-43-16 09:43:27.906 [Thread-16] WARN  database.Database - Can't get the resultset.
+2016-45-16 09:45:53.491 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-45-16 09:45:54.493 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-46-16 09:46:45.779 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-46-16 09:46:46.781 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-46-16 09:46:46.784 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-46-16 09:46:47.788 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-47-16 09:47:02.225 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-47-16 09:47:02.268 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-47-16 09:47:32.848 [Thread-13] INFO  server.ConnectionClient - Authorizing user. /authorize command
+2016-47-16 09:47:32.849 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-47-16 09:47:32.851 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-47-16 09:47:49.231 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-47-16 09:47:49.282 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-47-16 09:47:53.956 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-47-16 09:47:54.957 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-47-16 09:47:54.958 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-48-16 09:48:05.485 [Thread-19] INFO  server.ConnectionClient - User is granted to connect
+2016-48-16 09:48:05.485 [Thread-19] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-48-16 09:48:26.997 [Thread-18] WARN  database.Database - Can't get the resultset.
+2016-48-16 09:48:30.821 [Thread-19] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-48-16 09:48:30.874 [Thread-19] INFO  server.ConnectionClient - Connection lost with a client
+2016-48-16 09:48:43.388 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-48-16 09:48:43.442 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-49-16 09:49:21.730 [Thread-17] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-49-16 09:49:21.799 [Thread-17] INFO  server.ConnectionClient - Connection lost with a client
+2016-49-16 09:49:22.316 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-49-16 09:49:22.355 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-49-16 09:49:22.727 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-49-16 09:49:22.756 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-49-16 09:49:22.883 [Thread-15] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-49-16 09:49:22.911 [Thread-15] INFO  server.ConnectionClient - Connection lost with a client
+2016-49-16 09:49:23.654 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-49-16 09:49:23.689 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-50-16 09:50:21.248 [main] INFO  server.Server - Server online
+2016-50-16 09:50:22.635 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-50-16 09:50:24.426 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-50-16 09:50:24.427 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-50-16 09:50:30.294 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-50-16 09:50:30.295 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-50-16 09:50:36.582 [Thread-7] INFO  server.ConnectionClient - Admin connected
+2016-50-16 09:50:36.583 [Thread-7] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-50-16 09:50:44.639 [Thread-9] INFO  server.ConnectionClient - Admin connected
+2016-50-16 09:50:44.640 [Thread-9] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-51-16 09:51:02.563 [Thread-11] INFO  server.ConnectionClient - Admin connected
+2016-51-16 09:51:02.564 [Thread-11] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-51-16 09:51:10.696 [Thread-13] INFO  server.ConnectionClient - User is granted to connect
+2016-51-16 09:51:10.696 [Thread-13] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-52-16 09:52:34.871 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-52-16 09:52:35.875 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-52-16 09:52:35.876 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-06-16 10:06:40.727 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:04.770 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:05.771 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:05.772 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:06.773 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:06.774 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:07.775 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:39.794 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:40.796 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:40.797 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:41.798 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-07-16 10:07:43.800 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:16.956 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:17.957 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:17.957 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:18.958 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:19.959 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:20.961 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:21.962 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:21.963 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:22.964 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:22.964 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:23.966 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:23.967 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:24.968 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:24.968 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:25.969 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:25.970 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:26.971 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:27.973 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:27.973 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:28.974 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:28.975 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:29.976 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:29.976 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:30.977 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:31.978 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-09-16 10:09:32.980 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-10-16 10:10:18.013 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-10-16 10:10:19.015 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-10-16 10:10:19.015 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:36.009 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:37.009 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:37.010 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:43.022 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:44.025 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-11-16 10:11:44.027 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-14-16 10:14:32.335 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-14-16 10:14:33.337 [Thread-12] WARN  database.Database - Can't get the resultset.
+2016-14-16 10:14:33.338 [Thread-14] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:13.743 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:13.744 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:13.744 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:15.746 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:16.746 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:16.747 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:16.747 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:17.748 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:17.748 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:17.749 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:18.750 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:18.751 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:18.751 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:20.753 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:21.754 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:22.755 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:22.756 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:22.756 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:28.760 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:28.761 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:28.761 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:29.762 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:29.763 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:29.763 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:30.764 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:30.765 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:30.765 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:30.765 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:31.766 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:31.767 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:31.767 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:33.769 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:34.769 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:34.770 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:34.770 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:35.772 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:36.772 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:36.773 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:36.773 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:37.774 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:37.775 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:37.775 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:38.775 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:38.776 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:38.776 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:42.779 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:42.780 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:42.780 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:42.781 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:43.782 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:43.783 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:43.783 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:44.784 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:44.784 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:44.785 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:45.785 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:45.786 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:45.786 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:46.787 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:46.787 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:47.789 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:47.789 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:47.790 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:48.791 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:48.791 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:48.791 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:49.792 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:49.793 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:49.793 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:54.798 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:55.800 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:55.800 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:55.800 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:55.800 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:56.803 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:56.804 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:57.806 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:57.807 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:57.809 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:58.811 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:58.812 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:59.815 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-16-16 10:16:59.817 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:00.821 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:00.822 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:01.825 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:01.826 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:02.829 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:02.830 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:02.831 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:03.833 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:03.834 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:03.835 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:03.836 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:04.838 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:04.841 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:05.843 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:05.844 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:05.845 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:05.846 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:06.848 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:06.850 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:07.852 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:07.853 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:07.854 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:08.857 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:08.858 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:09.860 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:09.861 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:09.863 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:10.865 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:10.866 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:10.867 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:10.868 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:11.870 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:11.871 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:11.871 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:11.872 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:12.875 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:12.876 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:12.877 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:12.878 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:13.881 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:13.882 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:13.883 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:13.885 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:14.887 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:14.888 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:15.891 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:15.892 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:15.893 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:16.894 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:16.896 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:16.897 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:17.900 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:17.901 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:17.902 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:17.903 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:18.904 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:18.905 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:18.906 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:18.907 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:19.909 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:19.910 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:20.913 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:20.914 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:20.915 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:20.916 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:21.919 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:21.921 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:21.922 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:22.924 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:22.925 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:23.930 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:24.933 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:24.934 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:24.935 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:25.938 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:25.940 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:25.941 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:26.945 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:26.946 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:26.947 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:27.949 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:27.950 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:27.951 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:27.953 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:28.954 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:28.956 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:29.958 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:29.959 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:29.961 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:30.963 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:30.964 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:30.965 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:30.966 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:31.968 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:31.970 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:31.971 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:32.973 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:32.974 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:33.977 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:33.978 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:33.979 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:34.981 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:34.982 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:34.983 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:34.984 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:35.986 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:36.990 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:37.992 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:37.993 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:37.994 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:38.995 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:38.996 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:38.998 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:38.999 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:40.001 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:40.002 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:40.003 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:40.004 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:41.007 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:41.008 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:41.009 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:41.011 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:42.012 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:42.014 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:42.015 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:43.016 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:43.017 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:43.019 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:44.021 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:44.022 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:44.023 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:44.024 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:45.027 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:45.028 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:45.029 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:45.030 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:46.032 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:46.033 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:46.034 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:47.037 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:47.038 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:47.039 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:47.041 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:48.043 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:48.044 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:48.045 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:48.046 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:49.049 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:49.050 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:49.051 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:49.052 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:50.054 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:50.055 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:50.056 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:50.057 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:51.059 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:51.060 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:51.062 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:51.063 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:52.065 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:52.067 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:52.068 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:53.071 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:54.075 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:55.078 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:55.079 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:56.081 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:56.082 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:57.086 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:57.087 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:58.089 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:58.090 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:58.091 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:58.092 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:59.094 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:59.095 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:59.096 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-17-16 10:17:59.097 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:00.099 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:00.100 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:00.101 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:00.102 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:01.105 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:01.106 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:01.107 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:01.108 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:02.110 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:02.111 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:02.112 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:03.114 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:03.116 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:04.119 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:04.120 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:04.121 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:04.122 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:05.124 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:05.125 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:05.126 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:05.127 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:06.129 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:06.130 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:06.131 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:06.132 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:07.134 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:07.135 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:07.138 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:08.139 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:08.140 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:08.141 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:08.142 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:09.145 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:09.146 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:09.147 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:09.149 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:10.150 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:10.151 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:10.152 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:10.153 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:11.156 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:11.157 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:11.157 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:13.161 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:13.162 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:14.165 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:14.166 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:14.167 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:14.168 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:15.173 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:15.174 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:15.175 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:15.177 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:18.182 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:18.183 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:19.185 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:19.187 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:19.188 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:21.190 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:21.191 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:22.194 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:23.197 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:23.198 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:23.199 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:24.202 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:24.203 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:24.205 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:24.206 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:25.207 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:25.208 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:25.209 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:25.210 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:26.212 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:26.213 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:27.215 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:27.216 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:27.217 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:28.220 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:28.221 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:29.223 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:29.224 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:29.226 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:30.228 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:30.230 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:30.231 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:31.233 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:32.236 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:32.237 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:32.238 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:32.239 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:33.241 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:33.242 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:33.243 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:33.244 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:34.247 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:35.251 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:36.253 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:36.254 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:37.256 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:37.257 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:37.258 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:37.259 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:38.262 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:38.263 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:38.264 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:40.268 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:41.270 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:41.270 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:41.271 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:42.275 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:42.276 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:46.287 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:48.289 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:48.290 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-18-16 10:18:48.291 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:05.332 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:05.334 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:06.337 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:06.338 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:06.339 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:07.341 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:07.342 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:07.343 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:08.345 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:08.346 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:08.347 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:08.348 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:09.350 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:09.350 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:09.351 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:09.351 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:10.351 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:10.351 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:10.352 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:10.352 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:11.354 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:11.354 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:11.354 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:11.355 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:12.355 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:12.356 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:12.356 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:12.357 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:13.358 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:13.360 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:13.361 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:13.362 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:14.364 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:14.365 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:14.366 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:14.367 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:15.370 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:15.371 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:15.372 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:15.373 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:16.375 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:16.376 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:16.377 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:16.378 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:17.379 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:17.381 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:17.382 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:17.383 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:18.385 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:18.386 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:18.387 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:18.388 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:19.390 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:19.391 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:19.392 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:19.392 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:20.394 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:20.395 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:20.397 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:20.398 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:21.400 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:21.401 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:21.402 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:21.403 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:22.405 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:22.406 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:22.407 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:23.409 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:23.410 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:24.412 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:24.414 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:24.415 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:25.416 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:25.417 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:26.418 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:26.419 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:26.420 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:26.420 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:27.421 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:27.423 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:27.424 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:27.425 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:28.427 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:28.428 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:28.429 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:28.431 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:29.432 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:29.433 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:29.435 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:29.436 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:30.437 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:30.440 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:31.441 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:32.444 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:32.445 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:32.446 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:32.447 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:33.448 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:33.449 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:33.449 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:33.450 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:34.451 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:34.452 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:34.453 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:34.454 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:35.455 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:35.456 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:36.459 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:36.460 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:36.461 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:36.462 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:37.463 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:37.464 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:37.464 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:38.467 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:38.468 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:38.469 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:38.470 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:39.472 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:39.473 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:39.474 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:39.475 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:40.477 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:40.480 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:41.482 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:41.483 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:42.487 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:42.488 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:42.489 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:43.491 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:43.492 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:43.493 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:43.494 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:44.496 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:44.497 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:45.499 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:45.501 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:45.502 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:46.504 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:46.505 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:46.506 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:46.507 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:47.509 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:47.510 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:47.512 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:48.513 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:48.515 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:48.516 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:49.518 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:49.520 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:49.521 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:50.523 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:50.526 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:51.527 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:51.528 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:52.530 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:52.531 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:52.532 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:53.534 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:53.536 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:53.537 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:53.538 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:54.539 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:54.542 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:55.544 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:55.545 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:55.547 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:55.548 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:56.550 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:56.551 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:56.552 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:56.553 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:57.554 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:57.555 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:57.556 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:58.558 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:58.559 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:58.560 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:58.561 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:59.563 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:59.564 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:59.565 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-19-16 10:19:59.566 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:00.569 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:00.571 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:00.572 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:01.577 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:02.579 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:02.580 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:03.582 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:04.584 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:04.585 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:04.587 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:04.588 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:05.590 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:05.592 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:05.594 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:06.595 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:06.596 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:06.597 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:06.598 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:07.600 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:07.603 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:08.606 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:08.607 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:08.608 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:09.610 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:09.613 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:10.615 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:10.616 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:10.617 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:11.620 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:11.621 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:12.623 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:12.624 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:13.626 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:13.627 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:13.629 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:14.631 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:14.632 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:14.633 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:15.636 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:15.637 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:16.639 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:16.640 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:17.642 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:17.644 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:17.645 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:17.646 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:18.648 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:18.649 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:18.650 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:18.651 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:19.653 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:19.655 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:19.656 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:20.658 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:20.659 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:21.661 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:21.662 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:21.663 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:21.664 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:22.667 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:22.669 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:22.671 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:23.672 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:23.672 [Thread-4] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:23.674 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:23.675 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:23.676 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:24.677 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:24.678 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:24.681 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:25.683 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:25.686 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:26.691 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:26.695 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:27.696 [Thread-10] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:27.698 [Thread-6] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:37.716 [Thread-8] WARN  database.Database - Can't get the resultset.
+2016-20-16 10:20:41.747 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:41.809 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 10:20:48.710 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:48.743 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 10:20:50.499 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:50.565 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 10:20:51.583 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:51.632 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 10:20:56.766 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:56.832 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-20-16 10:20:57.929 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-20-16 10:20:57.988 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-16 10:27:59.346 [main] INFO  server.Server - Server online
+2016-28-16 10:28:00.126 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-28-16 10:28:10.463 [Thread-3] INFO  server.ConnectionClient - User is granted to connect
+2016-28-16 10:28:10.463 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-28-16 10:28:20.820 [Thread-5] INFO  server.ConnectionClient - Admin connected
+2016-28-16 10:28:20.822 [Thread-5] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-28-16 10:28:26.253 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-28-16 10:28:26.255 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-28-16 10:28:31.120 [Thread-9] INFO  server.ConnectionClient - User is granted to connect
+2016-28-16 10:28:31.122 [Thread-9] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-29-16 10:29:48.195 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-16 10:29:48.303 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-16 10:29:51.847 [Thread-5] INFO  server.ConnectionClient - Authorizing user. /authorize command
+2016-30-16 10:30:02.144 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-30-16 10:30:02.203 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-30-16 10:30:20.270 [Thread-11] INFO  server.ConnectionClient - User is banned
+2016-30-16 10:30:20.270 [Thread-11] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-32-16 10:32:54.068 [main] INFO  server.Server - Server online
+2016-32-16 10:32:57.221 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-34-16 10:34:27.398 [Thread-3] INFO  server.ConnectionClient - User is banned
+2016-34-16 10:34:27.398 [Thread-3] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-34-16 10:34:32.104 [Thread-3] INFO  server.ConnectionClient - Admin connected
+2016-34-16 10:34:32.104 [Thread-3] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-35-16 10:35:35.859 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-35-16 10:35:35.926 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-35-16 10:35:37.720 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-35-16 10:35:42.016 [Thread-7] INFO  server.ConnectionClient - Admin connected
+2016-35-16 10:35:42.018 [Thread-7] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-35-16 10:35:52.191 [Thread-9] INFO  server.ConnectionClient - User is banned
+2016-35-16 10:35:52.192 [Thread-9] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-36-16 10:36:07.573 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-36-16 10:36:07.573 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-36-16 10:36:08.328 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-36-16 10:36:08.394 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-36-16 10:36:09.814 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-36-16 10:36:13.408 [Thread-13] INFO  server.ConnectionClient - Admin connected
+2016-36-16 10:36:13.409 [Thread-13] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-36-16 10:36:24.056 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-36-16 10:36:24.118 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-36-16 10:36:25.693 [Thread-15] INFO  server.ConnectionClient - Connection lost with a client
+2016-36-16 10:36:30.299 [Thread-17] INFO  server.ConnectionClient - Admin connected
+2016-36-16 10:36:30.304 [Thread-17] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-36-16 10:36:49.446 [Thread-19] INFO  server.ConnectionClient - User is granted to connect
+2016-36-16 10:36:49.447 [Thread-19] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-37-16 10:37:02.032 [Thread-17] INFO  server.ConnectionClient - Authorizing user. /authorize command
+2016-37-16 10:37:14.336 [Thread-19] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-37-16 10:37:14.367 [Thread-19] INFO  server.ConnectionClient - Connection lost with a client
+2016-38-16 10:38:36.744 [Thread-21] INFO  server.ConnectionClient - User is banned
+2016-38-16 10:38:36.744 [Thread-21] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-38-16 10:38:40.807 [Thread-21] INFO  server.ConnectionClient - User is granted to connect
+2016-38-16 10:38:40.807 [Thread-21] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-39-16 10:39:54.510 [Thread-17] INFO  server.ConnectionClient - Authorizing user. /authorize command
+2016-40-16 10:40:00.501 [Thread-23] INFO  server.ConnectionClient - User is granted to connect
+2016-40-16 10:40:00.501 [Thread-23] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-40-16 10:40:33.813 [Thread-25] INFO  server.ConnectionClient - Admin connected
+2016-40-16 10:40:33.813 [Thread-25] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-40-16 10:40:41.908 [Thread-27] INFO  server.ConnectionClient - Admin is already connected
+2016-40-16 10:40:41.909 [Thread-27] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-40-16 10:40:48.826 [Thread-27] INFO  server.ConnectionClient - Admin connected
+2016-40-16 10:40:48.827 [Thread-27] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-42-16 10:42:54.209 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-42-16 10:42:55.211 [Thread-26] WARN  database.Database - Can't get the resultset.
+2016-42-16 10:42:55.213 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-42-16 10:42:56.215 [Thread-22] WARN  database.Database - Can't get the resultset.
+2016-43-16 10:43:29.264 [Thread-28] WARN  database.Database - Can't get the resultset.
+2016-43-16 10:43:30.268 [Thread-28] WARN  database.Database - Can't get the resultset.
+2016-45-16 10:45:01.511 [Thread-29] INFO  server.ConnectionClient - User is granted to connect
+2016-45-16 10:45:01.512 [Thread-29] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-45-16 10:45:03.468 [Thread-29] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:03.509 [Thread-29] INFO  server.ConnectionClient - Connection lost with a client
+2016-45-16 10:45:18.679 [Thread-17] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:18.743 [Thread-17] INFO  server.ConnectionClient - Connection lost with a client
+2016-45-16 10:45:20.452 [Thread-21] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:20.511 [Thread-21] INFO  server.ConnectionClient - Connection lost with a client
+2016-45-16 10:45:22.011 [Thread-23] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:22.045 [Thread-23] INFO  server.ConnectionClient - Connection lost with a client
+2016-45-16 10:45:24.007 [Thread-25] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:24.044 [Thread-25] INFO  server.ConnectionClient - Connection lost with a client
+2016-45-16 10:45:26.565 [Thread-27] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-45-16 10:45:26.599 [Thread-27] INFO  server.ConnectionClient - Connection lost with a client
+2016-05-16 13:05:58.435 [main] INFO  server.Server - Server online
+2016-06-16 13:06:04.745 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-06-16 13:06:12.211 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-06-16 13:06:12.214 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-27-17 08:27:54.648 [main] INFO  server.Server - Server online
+2016-27-17 08:27:57.814 [main] INFO  server.Server - Server socket has been closed properly
+2016-27-17 08:27:57.815 [main] ERROR server.Server - Error during server socket closing
+2016-28-17 08:28:03.209 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-28-17 08:28:10.644 [Thread-3] INFO  server.ConnectionClient - Admin connected
+2016-28-17 08:28:10.647 [Thread-3] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-28-17 08:28:21.643 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-28-17 08:28:21.645 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-28-17 08:28:45.322 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-28-17 08:28:45.325 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-28-17 08:28:57.891 [Thread-9] INFO  server.ConnectionClient - Admin connected
+2016-28-17 08:28:57.893 [Thread-9] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-29-17 08:29:47.864 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-29-17 08:29:47.911 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client
+2016-29-17 08:29:56.970 [Thread-11] INFO  server.ConnectionClient - User is already connected
+2016-29-17 08:29:56.971 [Thread-11] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-30-17 08:30:03.351 [Thread-11] INFO  server.ConnectionClient - User is granted to connect
+2016-30-17 08:30:03.352 [Thread-11] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-30-17 08:30:58.817 [Thread-7] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-30-17 08:30:58.877 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-31-17 08:31:09.911 [Thread-13] INFO  server.ConnectionClient - User is granted to connect
+2016-31-17 08:31:09.912 [Thread-13] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-31-17 08:31:19.525 [Thread-13] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-31-17 08:31:19.628 [Thread-13] INFO  server.ConnectionClient - Connection lost with a client
+2016-31-17 08:31:25.683 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-31-17 08:31:25.755 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-31-17 08:31:29.390 [Thread-11] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-31-17 08:31:29.536 [Thread-11] INFO  server.ConnectionClient - Connection lost with a client
+2016-31-17 08:31:36.989 [Thread-15] INFO  server.ConnectionClient - User is granted to connect
+2016-31-17 08:31:36.990 [Thread-15] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-31-17 08:31:44.037 [Thread-15] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-31-17 08:31:44.090 [Thread-15] INFO  server.ConnectionClient - Connection lost with a client
+2016-31-17 08:31:51.440 [main] INFO  server.Server - Server online
+2016-31-17 08:31:53.441 [main] INFO  server.Server - Server socket has been closed properly
+2016-31-17 08:31:53.443 [main] ERROR server.Server - Error during server socket closing
+2016-31-17 08:31:54.991 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-32-17 08:32:02.142 [Thread-3] INFO  server.ConnectionClient - Admin connected
+2016-32-17 08:32:02.143 [Thread-3] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-32-17 08:32:11.651 [Thread-5] INFO  server.ConnectionClient - Admin connected
+2016-32-17 08:32:11.651 [Thread-5] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-32-17 08:32:19.138 [Thread-7] INFO  server.ConnectionClient - User is granted to connect
+2016-32-17 08:32:19.142 [Thread-7] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-32-17 08:32:28.124 [Thread-9] INFO  server.ConnectionClient - User is granted to connect
+2016-32-17 08:32:28.125 [Thread-9] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-34-17 08:34:15.187 [main] INFO  server.Server - Server online
+2016-34-17 08:34:16.967 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-34-17 08:34:23.599 [Thread-3] INFO  server.ConnectionClient - Admin connected
+2016-34-17 08:34:23.607 [Thread-3] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-34-17 08:34:31.400 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-34-17 08:34:31.401 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-34-17 08:34:51.003 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-34-17 08:34:51.045 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-38-17 08:38:39.904 [main] INFO  server.Server - Server online
+2016-38-17 08:38:42.047 [Thread-1] INFO  server.ConnectionClient - Connection lost with a client
+2016-38-17 08:38:51.172 [Thread-3] INFO  server.ConnectionClient - Admin connected
+2016-38-17 08:38:51.173 [Thread-3] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-38-17 08:38:57.071 [Thread-5] INFO  server.ConnectionClient - User is granted to connect
+2016-38-17 08:38:57.072 [Thread-5] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-39-17 08:39:07.429 [Thread-5] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-39-17 08:39:07.470 [Thread-5] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-17 08:39:10.401 [Thread-3] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-39-17 08:39:10.448 [Thread-3] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-17 08:39:12.039 [Thread-7] INFO  server.ConnectionClient - Connection lost with a client
+2016-39-17 08:39:17.460 [Thread-9] INFO  server.ConnectionClient - User is granted to connect
+2016-39-17 08:39:17.461 [Thread-9] INFO  server.ConnectionClient - User asked a connection. /g command
+2016-39-17 08:39:27.084 [Thread-11] INFO  server.ConnectionClient - Admin connected
+2016-39-17 08:39:27.085 [Thread-11] INFO  server.ConnectionClient - Admin asked a connection. /l command
+2016-39-17 08:39:34.519 [Thread-9] INFO  server.ConnectionClient - Closing socket and ask disconnection with /c
+2016-39-17 08:39:34.572 [Thread-9] INFO  server.ConnectionClient - Connection lost with a client

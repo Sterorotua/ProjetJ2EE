@@ -475,10 +475,12 @@ public class UserGUI extends JFrame implements WindowListener, ActionListener, K
 			String nickname = st.nextToken();
 			list = list.replace(nickname + " ", "");
 			notifiedUser.addElement(nickname);
-			/*
-			 * try { Thread.sleep(1); } catch (InterruptedException e) { // TODO
-			 * Auto-generated catch block e.printStackTrace(); }
-			 */
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 

@@ -256,6 +256,8 @@ public class Database {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException npe){//En cas de concurrence sur la DB
+			logger.warn("Can't get the resultset.");
 		}
 		return listInfoUser;
 
@@ -374,6 +376,8 @@ public class Database {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException npe){//En cas de concurrence sur la DB
+			logger.warn("Can't get the resultset.");
 		}
 		return listInfoUser;
 	}
@@ -397,6 +401,8 @@ public class Database {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException npe){//En cas de concurrence sur la DB
+			logger.warn("Can't get the resultset.");
 		}
 		return listInfoBannedUser;
 	}
@@ -459,6 +465,8 @@ public class Database {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (NullPointerException npe){ //En cas de concurrence sur la DB
+			logger.warn("Can't get the resultset.");
 		}
 		return listInfoNotifiedUser;
 	}

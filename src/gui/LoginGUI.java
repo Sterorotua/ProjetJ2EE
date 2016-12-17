@@ -186,9 +186,10 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		
 		this.add(border);
 	
-		enablingWriting(true);
+		enablingWriting(false);
 		fieldLogin.requestFocusInWindow();
 		this.setVisible(true);
+		
 		
 	}
 
@@ -233,8 +234,8 @@ public class LoginGUI extends JFrame implements WindowListener, ActionListener, 
 		else if (ae.getActionCommand().equals("Log as an user"))
 		{
 			nicknameSent = fieldNickname.getText();
-			if(nicknameSent == null || nicknameSent.isEmpty() || nicknameSent.length() < 3 || nicknameSent.contains(" ")){
-				JOptionPane.showMessageDialog(getParent(),"Your nickname must contain 3 char at least and no space.", "Error Login",JOptionPane.ERROR_MESSAGE);
+			if(nicknameSent == null || nicknameSent.isEmpty() || nicknameSent.length() < 3 || nicknameSent.length() >= 15 || nicknameSent.contains(" ")){
+				JOptionPane.showMessageDialog(getParent(),"Your nickname must contain between 3 and 15 char at least and no space.", "Error Login",JOptionPane.ERROR_MESSAGE);
 			}
 			else {
 				client.setNickname(nicknameSent);

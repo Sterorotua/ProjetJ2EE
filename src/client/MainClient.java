@@ -21,6 +21,8 @@ public class MainClient {
 
 		client.chooseServer();
 		
+		loginGUI.enablingWriting(true);
+		
 		//Réception de la vérification des info de connexion
 		while(connectionGranted == false){
 			msgReceived = client.receiveMessage();

@@ -60,6 +60,7 @@ public class Client {
 					System.out.println("Can't connect on "+serverAddr+" on port "+serverPort);
 					if(this.server2Tried == false){
 						this.connect(1);
+						JOptionPane.showMessageDialog(null,"Connected on server 2.\n", "Connection established",JOptionPane.INFORMATION_MESSAGE);
 						this.sendMessage("/nbClient");
 						if(Integer.parseInt(this.receiveMessage())-1 == 0){
 							this.sendMessage("/clearCoDB");
@@ -122,16 +123,24 @@ public class Client {
 						}
 						System.out.println("Going back on server "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 						this.connect(0);
+						JOptionPane.showMessageDialog(null,"Connected on server 1.\n", "Connection established",JOptionPane.INFORMATION_MESSAGE);
 						this.sendMessage("/clearCoDB");
 					}
-					System.out.println("Other users found on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
-					System.out.println("Staying on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
+					else{
+						JOptionPane.showMessageDialog(null,"Connected on server 2.\n", "Connection established",JOptionPane.INFORMATION_MESSAGE);
+						System.out.println("Other users found on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
+						System.out.println("Staying on server "+this.serversAddr.get(1)+" on port "+this.serversPort.get(1));
+					}
 				}
 				else{
 					System.out.println("Going back on server "+this.serversAddr.get(0)+" on port "+this.serversPort.get(0));
 					this.connect(0);
+					JOptionPane.showMessageDialog(null,"Connected on server 1.\n", "Connection established",JOptionPane.INFORMATION_MESSAGE);
 					this.sendMessage("/clearCoDB");
 				}
+			}
+			else{
+				JOptionPane.showMessageDialog(null,"Connected on server 1.\n", "Connection established",JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

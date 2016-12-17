@@ -69,7 +69,6 @@ public class ConnectionClient extends Thread{
 			StringTokenizer st = new StringTokenizer(msg); //Sépare la commande du message
 			String cmd = st.nextToken();
 			msg = msg.replace(cmd+" ", "");
-			
 			switch(cmd) {
 									
 				//Demande le nombre de client connecté au serveur (pour le choix du serveur)
@@ -123,22 +122,35 @@ public class ConnectionClient extends Thread{
 				
 				//Demande de notification d'un utilisateur
 				case "/n" : String nicknameNotified = st.nextToken();
-							if (this.notifieUser(nicknameNotified) >= 3){
-								ConnectionClient coToBan = server.getCo(nicknameNotified);
-								coToBan.sendMessage("/banned "+nicknameNotified);
-								this.broadcastServer("User ["+nicknameNotified+"] BANNED (has been notified 3 time).");
+							if (server.getCo(nicknameNotified).getInfoUser().isAdmin()){
+								this.sendMessage("/b [SERVER] : You can't notify an admin.");
+							}
+							else{
+								if (this.notifieUser(nicknameNotified) >= 3){
+									ConnectionClient coToBan = server.getCo(nicknameNotified);
+									coToBan.sendMessage("/banned "+nicknameNotified);
+									this.broadcastServer("User ["+nicknameNotified+"] BANNED (has been notified 3 time).");
+								}
 							}
 							//logger.info("Notification asked. /n command");
 
 							break;
 								 
 				//Demande de ban
-				case "/ban" : if (this.infoUser.isAdmin()){
+				case "/ban" : 
+								if (this.infoUser.isAdmin()){
+				
 								  String nicknameBanned = st.nextToken();
 								  ConnectionClient coToBan = server.getCo(nicknameBanned);
-								  coToBan.sendMessage("/banned "+nicknameBanned);
-								  this.broadcastServer("User ["+nicknameBanned+"] BANNED by ["+this.infoUser.getNickname()+"].");
-								  //logger.info("Ban asked. /ban command");
+								  if (coToBan.getInfoUser().isAdmin()){
+									  this.sendMessage("/b [SERVER] : You can't ban an other admin.");
+								  }
+								  else{
+									  coToBan.sendMessage("/banned "+nicknameBanned);
+									  this.broadcastServer("User ["+nicknameBanned+"] BANNED by ["+this.infoUser.getNickname()+"].");
+									  this.db.setBan(this.infoUser.getNickname(), true);
+									  //logger.info("Ban asked. /ban command");
+								  }
 							  }
 							  break;
 							  
@@ -151,9 +163,14 @@ public class ConnectionClient extends Thread{
 				case "/kick" : if (this.infoUser.isAdmin()){
 								  String nicknameKicked = st.nextToken();
 								  ConnectionClient coToKick = server.getCo(nicknameKicked);
-								  coToKick.sendMessage("/kicked "+nicknameKicked);
-								  this.broadcastServer("User ["+nicknameKicked+"] KICKED by ["+this.infoUser.getNickname()+"].");
-								  //logger.info("Kicking a user. /kick command");
+								  if (coToKick.getInfoUser().isAdmin()){
+									  this.sendMessage("/b [SERVER] : You can't kick an other admin.");
+								  }
+								  else{
+									  coToKick.sendMessage("/kicked "+nicknameKicked);
+									  this.broadcastServer("User ["+nicknameKicked+"] KICKED by ["+this.infoUser.getNickname()+"].");
+									  //logger.info("Kicking a user. /kick command");
+								  }
 							  }	
 							  break;
 							  
